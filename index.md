@@ -2,4 +2,5 @@
 ## Welcome to GitHub Pages
 ## 个人资料
 * QQ:[2602629646](mqqwpa://im/chat?chat_type=wpa&uin=2602629646)
-* 个人笔记:[github.com/MrFlySand](https://github.com/MrFlySand)
+* 个人笔记1:[github.com/MrFlySand](https://github.com/MrFlySand)
+* 个人笔记2:[gitee.com/MrFlySand](https://gitee.com/MrFlySand)
