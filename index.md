@@ -3,7 +3,7 @@
 * QQ:[2602629646](mqqwpa://im/chat?chat_type=wpa&uin=2602629646)
 * 个人笔记1:[github.com/MrFlySand](https://github.com/MrFlySand)
 * 个人笔记2:[gitee.com/MrFlySand](https://gitee.com/MrFlySand)
-* 刷赞链接:[shua7.97vi.cn](shua7.97vi.cn)
+* 刷赞链接:[shua7.97vi.cn](http://shua7.97vi.cn)
 * 如果要找我最好记这个人主页域名,Mr先生,Fly飞沙,Sand沙,github平台域名
 # github使用方法
 * 试用于如何查看别人仓库的新手
