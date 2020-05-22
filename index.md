@@ -8,6 +8,7 @@
 
 ## github使用方法
 * 试用于如何查看别人仓库的新手
+
 1. 查看别人最常用的几个仓库
 ![查看别人最常用的几个仓库](https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/github-01.png)
 2. 查看别人的全部仓库
