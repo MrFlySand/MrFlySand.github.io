@@ -1,0 +1,16 @@
+*{margin:0;padding:0;overflow: hidden;}
+body{font-size:14px;font-family:"微软雅黑";color:#333333;background:#F3F3F3;}
+b{font-weight:normal;}
+i{font-style:normal;}
+a,a:hover,a:active{text-decoration: none;color:#333333;}
+input,textarea,select{outline:none}
+img{border:none;vertical-align:middle;/*对齐方式*/}
+li{list-style:none;}
+.fl{float:left;}
+.fr{float:right;}
+.cl{clear:both;}
+.clearfix::after{
+	content:"";
+	display:table;
+	clear:both;
+}
