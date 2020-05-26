@@ -14,3 +14,6 @@ li{list-style:none;}
 	display:table;
 	clear:both;
 }
+.box{
+	margin: 10px;overflow: hidden;
+}
