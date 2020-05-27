@@ -1,0 +1,17 @@
+.headNav{
+	width: 100vw;
+	background:#24292E;
+	padding: 16px;
+	margin: 0;	
+	position:fixed;				
+}
+.headNav a{
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 800;
+	margin-left: 10px;	
+}
+.WebsiteAll a{
+	height: 200px;
+	margin-top: 200px;
+}
