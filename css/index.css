@@ -1,7 +1,7 @@
 .headNav{
 	width: 100vw;
 	background:#24292E;
-	padding: 16px;
+	padding: 16px 0;
 	margin: 0;	
 	z-index: 999;	
 	overflow-x: auto;
