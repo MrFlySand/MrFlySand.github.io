@@ -1,17 +1,57 @@
 .headNav{
 	width: 100vw;
 	background:#24292E;
-	padding: 16px;
+	padding: 16px 0 ;
 	margin: 0;	
-	position:fixed;				
+	z-index: 999;	
+	overflow-x: auto;
+	white-space:nowrap;
+	/*position:fixed;*/
 }
 .headNav a{
 	color: #ffffff;
 	font-size: 14px;
 	font-weight: 800;
-	margin-left: 10px;	
+	margin: 0 10px;	
+}
+/*小图标play*/
+.WebsiteAll .titel{
+	font-size: 24px;font-weight: 800;
+	background:url(../img/redLine.png) center;
+	text-align:center;background-repeat:no-repeat;
 }
 .WebsiteAll a{
-	height: 200px;
-	margin-top: 200px;
+	height: 90px;
+	margin:10px;
+	display: inline-block;
+	/*display: block;*/
+	background:url(../img/img.jpg) no-repeat;
+	background-position:0px 0;
+	/*overflow: hidden;*/
 }
+.WebsiteAll a p{
+	font-size:20px ;
+	position: relative;
+	top: 60px;
+	text-align: center;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
+}
+.WebsiteAll .shua{
+	background:url(../img/img.jpg) no-repeat;
+	background-position:0px 0px;
+	width: 60px;
+}
+.WebsiteAll .ai520{
+	background:url(../img/img.jpg) no-repeat;
+	background-position:-60px 0px;
+	width: 60px;
+}
+.WebsiteAll .birthday{
+	background:url(../img/img.jpg) no-repeat;
+	background-position:-120px 0px;
+	width: 60px;
+}
+/*小图标end*/
