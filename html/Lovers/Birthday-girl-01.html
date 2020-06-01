@@ -327,7 +327,7 @@
 	</head>
 	<body>
 		<div class="birthday">
-			<audio id="music1" src="http://ws.stream.qqmusic.qq.com/C400003B0KRV1fUEND.m4a?guid=698491172&vkey=FE0EFCE0EE559C0874BD20BB991A3FEC3AFD9324053BA02A455D645EE597F155A839C0A8497DE2FD48B8C682CB2494B376E583F73C117FC6&uin=0&fromtag=66" autoplay loop></audio>
+			<audio id="music1" src="" autoplay loop></audio>
 			<div class="cake-area">
 			<div class="velas">
 			<div class="fuego"></div>
@@ -501,58 +501,57 @@
 			  <li></li>
 			</ul>	
 		</div>
-		<div id="SuspendedBall" style="top: 100px;left: 0;">更多</div>
-		<script type="text/javascript">			
-		function onePrint(){
-			var index=0;
-			var word="都说流星可以有求必应</br>如果可以</br>我愿意在夜空下等待</br>等到一颗星星被我感动</br>为我划过星空</br>带着我的祝福落在你的枕边</br>生日快乐！";
-			function type(){		
-				document.getElementById("birthdayWord").innerHTML = word.substring(0,index++);
-			}setInterval(type, 180);
-		}
-		onePrint();
-		
-		window.onload=function(){    	
-			var flag = 0; //标记是拖曳还是点击
-			var oDiv = document.getElementById('SuspendedBall');
-			var disX,moveX,L,T,starX,starY,starXEnd,starYEnd;        
-			oDiv.addEventListener('touchstart',function(e){
-			    flag = 0;
-			    e.preventDefault();//阻止触摸时页面的滚动，缩放
-			    disX = e.touches[0].clientX - this.offsetLeft;
-			    disY = e.touches[0].clientY - this.offsetTop;
-					//手指按下时的坐标
-			    starX = e.touches[0].clientX;
-			    starY = e.touches[0].clientY;            
-			});
-			oDiv.addEventListener('touchmove',function(e){
-			    flag = 1;
-			    L = e.touches[0].clientX - disX ;
-			    T = e.touches[0].clientY - disY ;
-					//移动时 当前位置与起始位置之间的差值
-			    starXEnd = e.touches[0].clientX - starX;
-			    starYEnd = e.touches[0].clientY - starY;
-			    if(L<0){//限制拖拽的X范围，不能拖出屏幕
-				L = 0;
-			    }else if(L > document.documentElement.clientWidth - this.offsetWidth){
-				L=document.documentElement.clientWidth - this.offsetWidth;
-			    }
-			    if(T<0){//限制拖拽的Y范围，不能拖出屏幕
-				T=0;
-			    }else if(T>document.documentElement.clientHeight - this.offsetHeight){
-				T = document.documentElement.clientHeight - this.offsetHeight;
-			    }
-			    moveX = L + 'px';
-			    moveY = T + 'px';
-			    this.style.left = moveX;
-			    this.style.top = moveY;                  
-			});
-			SuspendedBall.addEventListener('touchend',function(e){
-			    if(flag === 0) {//点击
-				window.location.href='https://mrflysand.github.io/html/WebsiteAll.html';
-			    }            						
-			});		
-		}
+		<a href="https://mrflysand.github.io/html/WebsiteAll.html"><div id="SuspendedBall" style="top: 100px;left: 0;">更多</div></a>
+		<script type="text/javascript">				
+			(function(){ 
+				var flag = 0; //标记是拖曳还是点击
+				var oDiv = document.getElementById('SuspendedBall');
+				var disX,moveX,L,T,starX,starY,starXEnd,starYEnd;        
+				oDiv.addEventListener('touchstart',function(e){
+				    flag = 0;
+				    e.preventDefault();//阻止触摸时页面的滚动，缩放
+				    disX = e.touches[0].clientX - this.offsetLeft;
+				    disY = e.touches[0].clientY - this.offsetTop;
+						//手指按下时的坐标
+				    starX = e.touches[0].clientX;
+				    starY = e.touches[0].clientY;            
+				});
+				oDiv.addEventListener('touchmove',function(e){
+				    flag = 1;
+				    L = e.touches[0].clientX - disX ;
+				    T = e.touches[0].clientY - disY ;
+						//移动时 当前位置与起始位置之间的差值
+				    starXEnd = e.touches[0].clientX - starX;
+				    starYEnd = e.touches[0].clientY - starY;
+				    if(L<0){//限制拖拽的X范围，不能拖出屏幕
+					L = 0;
+				    }else if(L > document.documentElement.clientWidth - this.offsetWidth){
+					L=document.documentElement.clientWidth - this.offsetWidth;
+				    }
+				    if(T<0){//限制拖拽的Y范围，不能拖出屏幕
+					T=0;
+				    }else if(T>document.documentElement.clientHeight - this.offsetHeight){
+					T = document.documentElement.clientHeight - this.offsetHeight;
+				    }
+				    moveX = L + 'px';
+				    moveY = T + 'px';
+				    this.style.left = moveX;
+				    this.style.top = moveY;                  
+				});
+				SuspendedBall.addEventListener('touchend',function(e){
+				    if(flag === 0) {//点击
+					window.location.href='https://mrflysand.github.io/html/WebsiteAll.html';
+				    }            													
+				});		
+			})()
+			function onePrint(word){
+				var index=0;
+//				var word="都说流星可以有求必应</br>如果可以</br>我愿意在夜空下等待</br>等到一颗星星被我感动</br>为我划过星空</br>带着我的祝福落在你的枕边</br>生日快乐！";
+				function type(){		
+					document.getElementById("birthdayWord").innerHTML = word.substring(0,index++);
+				}setInterval(type, 180);
+			}
+			onePrint("都说流星可以有求必应</br>如果可以</br>我愿意在夜空下等待</br>等到一颗星星被我感动</br>为我划过星空</br>带着我的祝福落在你的枕边</br>生日快乐！");		
 		</script>
 	</body>
 </html>	
