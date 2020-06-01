@@ -69,7 +69,7 @@
 		    font-size: 10px;
 		    color: #fff;
 		    line-height: 25px;      		    
-		   border-style: solid;
+		    border-style: solid;
 		}       
     </style>
 </head>
@@ -87,7 +87,7 @@
 		<div id="aa" style=""></div>
 		<div style="display:none" id="w">我这人特别小气</br>你要是和我在一起了</br>那么你只能是我的</br>除了我别人都不能拥有你</br></br>愿你三冬暖，愿你春不寒</br>愿你天黑有灯，下雨有伞</br>愿时光能缓，愿故人不散</br>愿你惦念的人能和你道晚安</br>愿你独闯的日子里不觉得孤单</br>愿你余生所遇之人，都是好人</br>愿你活的洒脱，不争不抢</br>爱别人，更要懂得爱自己</div>
 	</div>
-	<div id="SuspendedBall" style="top: 100px;left: 0;">更多</div>
+	<div id="SuspendedBall" onclick="SuspendedBallButt()" style="cursor:hand; top: 100px;left: 0;">更多</div>
 	<script>
 		var index=0;
 		var word=document.getElementById("w").innerHTML;
@@ -95,7 +95,10 @@
 		    document.getElementById("aa").innerHTML = word.substring(0,index++);
 		}
 		setInterval(type, 250);
-		window.onload=function(){    	
+		function SuspendedBallButt(){
+			window.location.href='https://mrflysand.github.io/html/WebsiteAll.html';
+		}
+		(function(){ 
 			var flag = 0; //标记是拖曳还是点击
 			var oDiv = document.getElementById('SuspendedBall');
 			var disX,moveX,L,T,starX,starY,starXEnd,starYEnd;        
@@ -133,9 +136,9 @@
 			SuspendedBall.addEventListener('touchend',function(e){
 			    if(flag === 0) {//点击
 				window.location.href='https://mrflysand.github.io/html/WebsiteAll.html';
-			    }            						
+			    }            													
 			});		
-		}
+		})()
 	</script>
 </body>
 </html>
