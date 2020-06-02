@@ -6,7 +6,6 @@
 	z-index: 999;	
 	overflow-x: auto;
 	white-space:nowrap;
-	/*position:fixed;*/
 	display: block;
 }
 .headNav a{
@@ -33,6 +32,7 @@
 	background:url(https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/WebsiteAll/img.jpg) no-repeat;
 	background-position:0px 0;
 	/*overflow: hidden;*/
+	vertical-align:text-bottom;
 }
 .WebsiteAll a p{
 	font-size:20px ;
