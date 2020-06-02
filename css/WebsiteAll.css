@@ -25,8 +25,8 @@
 }
 .WebsiteAll a{
 	width: 60px;
-	height: 90px;
-	margin:10px;
+	height: 60px;
+	margin:10px 10px 20px 10px;
 	display: inline-block;
 	/*display: block;*/
 	background:url(https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/WebsiteAll/img.jpg) no-repeat;
@@ -35,7 +35,7 @@
 	vertical-align:text-bottom;
 }
 .WebsiteAll a p{
-	font-size:20px ;
+	font-size:16px ;
 	position: relative;
 	top: 60px;
 	text-align: center;
