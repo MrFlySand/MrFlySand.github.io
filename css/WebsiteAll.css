@@ -27,15 +27,16 @@
 	width: 60px;
 	height: 60px;
 	margin:10px 10px 20px 10px;
+	border-radius: 3px;
 	display: inline-block;
 	/*display: block;*/
-	background:url(https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/WebsiteAll/img.jpg) no-repeat;
+	background:url(https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/WebsiteAll/img.png) no-repeat;
 	background-position:0px 0;
 	/*overflow: hidden;*/
 	vertical-align:text-bottom;
 }
 .WebsiteAll a p{
-	font-size:16px ;
+	font-size:12px ;
 	position: relative;
 	top: 60px;
 	text-align: center;
@@ -44,13 +45,24 @@
     text-overflow: ellipsis;
     -o-text-overflow:ellipsis;
 }
-.WebsiteAll .shua{
-	background-position:0px 0px;
-}
-.WebsiteAll .ai520{
-	background-position:-60px 0px;
-}
-.WebsiteAll .birthday{
-	background-position:-120px 0px;
-}
 /*小图标end*/
+/*悬浮球play*/
+#SuspendedBall{
+    width: 30px;
+    height: 30px;
+    position:fixed;
+    top: 70%;
+    right: 10px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius:25px;
+    text-align: center;
+    line-height: 10px;
+    font-size: 10px;
+    color: #000;
+    line-height: 25px;      		    
+    border: 1px black solid;
+}
+/*悬浮球end*/
+
+
+/*https://www.zhangxinxu.com/wordpress/2014/04/animateion-line-drawing-svg-path-动画-路径/*/
