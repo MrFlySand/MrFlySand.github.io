@@ -27,10 +27,10 @@
 	width: 60px;
 	height: 60px;
 	margin:10px 10px 20px 10px;
-	border-radius: 3px;
+	border-radius: 5px;
 	display: inline-block;
 	/*display: block;*/
-	background:url(https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/WebsiteAll/img.png) no-repeat;
+	background:url(https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/WebsiteAll/img.jpg) no-repeat;
 	background-position:0px 0;
 	/*overflow: hidden;*/
 	vertical-align:text-bottom;
