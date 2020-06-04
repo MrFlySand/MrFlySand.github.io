@@ -44,7 +44,7 @@
 				<a target="_blank" style="background-position:-480px 0px;" href="https://www.csdn.net/">
 					<p class="label">CSDN</p>				
 				</a>					
-				<a target="_blank" style="background-position:-0px 0px;" href="https://www.w3cschool.cn/">
+				<a target="_blank" style="background-position:-0px -60px;" href="https://www.w3cschool.cn/">
 					<p class="label">W3C</p>
 				</a>					
 				<a target="_blank" style="background-position:-540px 0px;"  href="https://www.w3school.com.cn/">
@@ -58,8 +58,14 @@
 				</a>
 				<a target="_blank" style="background-position:-0px 0px;" href="https://www.iconfont.cn">
 					<p class="label">矢量图库</p>					
-				</a>								
+				</a>
+				<a target="_blank" style="background-position:-0px 0px;" href="http://www.fontawesome.com.cn/faicons/">
+					<p class="label">awesome图标库</p>					
+				</a>	
 			<p class="titel it">娱乐</p>
+				<a target="_blank" style="background-position:-240px -60px;" href="https://www.youtube.com">
+					<p class="label">youtobe</p>
+				</a>
 				<a target="_blank" style="background-position:-240px -60px;" href="https://www.bilibili.com/">
 					<p class="label">哔哩哔哩</p>
 				</a>			
@@ -94,9 +100,21 @@
 				<a target="_blank" style="background-position:-180px -180px;" href="http://markdown.xiaoshujiang.com/">
 					<p class="label">小书匠</p>					
 				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://translate.google.cn">
+					<p class="label">Google翻译</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://cn.bing.com/Translator">
+					<p class="label">必应翻译</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://www.youzack.com">
+					<p class="label">youzack</p>					
+				</a>
 				<a target="_blank" style="background-position:-120px -180px;" href="https://www.dooccn.com/c/">
-					<p class="label">dooccn</p>					
-				</a>				
+					<p class="label">dooccn编译器</p>					
+				</a>
+				<a target="_blank" style="background-position:-120px -180px;" href="https://mh.cli.im">
+					<p class="label">草料二维码</p>					
+				</a>	
 			<p class="titel ">影视设计</p>
 				<a target="_blank" href="http://www.aigei.com/sound">
 					<p class="label">爱给</p>				
@@ -117,6 +135,9 @@
 				<a target="_blank" style="background-position:-360px -120px;" href="https://www.douban.com/">
 					<p class="label">豆瓣</p>					
 				</a>
+				<a target="_blank" style="background-position:-360px -120px;" href="https://www.quora.com/">
+					<p class="label">Quora</p>					
+				</a>
 			<p class="titel ">其它</p>
 				<a target="_blank"  style="background-position:-420px -120px;" href="https://pc.qq.com">
 					<p class="label">腾讯软件</p>					
@@ -131,17 +152,51 @@
 					<p class="label">7k7k</p>	
 				</a>
 		</div>
-		<div id="SuspendedBall">更多</div>
+		<div id="SuspendedBall">
+			<p id="word1">更多</p>
+			<p id="word2">top</p>
+		</div>
 		<script type="text/javascript">
-			var SuspendedBack = document.getElementById("SuspendedBack");
-			var SuspendedBox = document.getElementById("SuspendedBox");
-			var SuspendedWord = document.getElementById("SuspendedWord");
-			
-			SuspendedBall.onclick = function(){							
-				SuspendedBack.style.width = "106px";
-				SuspendedBox.style.width = "100px";
-				SuspendedWord.style.display = "none";
-			}
+			var flag = 0; //标记是拖曳还是点击
+			var oDiv = document.getElementById('SuspendedBall');
+			var disX,moveX,L,T,starX,starY,starXEnd,starYEnd;        
+			oDiv.addEventListener('touchstart',function(e){
+			    flag = 0;
+			    e.preventDefault();//阻止触摸时页面的滚动，缩放
+			    disX = e.touches[0].clientX - this.offsetLeft;
+			    disY = e.touches[0].clientY - this.offsetTop;
+					//手指按下时的坐标
+			    starX = e.touches[0].clientX;
+			    starY = e.touches[0].clientY;            
+			});
+			oDiv.addEventListener('touchmove',function(e){
+			    flag = 1;
+			    L = e.touches[0].clientX - disX ;
+			    T = e.touches[0].clientY - disY ;
+					//移动时 当前位置与起始位置之间的差值
+			    starXEnd = e.touches[0].clientX - starX;
+			    starYEnd = e.touches[0].clientY - starY;
+			    if(L<0){//限制拖拽的X范围，不能拖出屏幕
+					L = 0;
+			    }else if(L > document.documentElement.clientWidth - this.offsetWidth){
+					L=document.documentElement.clientWidth - this.offsetWidth;
+			    }
+			    if(T<0){//限制拖拽的Y范围，不能拖出屏幕
+					T=0;
+			    }else if(T>document.documentElement.clientHeight - this.offsetHeight){
+					T = document.documentElement.clientHeight - this.offsetHeight;
+			    }
+			    moveX = L + 'px';
+			    moveY = T + 'px';
+			    this.style.left = moveX;
+			    this.style.top = moveY;                  
+			});
+			SuspendedBall.addEventListener('touchend',function(e){
+			    if(flag === 0) {//点击
+					var word1 = document.getElementById("word1");
+					word1.style.display = "none";
+			    }            							 						
+			});		
 		</script>
 	</body>
 </html>
