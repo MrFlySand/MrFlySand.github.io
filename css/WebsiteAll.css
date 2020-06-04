@@ -48,20 +48,26 @@
 /*小图标end*/
 /*悬浮球play*/
 #SuspendedBall{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     position:fixed;
-    top: 70%;
-    right: 10px;
-    background-color: rgba(0,0,0,0.3);
+    top: 70%;right: 10px;
+    background-color: rgba(0,0,0,0.5);
     border-radius:25px;
     text-align: center;
-    line-height: 10px;
     font-size: 10px;
-    color: #000;
+    color: #fff;
     line-height: 25px;      		    
-    border: 1px black solid;
+    border-style: solid;    
 }
+#SuspendedBall:hover{
+	animation: SuspAnimate 2s linear;
+}
+@keyframes SuspAnimate{
+	0%{width: 25px;}
+	100%{width: 100px;}
+}
+
 /*悬浮球end*/
 
 
