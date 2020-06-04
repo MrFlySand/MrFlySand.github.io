@@ -7,6 +7,7 @@
 		<head><link rel="icon" type="image/jpeg" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg"/><head>
 		<link rel="stylesheet" type="text/css" href="../css/package.css"/>
 		<script src="../javascript/package.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="../javascript/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
 		<link rel="stylesheet" type="text/css" href="../css/WebsiteAll.css"/>
 	</head>
 	<body>
@@ -56,14 +57,14 @@
 				<a target="_blank" style="background-position:-240px -180px;" href="http://musictool.top">
 					<p>音乐搜索器</p>
 				</a>
-				<a target="_blank" style="background-position:-0px 0px;" href="https://www.iconfont.cn">
+				<a target="_blank" style="background-position:-540px -120px;" href="https://www.iconfont.cn">
 					<p class="label">矢量图库</p>					
 				</a>
-				<a target="_blank" style="background-position:-0px 0px;" href="http://www.fontawesome.com.cn/faicons/">
+				<a target="_blank" style="background-position:-120px -60px;" href="http://www.fontawesome.com.cn/faicons/">
 					<p class="label">awesome图标库</p>					
 				</a>	
 			<p class="titel it">娱乐</p>
-				<a target="_blank" style="background-position:-240px -60px;" href="https://www.youtube.com">
+				<a target="_blank" style="background-position:-360px -180px;" href="https://www.youtube.com">
 					<p class="label">youtobe</p>
 				</a>
 				<a target="_blank" style="background-position:-240px -60px;" href="https://www.bilibili.com/">
@@ -112,17 +113,17 @@
 				<a target="_blank" style="background-position:-120px -180px;" href="https://www.dooccn.com/c/">
 					<p class="label">dooccn编译器</p>					
 				</a>
-				<a target="_blank" style="background-position:-120px -180px;" href="https://mh.cli.im">
+				<a target="_blank" style="background-position:-300px -180px;" href="https://mh.cli.im">
 					<p class="label">草料二维码</p>					
 				</a>	
 			<p class="titel ">影视设计</p>
-				<a target="_blank" href="http://www.aigei.com/sound">
+				<a target="_blank" style="background-position:-480px -180px;" href="http://www.aigei.com/sound">
 					<p class="label">爱给</p>				
 				</a>
-				<a target="_blank" href="http://zhongguose.com/">
+				<a target="_blank" style="background-position:-540px -180px;" href="http://zhongguose.com/">
 					<p class="label">中国传统色</p>				
 				</a>
-				<a target="_blank" href="https://www.sj520.cn">
+				<a target="_blank" style="background-position:-420px -180px;" href="https://www.sj520.cn">
 					<p class="label">520设计网</p>				
 				</a>
 			<p class="titel ">阅读</p>
@@ -135,7 +136,7 @@
 				<a target="_blank" style="background-position:-360px -120px;" href="https://www.douban.com/">
 					<p class="label">豆瓣</p>					
 				</a>
-				<a target="_blank" style="background-position:-360px -120px;" href="https://www.quora.com/">
+				<a target="_blank" style="background-position:-0px -240px;" href="https://www.quora.com/">
 					<p class="label">Quora</p>					
 				</a>
 			<p class="titel ">其它</p>
@@ -145,16 +146,19 @@
 				<a target="_blank"  style="background-position:-480px -120px;" href="https://dl.pconline.com.cn">
 					<p class="label">电脑网</p>					
 				</a>									
-				<a target="_blank" style="background-position:-0px -180px;" href="http://www.4399.com/">
+				<a target="_blank" style="background-position:-60px -180px;" href="http://www.4399.com/">
 					<p class="label">4399</p>					
 				</a>	
-				<a target="_blank" style="background-position:-60px -180px;" href="http://www.7k7k.com/">
+				<a target="_blank" style="background-position:-0px -180px;" href="http://www.7k7k.com/">
 					<p class="label">7k7k</p>	
 				</a>
+				<a target="_blank" class="#Anim" style="background-position:-60px -180px;" href="http://MrFlySand.github.io/Other/AnimateEffect/index.html">
+					<p class="label">CSS,JS动画</p>	
+				</a>				
 		</div>
 		<div id="SuspendedBall">
 			<p id="word1">更多</p>
-			<p id="word2">top</p>
+			<a href="#"><p id="word2">top</p></a>
 		</div>
 		<script type="text/javascript">
 			var flag = 0; //标记是拖曳还是点击
@@ -196,7 +200,36 @@
 					var word1 = document.getElementById("word1");
 					word1.style.display = "none";
 			    }            							 						
-			});		
+			});
+			var a = 1;
+			var word1 = document.getElementById("word1");
+			var word2 = document.getElementById("word2");
+			oDiv.onclick = function(){				
+				if (a == 1) {					
+					word1.style.display = "none";
+					word2.style.display = "block";										
+					a = 0;
+				}else{
+					word1.style.display = "block";
+					word2.style.display = "none";
+					a = 1;
+				}
+			}			
+			$(function(){	
+				var a = 1;
+				$("#SuspendedBall").click(function(){
+					if(a == 1){
+						$("#SuspendedBall").animate({width:"100px"},500);
+						a = 0;
+					}else{
+						$("#SuspendedBall").animate({width:"24px"},500);
+						a = 1;
+					}
+				});
+				$("body").touchstart(function(){				
+					$("#SuspendedBall").animate({width:"24px"},500);					
+				});
+			})			
 		</script>
 	</body>
 </html>
