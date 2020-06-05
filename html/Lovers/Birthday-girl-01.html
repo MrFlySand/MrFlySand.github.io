@@ -7,15 +7,16 @@
 		<style type="text/css">
 		body{
 			margin: 0;padding: 0;
-			background: url(https://gitee.com/MrFlySand/Other/raw/master/ShuaZuan/liveyou.jpg);
-		}	
-		.birthday {
-			width: 100%;
-			height: 100%;			
+			background: linear-gradient(135deg,#ff9a9e,#fecfef) no-repeat;
+			height: 1500px;overflow: hidden;
+		}
+		.birthday{
+			width: 100vw;min-height: 100vh;z-index: 999;     
+			margin-right: -100px;       
 		}	
 		#cake {
 		  display: block;
-		  position: relative;
+/*		  position: relative;*/
 		  margin: -300px auto 0 auto;
 		}
 		.velas {
@@ -25,7 +26,7 @@
 		  top: 75px;
 		  left: 50%;
 		  margin-left: -2.5px;
-		  margin-top: -8.33333333px;
+		  margin-top: 95px;
 		  width: 5px;
 		  height: 35px;
 		  -webkit-transform: translateY(-300px);
@@ -163,11 +164,11 @@
 				opacity:1;
 			}
 		}
-		.happy {		
+		.happy {					
 			text-align: center; 
 			opacity: 1;
-			animation: happybirthdays 10s;
-			animation-delay: 0s;
+			animation: happybirthdays 12s;
+			animation-delay: 0s;			
 		}
 		@keyframes happybirthdays {
 			0% {
@@ -200,14 +201,15 @@
 		.cake-area{
 			width: 100%;
 			display: block;
+			margin-top: 100px;
 		}
 		.bg-bubbles {
-		  position: absolute;
-		  top: 0;
+		  /*position: absolute;*/
+		  top: -100px;
 		  left: 0;
 		  width: 100%;
 		  height: 100%;
-		  z-index: 1;
+		  z-index: 1;		  
 		}
 		.bg-bubbles li {
 		  position: absolute;
@@ -216,7 +218,7 @@
 		  width: 40px;
 		  height: 40px;
 		  background-color: rgba(255, 255, 255, 0.15);
-		  bottom: -160px;
+		  bottom: -170px;
 		  -webkit-animation: square 30s infinite;
 		  animation: square 30s infinite;
 		  -webkit-transition-timing-function: linear;
@@ -285,7 +287,7 @@
 		  background-color: rgba(255, 255, 255, 0.3);
 		}
 		.bg-bubbles li:nth-child(10) {
-		  left: 90%;
+		  left: 70%;
 		  width: 160px;
 		  height: 160px;
 		  -webkit-animation-delay: 11s;
@@ -312,15 +314,15 @@
 		  }
 		}
 		#SuspendedBall{
-		    width: 25px;
-		    height: 25px;
+		    width: 35px;
+		    height: 35px;
 		    position:fixed;
 		    background-color: rgba(0,0,0,0.5);
 		    border-radius:25px;
 		    text-align: center;
 		    font-size: 10px;
 		    color: #fff;
-		    line-height: 25px;      		    
+		    line-height: 35px;      		    
 		    border-style: solid;
 		}  
 	  </style>
@@ -485,9 +487,8 @@
 			<rect class="come" x="10" y="475.571" fill="#fefae9" width="180" height="4" />
 			</svg>
 			</div>
-			<div class="happy"><img src="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/Suan/birthday.png" style="width: 240px;"></div>
-			<div id="birthdayWord" style="text-align: center; color: #000; "></div>
-			<!-- <audio src="music/2.mp3"  autoplay="autoplay" loop="loop"></audio> -->
+			<div class="happy"><img src="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/Suan/birthday.png" style="width: 300px;margin: 50px 0 50px 0;"></div>
+			<div id="birthdayWord" style="text-align: center; color: #000;padding-bottom: 100px; "></div>
 			<ul class="bg-bubbles">
 			  <li></li>
 			  <li></li>
@@ -546,12 +547,11 @@
 			})()
 			function onePrint(word){
 				var index=0;
-//				var word="都说流星可以有求必应</br>如果可以</br>我愿意在夜空下等待</br>等到一颗星星被我感动</br>为我划过星空</br>带着我的祝福落在你的枕边</br>生日快乐！";
 				function type(){		
-					document.getElementById("birthdayWord").innerHTML = word.substring(0,index++);
-				}setInterval(type, 180);
+					document.getElementById("birthdayWord").innerText = word.substring(0,index++);
+				}setInterval(type, 160);
 			}
-			onePrint("都说流星可以有求必应</br>如果可以</br>我愿意在夜空下等待</br>等到一颗星星被我感动</br>为我划过星空</br>带着我的祝福落在你的枕边</br>生日快乐！");		
+			onePrint("都说流星可以有求必应\n如果可以\n我愿意在夜空下等待\n等到一颗星星被我感动\n为我划过星空\n带着我的祝福落在你的枕边\n生日快乐！");		
 		</script>
 	</body>
 </html>	
