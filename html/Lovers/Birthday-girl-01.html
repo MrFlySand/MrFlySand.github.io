@@ -5,16 +5,13 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
 		<title>Happy Birthday</title>
 		<style type="text/css">
-		body{
-			margin: 0;padding: 0;
-			background: linear-gradient(135deg,#ff9a9e,#fecfef) no-repeat;
-			min-height: 1200px;			
+		*{
+			margin: 0;padding: 0;						
 		}
 		.birthday{
-			width: 100vw;min-height: 100vh;
-			z-index: 999; 
-			padding-bottom: 100px;
-			margin-left: -20px;           
+		     background: linear-gradient(135deg,#ff9a9e,#fecfef) no-repeat;
+            width: 100vw;min-height: 100vh; padding-top:1px; z-index: 999;
+            padding-bottom: 100px;    
 		}	
 		#cake {
 		  display: block;
@@ -27,7 +24,7 @@
 		  position: absolute;
 		  top: 75px;
 		  left: 50%;
-		  margin-left: -2.5px;
+		  /*margin-left: -15px;*/
 		  margin-top: 95px;
 		  width: 5px;
 		  height: 35px;
@@ -48,7 +45,7 @@
 		  width: 100%;
 		  height: 2.22222222px;
 		}
-		
+	
 		.velas:after {
 		  top: 25%;
 		  left: 0;
@@ -206,7 +203,7 @@
 			margin-top: 100px;
 		}
 		.bg-bubbles {
-		  /*position: absolute;*/
+		  position: absolute;
 		  top: -100px;
 		  left: 0;
 		  width: 100%;
@@ -331,7 +328,7 @@
 	</head>
 	<body>
 		<div class="birthday">
-			<audio id="music1" src="" autoplay loop></audio>
+			<audio id="music1" src="http://music.163.com/song/media/outer/url?id=5270588.mp3" autoplay loop></audio>
 			<div class="cake-area">
 			<div class="velas">
 			<div class="fuego"></div>
