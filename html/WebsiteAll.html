@@ -25,7 +25,10 @@
 				</a>					
 				<a target="_blank" style="background-position:-120px 0px;" href="https://MrFlySand.github.io/html/Lovers/Birthday-girl-01.html">
 					<p>生日快乐</p>
-				</a>										
+				</a>		
+				<a target="_blank" style="background-position:-120px 0px;" href="https://MrFlySand.github.io/html/Lovers/LoveTree/index.html">
+					<p>爱心树</p>
+				</a>	
 			<p class="titel it">计算机</p>
 				<a target="_blank" style="background-position:-180px 0px;" href="http://www.google.cn/">
 					<p class="label">google搜索</p>
@@ -159,6 +162,7 @@
 		<div id="SuspendedBall">
 			<p id="word1">更多</p>
 			<a href="#"><p id="word2">top</p></a>
+			<a href="#"><p id="word3" style="display: none;margin-top: -30px;">分享</p></a>
 		</div>
 		<script type="text/javascript">
 			var flag = 0; //标记是拖曳还是点击
@@ -198,7 +202,7 @@
 			SuspendedBall.addEventListener('touchend',function(e){
 			    if(flag === 0) {//点击
 					var word1 = document.getElementById("word1");
-					word1.style.display = "none";
+//					word1.style.display = "none";
 			    }            							 						
 			});
 			var a = 1;
@@ -208,6 +212,7 @@
 				if (a == 1) {					
 					word1.style.display = "none";
 					word2.style.display = "block";										
+					word3.style.display = "inline-block";
 					a = 0;
 				}else{
 					word1.style.display = "block";
@@ -226,8 +231,8 @@
 						a = 1;
 					}
 				});
-				$("body").touchstart(function(){				
-					$("#SuspendedBall").animate({width:"24px"},500);					
+				$("body").click(function(){				
+					$("#SuspendedBall p:not([id='word2'])").animate({width:"24px"},500);	//JQuery2-10			
 				});
 			})			
 		</script>
