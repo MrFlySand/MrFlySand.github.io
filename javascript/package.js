@@ -1,11 +1,64 @@
 //一个个打印文字
 function onePrint(word){
 	var index=0;
-	var word=word;
 	function type(){		
-		document.getElementById("bb").innerText = word.substring(0,index++);
+		document.getElementById("").innerText = word.substring(0,index++);
 	}setInterval(type, 180);
 }
+//计时器
+function timer(y,mo,d,h,mi,id){
+setInterval(function(){
+	function customize(month){
+		switch (month){
+		 	case 1: return 0;
+		 	case 2: return 31;
+		 	case 3: return 59;
+		 	case 4: return 90;
+		 	case 5: return 120;
+		 	case 6: return 151;
+		 	case 7: return 181;
+			case 8: return 212;
+			case 9: return 243;
+			case 10: return 273;
+			case 11: return 304;
+			case 12: return 334;
+		}
+	}
+    var now = new Date();
+    var myDate = new Date;
+	var year = myDate.getFullYear();
+	var mon = myDate.getMonth()+1;
+	var dat = myDate.getDate();
+	var hou = myDate.getHours(); 
+	var min = myDate.getMinutes();
+	var seco = myDate.getSeconds();
+	year = year - y;
+	if (mon >= mo){
+		dat = customize(mon) - customize(mo) + dat - d;
+	} else{
+		year--;
+		dat = 334 - customize(mo) + customize(mon) + d;
+	}
+	if(hou >= h){
+		hou = hou - h;
+	}else{						
+		if (hou > h ) {
+			dat--;
+			hou = 60+hou-h;
+		} else{
+			dat--;
+			hou = 60+hou-h;
+		}
+	}
+	if (min >= mi) {
+		min = min - mi;
+	} else{
+		hou--;
+		min = 60+min-mi;
+	}
+    id.innerHTML= year+"年"+dat+"天"+hou+"小时"+min+"分钟"+seco+"秒";
+        },1000);
+   }
 //输出换行(可以指定多少个元素换行)
 function print(arr,leng,row){//数组,长度,行数
 	for (var i=0;i<leng;i++) {
