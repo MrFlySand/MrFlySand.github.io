@@ -1,12 +1,12 @@
 .headNav{
-	width: 100vw;
+	width: 100%;
 	background:#24292E;
-	padding: 16px 0;
+	padding: 16px 0 ;
 	margin: 0;	
 	z-index: 999;	
 	overflow-x: auto;
 	white-space:nowrap;
-	/*position:fixed;*/
+	display: block;
 }
 .headNav a{
 	color: #ffffff;
@@ -32,6 +32,9 @@
 	color: #fff;
 }
 /*幻灯片end*/
+/*.persInfo .text{
+	list-style: afar;
+}*/
 /*哔哩哔哩play*/
 .bilibili img{
 	float: left;
@@ -39,5 +42,18 @@
 }
 /*哔哩哔哩end*/
 .tabProject{
-	
+	 border-style: solid;
 }
+/*底部play*/
+.foot .footLine{
+	background: #fff;
+	text-align: center;
+	width: 100px;height: 24px;
+	position: relative;
+	margin: 0 auto;
+	top:12px;
+}
+.foot .footWord{
+	margin: 0 auto;
+}
+/*底部end*/
