@@ -48,12 +48,13 @@
 .foot .footLine{
 	background: #fff;
 	text-align: center;
-	width: 100px;height: 24px;
+	width: 100px;height: 20px;
 	position: relative;
 	margin: 0 auto;
-	top:12px;
+	top:10px;
 }
 .foot .footWord{
 	margin: 0 auto;
+	line-height: 25px;
 }
 /*底部end*/
