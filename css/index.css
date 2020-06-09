@@ -45,17 +45,14 @@
 	 border-style: solid;
 }
 /*底部play*/
-.foot .footLine{
-	background: #fff;
-	text-align: center;
-	width: 100px;height: 20px;
-	position: relative;
-	margin: 0 auto;
-	top:10px;
-	margin-bottom: 5px;
+.foot{
+	background: #1f1f1f;
+	width: 100%;
+	min-height:30vh;
+	color: #fff;
 }
-.foot .footWord{
-	margin: 0 auto;
-	line-height: 25px;
+.foot .icon{
+	width: 50px;height: 50px;
+	margin: 10px;
 }
 /*底部end*/
