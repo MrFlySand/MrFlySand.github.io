@@ -44,10 +44,10 @@ setInterval(function(){
 	}else{						
 		if (hou > h ) {
 			dat--;
-			hou = 60+hou-h;
+			hou = hou-h;
 		} else{
 			dat--;
-			hou = 60+hou-h;
+			hou = 24+hou-h;
 		}
 	}
 	if (min >= mi) {
