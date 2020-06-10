@@ -48,8 +48,39 @@
 .foot{
 	background: #1f1f1f;
 	width: 100%;
-	min-height:30vh;
+	min-height:40vh;
 	color: #fff;
+}
+.foot .logo{
+	
+}
+.foot .logo .rope{
+	width: 3px;height:10vh;
+	background: #fff;
+	margin-left: 150px;
+}
+.foot .logo img{
+	margin-left: 80px;
+	border-radius: 100px;
+    -webkit-transition: -webkit-transform 2s ease-out;
+    -moz-transition: -moz-transform 2s ease-out;
+    -o-transition: -o-transform 2s ease-out;
+    -ms-transition: -ms-transform 2s ease-out;
+    transition: transform 2s ease-out;
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+}
+.foot .logo img:hover{
+	-webkit-transform:rotateZ(360deg);
+	-moz-transform:rotateZ(360deg);
+	-o-transform:rotateZ(360deg);
+	-ms-transform:rotateZ(360deg);
+	transform:rotateZ(360deg);
+}
+.foot .icons{
+	float: left;
 }
 .foot .icon{
 	width: 50px;height: 50px;
