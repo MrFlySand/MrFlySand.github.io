@@ -1,5 +1,5 @@
 *{margin:0;padding:0;}
-body{font-size:14px;font-family:"微软雅黑";color:#000;background:#FFF;}
+body{font-size:14px;font-family:"微软雅黑";color:#817c7c;background:#ddd;}
 b{font-weight:normal;}
 i{font-style:normal;}
 a,a:hover,a:active{text-decoration: none;color:#333333;}
@@ -17,3 +17,5 @@ li{list-style:none;}
 .box{
 	margin: 10px;overflow: hidden;
 }
+
+
