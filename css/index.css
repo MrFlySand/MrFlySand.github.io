@@ -25,7 +25,7 @@
 }
 .headTitle .website{
 	float: right;
-	margin: 50px 20px;
+	margin: 50px 20px 20px 20px;
 }
 .headTitle .website a{
 	color: #fff;
@@ -35,12 +35,9 @@
 	background: red;
 }
 /*幻灯片end*/
-/*.persInfo .text{
-	list-style: afar;
-}*/
 /*内容play*/
 .container {
-    margin: 30px 10px 10px 10px;padding: -20px;
+    margin: 20px 10px 10px 10px;padding: -20px;
     float: left;
     width: 70%-20px;
 }
@@ -52,7 +49,7 @@
 	background: #fff;
 	border-left: 0.3em solid #ccc;
 	height: 19.3em;
-	line-height: 40px;
+	line-height: 1.8em;
 	overflow: hidden;
 	text-overflow: ellipsis;
     -o-text-overflow:ellipsis;
@@ -68,7 +65,7 @@
 /*专案play*/
 .leftBox{
 	background: #fff;
-	margin: 30px 10px 10px 10px;
+	margin: 20px 10px 10px 10px;
 	float: left;
 	overflow: hidden;
 }
