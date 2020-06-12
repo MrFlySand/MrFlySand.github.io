@@ -1,8 +1,17 @@
 *{margin:0;padding:0;}
-body{font-size:14px;font-family:"微软雅黑";color:#817c7c;background:#ddd;}
+body{
+	background: #ddd;
+    font-family: "微软雅黑";
+    font-size: 65%;
+    color: #817c7c;
+    line-height: 1.5;
+}
 b{font-weight:normal;}
 i{font-style:normal;}
-a,a:hover,a:active{text-decoration: none;color:#333333;}
+a,a:hover,a:active{
+	text-decoration: none;
+	color:#2ca6cb;	
+}
 input,textarea,select{outline:none}
 img{border:none;vertical-align:middle;/*对齐方式*/}
 li{list-style:none;}
@@ -17,5 +26,11 @@ li{list-style:none;}
 .box{
 	margin: 10px;overflow: hidden;
 }
-
+p{
+	font-size: 1.4em;
+}
+p.title{
+	font-size: 2em;
+	font-weight: 800;
+}
 
