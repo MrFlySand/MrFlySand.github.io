@@ -6,6 +6,7 @@
 	color: #fff;
 	margin: 0;
 	display:block;
+	overflow: hidden;
 }
 .headTitle .logo{
 	width: 500px;
@@ -23,6 +24,9 @@
 	color: #fff;
 	font-family: "covered_by_your_graceregular";
 }
+.headTitle .search{
+	float: right;
+}
 .headTitle .website{
 	float: right;
 	margin: 50px 20px 20px 20px;
@@ -33,6 +37,26 @@
 }
 .headTitle .website a:hover{
 	background: red;
+}
+.search{
+	margin-top: 50px;
+}
+#searchText{
+	width: 15em;height: 2em;
+	border-radius: 3px;	
+	margin-left: 5px;
+	padding: 0 10px;
+	border-style:ridge;
+	border-color:black;
+}
+.search button{
+	width: 5em;height: 2.2em;
+	border-radius: 3px;
+	border-style:ridge;
+	border-color:black;
+}
+.search button:hover{
+	background: #ccc;
 }
 /*幻灯片end*/
 /*内容play*/
