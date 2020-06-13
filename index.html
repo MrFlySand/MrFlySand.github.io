@@ -15,12 +15,16 @@
 				<div class="box logo">
 					<img src="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg"/>
 					<p class="name">飞沙的博客</p>
-					<p class="url">MrFlySand.github.io</p>
+					<p class="url">MrFlySand.github.io</p>		
 				</div>
-			</a>			
+			</a>							
 			<div class="website">
 				<a href="https://MrFlySand.github.io">主页</a>
 				<a href="https://mrflysand.github.io/html/WebsiteAll.html">网站大全</a>
+			</div>	
+			<div class="search">				
+				<input type="text" id="searchText" placeholder="Please Enter..." />
+				<button id="searchButt" type="button" onclick="searchFunction()">搜索</button>
 			</div>	
 		</div>				
 		<div class="container" id="container">
@@ -96,12 +100,13 @@
 		
 		<script type="text/javascript">
 			timer(2020,5,23,10,12,document.getElementById("timer"));
-			function bodyWindow(){				
+			setInterval(function bodyWindow(){				
 				container = document.getElementById("container");
 				leftBox= document.getElementById("leftBox");
 				footLogo = document.getElementById("footLogo");
 				timers = document.getElementById("timers");
 				icons =document.getElementById("icons");
+				searchText = document.getElementById("searchText");
 			    var x = window.document.body.clientWidth;
 			    console.log(x)
 			    if(x < '900'){
@@ -109,16 +114,25 @@
 			    	leftBox.style.width = "95%";
 			    	leftBox.style.margin = "0px 10px 10px 10px";
 			    	footLogo.style.margin = "0 auto";
-			    	timers.style.margin = "0 auto";			    	
+			    	timers.style.margin = "0 auto";	
+			    	if (x >= '440' && x < '510') {
+			    		searchText.style.width = "10em";	
+			    	}else if (x> '300' && x < '440') {
+			    		searchText.style.width = "20px";	
+			    	}else if(x >='510'){
+			    		searchText.style.width = "15em";
+			    	}
 			    }else{
 			    	container.style.width = "70%";
 			    	leftBox.style.width = "25%";
 			    	leftBox.style.margin = "20px 10px 10px 10px";
-			    	footLogo.style.margin = "0 80px";
+			    	footLogo.style.margin = "0 80px";			    			    	
 			    }
-			}
-			bodyWindow();
-			setInterval(bodyWindow, 1000);
+			},1000);				
+			function searchFunction(){
+			 	var searchText = document.getElementById("searchText").value;	
+				window.open('https://cn.bing.com/search?q='+searchText);
+			}		
 		</script>	
 	</body>
 </html>
