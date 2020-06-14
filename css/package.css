@@ -12,7 +12,22 @@ a,a:hover,a:active{
 	text-decoration: none;
 	color:#2ca6cb;	
 }
-input,textarea,select{outline:none}
+input{
+	border-radius: 3px;
+	border-style:ridge;
+	border-color:black;
+	padding: 10px;
+	height: 2em;
+}
+button{
+	border-radius: 3px;
+	border-style:ridge;
+	border-color:black;
+	height: 2.2em;
+}
+button:hover{
+	background: #ccc;
+}
 img{border:none;vertical-align:middle;/*对齐方式*/}
 li{list-style:none;}
 .fl{float:left;}
