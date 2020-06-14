@@ -29,12 +29,12 @@
 }
 .headTitle .website{
 	float: right;
-	margin: 50px 20px 20px 20px;
+	margin: 40px 20px 20px 20px;
 }
 .headTitle .website a{
 	color: #fff;
 	padding: 10px;
-	font-size: 1em;
+	font-size: 1.5em;
 }
 .headTitle .website a:hover{
 	background: red;
@@ -72,15 +72,15 @@
 .containerBox{
 	background: #fff;
 	border-left: 0.3em solid #ccc;
-	height: 19.3em;
+	height: 18em;
 	line-height: 1.8em;
-	overflow: hidden;
-	text-overflow: clip;
-	/*text-overflow: ellipsis;*/
-    -o-text-overflow:ellipsis;
-    padding: 10px;margin-bottom: 10px;    
+	overflow: hidden;	
+    padding: 10px;margin-bottom: 10px;  
+    text-overflow: clip|ellipsis;
 }
 .containerBox p{
+	/*text-overflow: clip|ellipsis;
+	-o-text-overflow:clip|ellipsis;*/
 	color: #817c7c;
 }
 .containerBox:hover{
