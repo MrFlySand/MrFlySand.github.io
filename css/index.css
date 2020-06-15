@@ -24,12 +24,9 @@
 	color: #fff;
 	font-family: "covered_by_your_graceregular";
 }
-.headTitle .search{
-	float: right;
-}
 .headTitle .website{
 	float: right;
-	margin: 40px 20px 20px 20px;
+	margin-right: 10px;
 }
 .headTitle .website a{
 	color: #fff;
@@ -39,8 +36,12 @@
 .headTitle .website a:hover{
 	background: red;
 }
+.headBox{
+	margin-top: 40px;
+}
 .search{
-	margin-top: 50px;
+	float: right;
+	margin: 10px 0;
 }
 #searchText{
 	width: 15em;height: 2em;
