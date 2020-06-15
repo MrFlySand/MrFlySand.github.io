@@ -26,12 +26,13 @@
 }
 .headTitle .website{
 	float: right;
-	margin-right: 10px;
+	margin: 0 10px;
 }
 .headTitle .website a{
 	color: #fff;
-	padding: 10px;
+	padding: 0px 10px 2px 10px;
 	font-size: 1.5em;
+
 }
 .headTitle .website a:hover{
 	background: red;
