@@ -80,19 +80,19 @@ p.title{
 }
 .container li{
 	list-style:	disc outside none ;
-	margin-left: 50px;
+	margin-left: 30px;
 }
 .container ul li+.second{
 	list-style: square;
-	margin-left: 80px;	
+	margin-left: 60px;	
 }
 .container ul li+.third{
 	list-style: circle;
-	margin-left: 110px;
+	margin-left: 90px;
 }
 .container p .codeIntroduction{
 	width: auto;
 	line-height: 40px;
-	display: block;
-	margin-top: 30px;
+	display: inline-block;
+	margin: 30px 0 10px 0;
 }
