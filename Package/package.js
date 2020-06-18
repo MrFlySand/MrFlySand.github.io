@@ -1,12 +1,3 @@
-//如果是手机,则body宽度100%
-//function bodyWindow(a){
-//  var x = window.document.body.clientWidth;
-//  var id = id;
-//  console.log(x)
-//  if(x < 700){
-//  	id.style.width = "100%";
-//  }
-//}
 //一个个打印文字
 function onePrint(word){
 	var index=0;
@@ -15,15 +6,15 @@ function onePrint(word){
 	}setInterval(type, 180);
 }
 //文本框前的标号,html显示代码块
-function code(id){
-	var word = "";			
-	var height = $(id).height();			
-	for (var i = j = 1;j <= height; i++, j += 32) {
-		word = word + i + "</br>"; 
-	}
-	$(id).prev().html(word);
-	$(id).prev().css("height",height);
-}
+//function code(id){
+//	var word = "";			
+//	var height = $(id).height();			
+//	for (var i = j = 1;j <= height; i++, j += 32) {
+//		word = word + i + "</br>"; 
+//	}
+//	$(id).prev().html(word);
+//	$(id).prev().css("height",height);
+//}
 //计时器
 function timer(y,mo,d,h,mi,id){
 setInterval(function(){
@@ -43,7 +34,7 @@ setInterval(function(){
 			case 12: return 334;
 		}
 	}
-    var now = new Date();
+//  var now = new Date();
     var myDate = new Date;
 	var year = myDate.getFullYear();
 	var mon = myDate.getMonth()+1;
@@ -76,8 +67,8 @@ setInterval(function(){
 		min = 60+min-mi;
 	}
     id.innerHTML= year+"年"+dat+"天"+hou+"小时"+min+"分钟"+seco+"秒";
-        },1000);
-   }
+    },1000);
+}
 //输出换行(可以指定多少个元素换行)
 function print(arr,leng,row){//数组,长度,行数
 	for (var i=0;i<leng;i++) {
