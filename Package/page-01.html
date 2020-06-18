@@ -6,9 +6,36 @@
 		<title>page-01</title>
 		<head><link rel="icon" type="image/jpeg" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg"/><head>				
 		<script src="https://MrFlySand.github.io/Package/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
-		<link rel="stylesheet" type="text/css" href="Package/package.css"/>
-		<link rel="stylesheet" type="text/css" href="Package/function.js"/>
-		<script src="Package/package.js" type="text/javascript" charset="UTF-8"></script>
+		<link rel="stylesheet" type="text/css" href="package.css"/>
+		<script src="package.js" type="text/javascript" charset="UTF-8"></script>
+		<script type="text/javascript">
+			//根据屏幕的高度调整元素的宽度
+			setInterval(function(){				
+			//	var container = document.getElementById("container");
+				var rightBox= document.getElementById("rightBox");
+				var footLogo = document.getElementById("footLogo");
+				var timers = document.getElementById("timers");
+				var icons = document.getElementById("icons");
+				var headTitle = document.getElementById("headTitle");
+				var searchText = document.getElementById("searchText");
+				var headIcon = document.getElementById("headIcon");
+			    var x = window.document.body.clientWidth;
+			    if(x < '1000'){
+			//  	headTitle.style.height = "200px";
+			//  	headBox.style.display = "none";
+			    	headIcon.style.display = "block";
+			//  	if(x < '565'){
+			////		headTitle.style.height = "150px";
+			//  		headBox.style.display = "block";
+			//  		headIcon.style.display = "block";
+			//  	}
+			   }else{			   
+			    	headTitle.style.height = "200px";
+			    	headBox.style.display = "block";
+			    	headIcon.style.display = "none";    	
+			    }
+			},1000);
+		</script>
 		<style type="text/css">
 			/*头部play*/
 			.headTitle{
@@ -25,6 +52,11 @@
 				position: relative;
 				display: inline-block;
 				line-height: 50px;
+			}
+			.headTitle .logo p{
+				font-size: 20px;
+				color: #fff;
+				width: 295px;
 			}
 			.headTitle .name{
 				width: 430px;
@@ -53,33 +85,32 @@
 			.headTitle .website a:hover{
 				background: red;
 			}	
-			.search{
+			.headTitle .search{
 				float: right;
 				margin: 15px;
 			}
-			#searchText{
+			.headTitle #searchText{
 				width: 200px;height: 30px;
 				border-radius: 3px;	
 				padding: 0 10px;
 				border-style:ridge;
 				border-color:black;
 			}
-			.search button{
+			.headTitle .search button{
 				width: 70px;height: 35px;
 				border-radius: 3px;
 				border-style:ridge;
 				border-color:black;
 			}
-			.search button:hover{
+			.headTitle .search button:hover{
 				background: #ccc;
 			}
-			#headIcon{
+			.headTitle #headIcon{
 				width: 30px; height: 30px;
-				margin: 10px;
 				position: relative;
-				top: 50px;
+				top: 50px;right: 10px;
 				float: right;
-			}
+			}		
 			/*头部end*/					
 		</style>
 	</head>
@@ -104,7 +135,7 @@
 				</div>	
 			</div>
 		</div>	
-		<script type="text/javascript">	
+		<script type="text/javascript">			
 			function searchFunction(){
 			 	var searchText = document.getElementById("searchText").value;	
 				window.open('https://cn.bing.com/search?q='+searchText);
