@@ -6,11 +6,46 @@
 		<title>page-02</title>
 		<script src="https://MrFlySand.github.io/Package/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
 		<script src="https://MrFlySand.github.io/Package/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
-		<link rel="stylesheet" type="text/css" href="Package/package.css"/>
-		<link rel="stylesheet" type="text/css" href="Package/function.js"/>
-		<script src="Package/package.js" type="text/javascript" charset="UTF-8"></script>
+		<link rel="stylesheet" type="text/css" href="package.css"/>
+		<script src="package.js" type="text/javascript" charset="UTF-8"></script>
 		<script type="text/javascript">
-					
+			//根据屏幕的高度调整元素的宽度
+			setInterval(function(){				
+			//	var container = document.getElementById("container");
+				var rightBox= document.getElementById("rightBox");
+				var footLogo = document.getElementById("footLogo");
+				var timers = document.getElementById("timers");
+				var icons = document.getElementById("icons");
+				var headTitle = document.getElementById("headTitle");
+				var searchText = document.getElementById("searchText");
+				var headIcon = document.getElementById("headIcon");
+			    var x = window.document.body.clientWidth;
+			    if(x < '1000'){		
+			    	rightBox.style.width = "90%";	
+			    	rightBox.style.margin = "10px";
+			    	footLogo.style.left = "both";
+			    	footLogo.style.display = "block";
+			    	footLogo.style.margin = "0 auto";
+			    	icons.style.clear = "both";
+			    	icons.style.display = "block";
+			    	icons.style.margin = "10px auto";
+			    	timers.style.clear = "both";
+			    	timers.style.display = "block";
+			    	timers.style.margin = "10px auto";
+			    }else{
+			    	rightBox.style.width = "25%";
+			    	rightBox.style.margin = "20px 10px 10px 10px";
+			    	footLogo.style.float = "left";
+			    	footLogo.style.display = "inline-block";
+			    	footLogo.style.margin = "0 80px";
+			    	icons.style.float = "left";
+			    	icons.style.display = "inline-block";
+			    	icons.style.margin = "50px 100px 20px 100px";
+			    	timers.style.float = "left";
+			    	timers.style.display = "inline-block";
+			    	timers.style.margin = "20px 100px 20px 100px";
+			    }
+			},1000);
 		</script>
 		<style type="text/css">				
 			/*专案play*/
@@ -19,8 +54,7 @@
 				background: #fff;
 				margin: 20px 15px;
 				padding: 10px;
-				float: left;
-				overflow: hidden;
+				float: left;				
 			}
 			.rightBox a{
 				border-bottom: 0.05em solid #ccc;
@@ -91,7 +125,12 @@
 				-o-transform:rotateZ(360deg);
 				-ms-transform:rotateZ(360deg);
 				transform:rotateZ(360deg);
-			}			
+			}	
+			.foot .footLogo p,.timers p{
+				color: #fff;
+				width: 300px;
+				margin: 0 auto;
+			}		
 			.foot .icons{				
 				width: 380px;			
 			}
@@ -142,8 +181,5 @@
 				<p id="timer" style="display: block;"></p>
 			</span>
 		</div>
-		<script type="text/javascript">				
-//			timer(2020,5,23,10,12,document.getElementById("timer"));
-		</script>
 	</body>
 </html>
