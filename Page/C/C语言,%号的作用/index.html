@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <title>Fly Sand&#39;s blog</title>    
+    <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">
+    <link rel="stylesheet" href="../../../Package/package.css">
+    <link rel="stylesheet" href="../../../Package/style.css">    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>    
+	<header class="header"></header>
+	<div id="container">
+<!----------------------------------------可以修改的内容play------------------------------------>
+		 <div id="main">
+				<section class="post" itemscope itemprop="blogPost">
+				  					<h1>C语言,输出%号的用法</h1>
+				<div class="label">更新时间:20200617</div>
+				<div class="label">C语言</di	v>
+				<div class="label">模除</div>
+				<div class="label">输出</div>
+				<div class="BalanceOperation">
+					<p>模除的运算</p>
+					<input id="BalanceOperationOne" placeholder="第1个数"/>％
+					<input id="BalanceOperationTwo" placeholder="第2个数"/>=
+					<input id="BalanceOperationThree" placeholder="结果"/>
+					<button onclick="BalanceOperationFun()">确定</button>
+				</div>
+				<pre><p></p><code id="code1">
+#include "stdio.h"
+int main(){  
+    int x=2;   
+    printf("%d\n",x);
+    printf("%%d\n",x); 
+    printf("$%d\n",x); 
+    printf("*%d\n",x); 
+    printf("%%%d\n",x); 
+    printf("%%%%d\n",x);
+    printf("%%%%%d\n",x); 
+}  
+					</code></pre>
+					<p style="display: inline-block;color: #000;">运行结果</p>
+					<pre><p></p><code id="code2">
+2
+%d
+$2
+*2
+%2
+%%d
+%%2				
+					</code></pre>
+					<p style="color: #000;">由上面可见:任意符号+%,输出显示的都是任意符号。%d就是取后面的值</p>
+				</section>				
+			</div>
+<!----------------------------------------可以修改的内容end------------------------------------>
+		<div id="asidepart"></div>
+	</div>
+	<footer class="footer"></footer>
+		<script src="https://MrFlySand.github.io/Package/jquery.min.js"></script>
+		<script src="../../../Package/package.js"></script>
+		<script type="text/javascript">
+/*-----------------------------------------Essential play-----------------------------------------------------*/			
+			$(document).ready(function(){
+				$('.header').load('../../../Package/top.html');
+				$('#asidepart').load('../../../Package/right.html');
+				$('.footer').load('../../../Package/footer.html');
+			});			
+		</script>
+		<script type="text/javascript">			
+			function searchFunction(){
+			 	var searchText = document.getElementById("searchText").value;	
+				window.open('https://cn.bing.com/search?q='+searchText);
+			}						
+/*-----------------------------------------Essential End-----------------------------------------------------*/
+			function BalanceOperationFun () {
+				var one = parseInt(document.getElementById("BalanceOperationOne").value);
+				var two = parseInt(document.getElementById("BalanceOperationTwo").value);
+				document.getElementById("BalanceOperationThree").value = one%two; 
+			}
+		</script>
+  </body>
+ </html>
