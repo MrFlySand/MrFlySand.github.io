@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     <title>Fly Sand&#39;s blog</title>    
     <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">
+    
     <link rel="stylesheet" href="../../../Package/package.css">
     <link rel="stylesheet" href="../../../Package/style.css">    
+    <link rel="stylesheet" href="../../../Package/highlight.min.css"/>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>    
@@ -15,19 +18,19 @@
 <!----------------------------------------可以修改的内容play------------------------------------>
 		 <div id="main">
 				<section class="post" itemscope itemprop="blogPost">
-				  					<h1>C语言,输出%号的用法</h1>
-				<div class="label">更新时间:20200617</div>
-				<div class="label">C语言</di	v>
-				<div class="label">模除</div>
-				<div class="label">输出</div>
-				<div class="BalanceOperation">
+				  <h1>C语言,输出%号的用法</h1>
+					<div class="label">更新时间:20200617</div>
+					<div class="label">C语言</div>  
+					<div class="label">模除</div>
+					<div class="label">输出</div>
+					<div class="BalanceOperation">
 					<p>模除的运算</p>
 					<input id="BalanceOperationOne" placeholder="第1个数"/>％
 					<input id="BalanceOperationTwo" placeholder="第2个数"/>=
 					<input id="BalanceOperationThree" placeholder="结果"/>
 					<button onclick="BalanceOperationFun()">确定</button>
 				</div>
-				<pre><p></p><code id="code1">
+				<pre><p></p><code class="language-cpp" id="code1">源码:
 #include "stdio.h"
 int main(){  
     int x=2;   
@@ -39,9 +42,8 @@ int main(){
     printf("%%%%d\n",x);
     printf("%%%%%d\n",x); 
 }  
-					</code></pre>
-					<p style="display: inline-block;color: #000;">运行结果</p>
-					<pre><p></p><code id="code2">
+				</code></pre>
+					<pre><p></p><code class="language-cpp" id="code2">输出:
 2
 %d
 $2
@@ -57,7 +59,9 @@ $2
 		<div id="asidepart"></div>
 	</div>
 	<footer class="footer"></footer>
-		<script src="https://MrFlySand.github.io/Package/jquery.min.js"></script>
+		<script src="../../../Package/jquery.min.js"></script>
+		<script src="../../../Package/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
 		<script src="../../../Package/package.js"></script>
 		<script type="text/javascript">
 /*-----------------------------------------Essential play-----------------------------------------------------*/			
@@ -78,6 +82,10 @@ $2
 				var two = parseInt(document.getElementById("BalanceOperationTwo").value);
 				document.getElementById("BalanceOperationThree").value = one%two; 
 			}
+			code(document.getElementById("code1"));
+			code(document.getElementById("code2"));
+			code(document.getElementById("code3"));
+			code(document.getElementById("code4"));
 		</script>
   </body>
  </html>
