@@ -13,17 +13,24 @@ a,a:hover,a:active{
 	color:#2ca6cb;	
 }
 input{
+	width: 100px;height: 30px;
 	border-radius: 3px;
 	border-style:ridge;
 	border-color:black;
-	padding: 10px;
+	padding: 0 10px;
 	height: 24px;
+	background: #ddd;	
+}
+
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:#666;
 }
 button{
+	width: 50px;
 	border-radius: 3px;
 	border-style:ridge;
 	border-color:black;
-	height: 2.2em;
+	height: 2.2em;	
 }
 button:hover{
 	background: #ccc;
@@ -64,16 +71,6 @@ p.title{
 	color: #000;
 	font-size: 20px;
 }
-.container .label{
-	width: auto;height: 20px;
-	display: inline-block;
-	background: #dbdbdb;
-	color: #817c7c;
-	margin: 5px; padding: 5px 10px;
-	font-size: 14px;
-	text-align: center;
-	line-height: 20px;
-}
 .container p+.title{
 	color: #2CA6CB;
 	font-size: 28px
@@ -83,11 +80,11 @@ p.title{
 	margin-left: 30px;
 }
 .container ul li+.second{
-	list-style: square;
+	list-style: circle;
 	margin-left: 60px;	
 }
 .container ul li+.third{
-	list-style: circle;
+	list-style: square;
 	margin-left: 90px;
 }
 .container p .codeIntroduction{
@@ -95,4 +92,14 @@ p.title{
 	line-height: 40px;
 	display: inline-block;
 	margin: 30px 0 10px 0;
+}
+#container #main .post .label{
+	width: auto;height: 20px;
+	display: inline-block;
+	background: #dbdbdb;
+	color: #817c7c;
+	margin: 5px; padding: 5px 10px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 20px;
 }
