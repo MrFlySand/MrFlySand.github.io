@@ -40,12 +40,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	width: 100%;
 }
 footer .hello{
-	width: 390px;
+	width: 370px;
 	margin: 40px auto;
 	text-align: center;
 }
 footer #footer .icons{
-	width: 390px;
+	width: 340px;
 	margin: 40px auto;
 }
 footer #footer .icons a,svg{
@@ -55,5 +55,9 @@ footer #footer .icons a,svg{
 footer #footer .timers{
 	width: 550px;
 	margin: 40px auto;
+	display: block;
+}
+footer #footer .timers p{	
+	margin:  0 auto;
 	display: block;
 }
