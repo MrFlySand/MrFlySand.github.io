@@ -1,0 +1,74 @@
+.headNav{
+	width: 100%;
+	background:#24292E;
+	padding: 16px 0 ;
+	margin: 0;	
+	z-index: 999;	
+	overflow-x: auto;
+	white-space:nowrap;
+	display: block;
+}
+.headNav a{
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 800;
+	margin: 0 10px;	
+}
+/*小图标play*/
+.WebsiteAll .titel{
+	font-size: 24px;font-weight: 800;
+	background:url(https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/WebsiteAll/redLine.png) center;
+	text-align:center;background-repeat:no-repeat;
+}
+.WebsiteAll .one{
+	width: 100%;display: fixed;
+}
+.WebsiteAll a{
+	width: 60px;
+	height: 60px;
+	margin:10px 10px 20px 10px;
+	border-radius: 5px;
+	display: inline-block;
+	/*display: block;*/
+	background:url(https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/WebsiteAll/img.jpg) no-repeat;
+	background-position:0px 0;
+	/*overflow: hidden;*/
+	vertical-align:text-bottom;
+}
+.WebsiteAll a p{
+	font-size:12px ;
+	position: relative;
+	top: 60px;
+	text-align: center;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
+}
+/*小图标end*/
+/*悬浮球play*/
+#SuspendedBall{
+    width: 25px;
+    height: 25px;
+    position:fixed;
+    top: 70%;right: 10px;
+    background-color: rgba(255,0,0,0.3);
+    border-radius:25px;
+    font-weight:800 ;
+    text-align: center;
+    font-size: 10px;
+    color: #000;
+    line-height: 25px;      		    
+    border-style: solid;
+    user-select:none;
+}   
+#SuspendedBall #word2{
+	display: none;
+	color: #000;
+	width: 25px;
+	background: rgba(255,255,255,0);
+}
+/*悬浮球end*/
+
+
+/*https://www.zhangxinxu.com/wordpress/2014/04/animateion-line-drawing-svg-path-动画-路径/*/
