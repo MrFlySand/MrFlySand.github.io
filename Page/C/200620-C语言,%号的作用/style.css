@@ -1,0 +1,10 @@
+#container .post .BalanceOperation input{
+	width: 50px;
+	position: relative;
+	top: -5px;
+	padding:  0 10px;
+}
+#container .post .BalanceOperation button{
+	position: relative;
+	top: -5px;
+}
