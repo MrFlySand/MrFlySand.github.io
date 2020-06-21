@@ -1,119 +1,246 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    <title>排序|Fly Sand&#39;s blog</title>    
-    <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">
-    <link rel="stylesheet" href="../../../Package/package.css">
-    <link rel="stylesheet" href="../../../Package/style.css">    
-    <link rel="stylesheet" href="../../../Package/highlight.min.css"/>
-</head>
-<body>    
-	<header class="header"></header>
-	<div id="container">
-<!----------------------------------------可以修改的内容play------------------------------------>
-		<div id="main">
-			<section class="post" itemscope itemprop="blogPost">
-				<h1 class="headTitle">简单排序</h1>
-				<div class="label">更新时间:2020061708</div>
-				<div class="label">JS</div>
-				<div class="label"><a href="../index.html">算法</a></div>
-				<div class="label"><a href="#">冒泡排序</a></div>
-				<div class="label"><a href="#">选择排序</a></div>
-				<div class="label"><a href="#">插入排序</a></div>
-				<div class="label"><a href="#">希尔排序</a></div>
-				<div class="label"><a href="#">快速排序</a></div>
-				<li style="margin-left: 10px; list-style: disc;">排序算法有很多:冒泡排序/选择排序/插入排序/归并排序/计数排序(counting sort)/基数排序(radix sort)/希尔排序/堆排序/桶排序</li>							
-				<pre><p></p><code class="language-js" id="code1">封装属性:
-//属性
-this.array = [];
-//方法
-//向数据插入到数组中的方法
-ArrayList.prototype.insert = function(item){
-  this.array.push(item);
-}
-//toString方法
-ArrayList.prototype.toString = function(){
-  //join()把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。
-  return this.array.join('-');
-}
-//交换两个数据
-ArrayList.prototype.swap = function(x,y){
-  var temp = this.array[x];
-  this.array[x] = this.array[y];
-  this.array[y] = temp;
-}
-				</code></pre>
-				<h2 class="codeTitle">冒泡排序的思路</h2>
-				<ul>
-					<li class="first">冒泡排序算法相对其他排序运行效率较低但是在概念上它是排序算法中最简单的</li>
-					<li class="first">思路</li>
-					<li class="second">对未排序的各元素从头到尾依次比较相邻的两个元素大小关系</li>
-					<li class="second">如果左边的队员高，则两队员交换位置</li>
-					<li class="second">向右移动个位置，比较下面两个队员</li>
-					<li class="second">当走到最右端时，最高的队员一定被放在了最右边</li>
-					<li class="second">按照这个思路，从最左端重新开始，这次走到倒数第二个位置的队员即可</li>
-				</ul>
-				<pre><p></p><code class="language-js" id="code2">
-//冒泡排序
-ArrayList.prototype.bubbleSort = function(){
-	//1. 获取数组的长度
-	var length = this.array.length;	
-	for (var j = length-1; j >= 0; j--) {
-		for (var i = 0; i < j; i++) {
-			if (this.array[i] > this.array[i+1]) {
-				this.swap(i,i+1);
-			}
-		}
-	}
-}				
-				</code></pre>
-				<h3 class="codeTitle">冒泡排序的效率</h3>
-				<ul>
-					<li>冒泡排序的比较次数:</li>
-					<li class="second">如果按照上面的例子来说一共有7个数字，那么每次循环时进行了几次的比较呢?</li>
-					<li class="second">第一次循环6次比较第二次5次比较第三次4次比..直到最后一趟进行了一 次比较口对于7个数据项比较次数:6+5+4+3+2+1</li>
-					<li class="second">对于N个数据项呢? (N-1)+(N-2)+(N-3)+...+ 1 =N*(N-1)/2</li>
-					<li>通过大0表示法推到过程我们来推到下冒泡排序的大O形式:</li>
-					<li class="second">N*(N- 1)/2 = N²/2-N/2,根据规则2,只保留最高阶项编程N²/2</li>
-					<li class="second">N²/ 2,根据规则3,去除常量编程N²</li>
-					<li class="second">因此冒泡排序的大0表示法为O(N²)</li>
-					<li>冒泡排序的交换次数:</li>
-					<li class="second">如果有两次比较才需要交换一次(不可能每次比较都交换次)， 那么交换次数为N²/4</li>
-					<li class="second">由于常量不算在大0表示法中，因此，我们可以认为交换次数的大0表示也是O(N²)</li>
-				</ul>
-			</section>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+		<title>网站大全</title>
+		<head><link rel="icon" type="image/jpeg" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg"/><head>
+		<link rel="stylesheet" type="text/css" href="../../Package/package.css"/>		
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<nav class="box headNav">
+			<a href="../../index.html">主页</a>
+			<a href="https://.github.io/html/WebsiteAll.html">网站大全</a>		
+			<a href="#it">计算机</a>
+			<a href="#entertainment">娱乐</a>
+			<a href="#smallTools">小工具</a>
+			<a href="#read">阅读</a>
+			<a href="#other">其它</a>
+		</nav>
+		<div class="WebsiteAll">
+			<p class="titel">站主</p>											
+				<a target="_blank" style="background-position:-60px 0px;" href="https://MrFlySand.github.io/html/Lovers/520-girl-01.html">					
+					<p>520</p>
+				</a>					
+				<a target="_blank" style="background-position:-120px 0px;" href="https://MrFlySand.github.io/html/Lovers/Birthday-girl-01.html">
+					<p>生日快乐</p>
+				</a>		
+				<a target="_blank" style="background-position:-120px 0px;" href="https://MrFlySand.github.io/html/Lovers/LoveTree/index.html">
+					<p>爱心树</p>
+				</a>	
+			<p class="titel it" id="it">计算机</p>
+				<a target="_blank" style="background-position:-180px 0px;" href="http://www.google.cn/">
+					<p class="label">google搜索</p>
+				</a>
+				<a target="_blank" style="background-position:-240px 0px;" href="https://cn.bing.com/">
+					<p class="label">必应</p>
+				</a>	
+				<a target="_blank" style="background-position:-300px 0px;"  href="http://github.com">
+					<p>github</p>
+				</a>
+				<a target="_blank" style="background-position:-360px 0px;"  href="http://gitee.com">
+					<p>码云</p>
+				</a>														
+				<a target="_blank" style="background-position:-420px 0px;" href="https://www.51zxw.net/">
+					<p class="label">我要自学网</p>
+				</a>	
+				<a target="_blank" style="background-position:-480px 0px;" href="https://www.csdn.net/">
+					<p class="label">CSDN</p>				
+				</a>					
+				<a target="_blank" style="background-position:-0px -60px;" href="https://www.w3cschool.cn/">
+					<p class="label">W3C</p>
+				</a>					
+				<a target="_blank" style="background-position:-540px 0px;"  href="https://www.w3school.com.cn/">
+					<p class="label">W3</p>
+				</a>							
+				<a target="_blank" style="background-position:-60px -60px;" href="https://www.adobe.com/">
+					<p class="label">Adobe</p>
+				</a>
+				<a target="_blank" style="background-position:-240px -180px;" href="http://musictool.top">
+					<p>音乐搜索器</p>
+				</a>
+				<a target="_blank" style="background-position:-540px -120px;" href="https://www.iconfont.cn">
+					<p class="label">矢量图库</p>					
+				</a>
+				<a target="_blank" style="background-position:-120px -60px;" href="http://www.fontawesome.com.cn/faicons/">
+					<p class="label">awesome图标库</p>					
+				</a>	
+			<p class="titel" id="entertainment">娱乐</p>
+				<a target="_blank" style="background-position:-360px -180px;" href="https://www.youtube.com">
+					<p class="label">youtobe</p>
+				</a>
+				<a target="_blank" style="background-position:-240px -60px;" href="https://www.bilibili.com/">
+					<p class="label">哔哩哔哩</p>
+				</a>			
+				<a target="_blank" style="background-position:-300px -60px;" href="https://v.qq.com/">
+					<p class="label">腾讯视频</p>
+				</a>				
+				<a target="_blank" style="background-position:-360px -60px;" href="https://www.iqiyi.com">
+					<p class="label">爱奇艺</p>					
+				</a>			
+				<a target="_blank" style="background-position:-420px -60px;"  href="https://www.youku.com">
+					<p class="label">优酷</p>					
+				</a>			
+				<a target="_blank" style="background-position:-480px -60px;"  href="https://www.douyu.com">
+					<p class="label">斗鱼</p>					
+				</a>				
+				<a target="_blank" style="background-position:-540px -60px;"  href="https://y.qq.com">
+					<p class="label">QQ音乐</p>					
+				</a>	
+				<a target="_blank" style="background-position:-0px -120px;" href="https://music.163.com">
+					<p class="label">网易云音乐</p>					
+				</a>		
+				<a target="_blank" style="background-position:-60px -120px;" href="http://www.kugou.com">
+					<p class="label">酷狗音乐</p>
+				</a>
+				<a target="_blank" style="background-position:-120px -120px;" href="https://www.xiami.com">
+					<p class="label">虾米音乐</p>				
+				</a>
+			<p class="titel" id="smallTools">小工具</p>
+				<a target="_blank" style="background-position:-180px -120px;" href="https://www.uupoop.com">
+					<p class="label">PS</p>					
+				</a>	
+				<a target="_blank" style="background-position:-180px -180px;" href="http://markdown.xiaoshujiang.com/">
+					<p class="label">小书匠</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://processon.com">
+					<p class="label">processOn</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://translate.google.cn">
+					<p class="label">Google翻译</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://cn.bing.com/Translator">
+					<p class="label">必应翻译</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://www.youzack.com">
+					<p class="label">youzack</p>					
+				</a>
+				<a target="_blank" style="background-position:-120px -180px;" href="https://www.dooccn.com/c/">
+					<p class="label">dooccn编译器</p>					
+				</a>
+				<a target="_blank" style="background-position:-300px -180px;" href="https://mh.cli.im">
+					<p class="label">草料二维码</p>					
+				</a>	
+			<p class="titel ">影视设计</p>
+				<a target="_blank" style="background-position:-480px -180px;" href="http://www.aigei.com/sound">
+					<p class="label">爱给</p>				
+				</a>
+				<a target="_blank" style="background-position:-540px -180px;" href="http://zhongguose.com/">
+					<p class="label">中国传统色</p>				
+				</a>
+				<a target="_blank" style="background-position:-420px -180px;" href="https://www.sj520.cn">
+					<p class="label">520设计网</p>				
+				</a>
+			<p class="titel" id="read">阅读</p>
+				<a target="_blank" style="background-position:-240px -120px;" href="https://www.jianshu.com/">
+					<p class="label">简书</p>					
+				</a>								
+				<a target="_blank" style="background-position:-300px -120px;" href="https://www.zhihu.com/">
+					<p class="label">知乎</p>					
+				</a>	
+				<a target="_blank" style="background-position:-360px -120px;" href="https://www.douban.com/">
+					<p class="label">豆瓣</p>					
+				</a>
+				<a target="_blank" style="background-position:-0px -240px;" href="https://www.quora.com/">
+					<p class="label">Quora</p>					
+				</a>
+			<p class="titel" id="other">其它</p>
+				<a target="_blank"  style="background-position:-420px -120px;" href="https://pc.qq.com">
+					<p class="label">腾讯软件</p>					
+				</a>					
+				<a target="_blank"  style="background-position:-480px -120px;" href="https://dl.pconline.com.cn">
+					<p class="label">电脑网</p>					
+				</a>									
+				<a target="_blank" style="background-position:-60px -180px;" href="http://www.4399.com/">
+					<p class="label">4399</p>					
+				</a>	
+				<a target="_blank" style="background-position:-0px -180px;" href="http://www.7k7k.com/">
+					<p class="label">7k7k</p>	
+				</a>
+				<a target="_blank" class="#Anim" style="background-position:-60px -180px;" href="http://MrFlySand.github.io/Other/AnimateEffect/index.html">
+					<p class="label">CSS,JS动画</p>	
+				</a>				
 		</div>
-<!----------------------------------------可以修改的内容end------------------------------------>
-		<div id="asidepart"></div>
-	</div>
-	<footer class="footer"></footer>
-		<script src="../../../Package/jquery.min.js"></script>
-		<script src="../../../Package/highlight.min.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-		<script src="../../../Package/package.js"></script>
+		<div id="SuspendedBall">
+			<p id="word1">更多</p>
+			<a href="#"><p id="word2">top</p></a>
+			<a href="#"><p id="word3" style="display: none;margin-top: -30px;">分享</p></a>
+		</div>
+		<script src="../../Package/package.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="../../Package/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
 		<script type="text/javascript">
-/*-----------------------------------------Essential play-----------------------------------------------------*/			
-			$(document).ready(function(){
-				$('.header').load('../../../Package/top.html');
-				$('#asidepart').load('../../../Package/right.html');
-				$('.footer').load('../../../Package/footer.html');
-			});			
-		</script>
-		<script type="text/javascript">			
-			function searchFunction(){
-			 	var searchText = document.getElementById("searchText").value;	
-				window.open('https://cn.bing.com/search?q='+searchText);
+			var flag = 0; //标记是拖曳还是点击
+			var oDiv = document.getElementById('SuspendedBall');
+			var disX,moveX,L,T,starX,starY,starXEnd,starYEnd;        
+			oDiv.addEventListener('touchstart',function(e){
+			    flag = 0;
+			    e.preventDefault();//阻止触摸时页面的滚动，缩放
+			    disX = e.touches[0].clientX - this.offsetLeft;
+			    disY = e.touches[0].clientY - this.offsetTop;
+					//手指按下时的坐标
+			    starX = e.touches[0].clientX;
+			    starY = e.touches[0].clientY;            
+			});
+			oDiv.addEventListener('touchmove',function(e){
+			    flag = 1;
+			    L = e.touches[0].clientX - disX ;
+			    T = e.touches[0].clientY - disY ;
+					//移动时 当前位置与起始位置之间的差值
+			    starXEnd = e.touches[0].clientX - starX;
+			    starYEnd = e.touches[0].clientY - starY;
+			    if(L<0){//限制拖拽的X范围，不能拖出屏幕
+					L = 0;
+			    }else if(L > document.documentElement.clientWidth - this.offsetWidth){
+					L=document.documentElement.clientWidth - this.offsetWidth;
+			    }
+			    if(T<0){//限制拖拽的Y范围，不能拖出屏幕
+					T=0;
+			    }else if(T>document.documentElement.clientHeight - this.offsetHeight){
+					T = document.documentElement.clientHeight - this.offsetHeight;
+			    }
+			    moveX = L + 'px';
+			    moveY = T + 'px';
+			    this.style.left = moveX;
+			    this.style.top = moveY;                  
+			});
+			SuspendedBall.addEventListener('touchend',function(e){
+			    if(flag === 0) {//点击
+					var word1 = document.getElementById("word1");
+//					word1.style.display = "none";
+			    }            							 						
+			});
+			var a = 1;
+			var word1 = document.getElementById("word1");
+			var word2 = document.getElementById("word2");
+			oDiv.onclick = function(){				
+				if (a == 1) {					
+					word1.style.display = "none";
+					word2.style.display = "block";										
+					word3.style.display = "inline-block";
+					a = 0;
+				}else{
+					word1.style.display = "block";
+					word2.style.display = "none";
+					a = 1;
+				}
 			}			
-			code(document.getElementById("code1"));
-			code(document.getElementById("code2"));
-			code(document.getElementById("code3"));
-			code(document.getElementById("code4"));
-			code(document.getElementById("code5"));
-			code(document.getElementById("code6"));
-			code(document.getElementById("code7"));
-/*-----------------------------------------Essential End-----------------------------------------------------*/	
+			$(function(){	
+				var a = 1;
+				$("#SuspendedBall").click(function(){
+					if(a == 1){
+						$("#SuspendedBall").animate({width:"100px"},500);
+						a = 0;
+					}else{
+						$("#SuspendedBall").animate({width:"24px"},500);
+						a = 1;
+					}
+				});
+				$("body").click(function(){				
+					$("#SuspendedBall p:not([id='word2'])").animate({width:"24px"},500);	//JQuery2-10			
+				});
+			})			
 		</script>
-  </body>
- </html>
+	</body>
+</html>
+	
