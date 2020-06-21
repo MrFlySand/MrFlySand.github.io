@@ -75,15 +75,15 @@ p.title{
 	color: #2CA6CB;
 	font-size: 28px
 }
-.container li{
+li{
 	list-style:	disc outside none ;
 	margin-left: 30px;
 }
-.container ul li+.second{
+ul li.second{
 	list-style: circle;
 	margin-left: 60px;	
 }
-.container ul li+.third{
+ul li.third{
 	list-style: square;
 	margin-left: 90px;
 }
@@ -93,7 +93,7 @@ p.codeIntroduction{
 	display: inline-block;
 
 }
-#container #main .post .label{
+div.label{
 	width: auto;height: 20px;
 	display: inline-block;
 	background: #dbdbdb;
@@ -103,20 +103,25 @@ p.codeIntroduction{
 	text-align: center;
 	line-height: 20px;
 }
+
 h1.headTitle{
+	font-size: 1.6em;
 	color: #0044ff;
 }
 h1.codeTitle{
+	font-size: 1.6em;
 	color: #0044ff;
 	margin-top: 0;
 	display: block;
 }
 h2.codeTitle{
+	font-size: 1.4em;
 	color: #0055dd;
 	margin-top: 0.8em;
 	display: block;
 }
 h3.codeTitle{
+	font-size: 1.2em;
 	color: #0066bb;
 	margin-top: 0.8em;
 	display: block;
