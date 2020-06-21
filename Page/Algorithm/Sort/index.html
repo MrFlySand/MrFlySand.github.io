@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <title>排序|Fly Sand&#39;s blog</title>    
+    <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">
+    <link rel="stylesheet" href="../../../Package/package.css">
+    <link rel="stylesheet" href="../../../Package/style.css">    
+    <link rel="stylesheet" href="../../../Package/highlight.min.css"/>
+</head>
+<body>    
+	<header class="header"></header>
+	<div id="container">
+<!----------------------------------------可以修改的内容play------------------------------------>
+		<div id="main">
+			<section class="post" itemscope itemprop="blogPost">
+				<h1 class="headTitle">简单排序</h1>
+				<div class="label">更新时间:2020061708</div>
+				<div class="label">JS</div>
+				<div class="label"><a href="../index.html">算法</a></div>
+				<div class="label"><a href="#">冒泡排序</a></div>
+				<div class="label"><a href="#">选择排序</a></div>
+				<div class="label"><a href="#">插入排序</a></div>
+				<div class="label"><a href="#">希尔排序</a></div>
+				<div class="label"><a href="#">快速排序</a></div>
+				<li>排序算法有很多:冒泡排序/选择排序/插入排序/归并排序/计数排序(counting sort)/基数排序(radix sort)/希尔排序/堆排序/桶排序</li>							
+				<pre><p></p><code class="language-js" id="code1">封装属性:
+//属性
+this.array = [];
+//方法
+//向数据插入到数组中的方法
+ArrayList.prototype.insert = function(item){
+  this.array.push(item);
+}
+//toString方法
+ArrayList.prototype.toString = function(){
+  //join()把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。
+  return this.array.join('-');
+}
+//交换两个数据
+ArrayList.prototype.swap = function(x,y){
+  var temp = this.array[x];
+  this.array[x] = this.array[y];
+  this.array[y] = temp;
+}
+				</code></pre>
+				<h2 class="codeTitle">冒泡排序的思路</h2>
+				<ul>
+					<li>冒泡排序算法相对其他排序运行效率较低但是在概念上它是排序算法中最简单的</li>
+					<li>思路</li>
+					<li class="second">对未排序的各元素从头到尾依次比较相邻的两个元素大小关系</li>
+					<li class="second">如果左边的队员高，则两队员交换位置</li>
+					<li class="second">向右移动个位置，比较下面两个队员</li>
+					<li class="second">当走到最右端时，最高的队员一定被放在了最右边</li>
+					<li class="second">按照这个思路，从最左端重新开始，这次走到倒数第二个位置的队员即可</li>
+				</ul>
+				<pre><p></p><code class="language-js" id="code2">
+//冒泡排序
+ArrayList.prototype.bubbleSort = function(){
+	//1. 获取数组的长度
+	var length = this.array.length;	
+	for (var j = length-1; j >= 0; j--) {
+		for (var i = 0; i < j; i++) {
+			if (this.array[i] > this.array[i+1]) {
+				this.swap(i,i+1);
+			}
+		}
+	}
+}				
+				</code></pre>
+				<h3 class="codeTitle">冒泡排序的效率</h3>
+				<ul>
+					<li>冒泡排序的比较次数:</li>
+					<li class="second">如果按照上面的例子来说一共有7个数字，那么每次循环时进行了几次的比较呢?</li>
+					<li class="second">第一次循环6次比较第二次5次比较第三次4次比..直到最后一趟进行了一 次比较口对于7个数据项比较次数:6+5+4+3+2+1</li>
+					<li class="second">对于N个数据项呢? (N-1)+(N-2)+(N-3)+...+ 1 =N*(N-1)/2</li>
+					<li>通过大0表示法推到过程我们来推到下冒泡排序的大O形式:</li>
+					<li class="second">N*(N- 1)/2 = N²/2-N/2,根据规则2,只保留最高阶项编程N²/2</li>
+					<li class="second">N²/ 2,根据规则3,去除常量编程N²</li>
+					<li class="second">因此冒泡排序的大0表示法为O(N²)</li>
+					<li>冒泡排序的交换次数:</li>
+					<li class="second">如果有两次比较才需要交换一次(不可能每次比较都交换次)， 那么交换次数为N²/4</li>
+					<li class="second">由于常量不算在大0表示法中，因此，我们可以认为交换次数的大0表示也是O(N²)</li>
+				</ul>
+			</section>
+		</div>
+<!----------------------------------------可以修改的内容end------------------------------------>
+		<div id="asidepart"></div>
+	</div>
+	<footer class="footer"></footer>
+		<script src="../../../Package/jquery.min.js"></script>
+		<script src="../../../Package/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script src="../../../Package/package.js"></script>
+		<script type="text/javascript">
+/*-----------------------------------------Essential play-----------------------------------------------------*/			
+			$(document).ready(function(){
+				$('.header').load('../../../Package/top.html');
+				$('#asidepart').load('../../../Package/right.html');
+				$('.footer').load('../../../Package/footer.html');
+			});			
+		</script>
+		<script type="text/javascript">			
+			function searchFunction(){
+			 	var searchText = document.getElementById("searchText").value;	
+				window.open('https://cn.bing.com/search?q='+searchText);
+			}			
+			code(document.getElementById("code1"));
+			code(document.getElementById("code2"));
+			code(document.getElementById("code3"));
+			code(document.getElementById("code4"));
+			code(document.getElementById("code5"));
+			code(document.getElementById("code6"));
+			code(document.getElementById("code7"));
+/*-----------------------------------------Essential End-----------------------------------------------------*/	
+		</script>
+  </body>
+ </html>
