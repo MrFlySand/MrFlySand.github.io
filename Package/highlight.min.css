@@ -3,8 +3,8 @@
 pre{
 	width: 100%;
 	margin: 10px 0;
-	line-height: 35px;
-	font-size: 30px;
+	line-height: 1.2em;
+	font-size: 1em;
 	background: #2B2B2B;	
 }
 pre p{
