@@ -75,9 +75,9 @@ p.title{
 	color: #2CA6CB;
 	font-size: 28px
 }
-li{
-	list-style:	disc outside none ;
-	margin-left: 30px;
+ul>li.first{
+	list-style:	disc;
+	margin-left:30px;
 }
 ul li.second{
 	list-style: circle;
