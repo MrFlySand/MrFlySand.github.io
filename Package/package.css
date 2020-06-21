@@ -87,7 +87,7 @@ p.title{
 	list-style: square;
 	margin-left: 90px;
 }
-p,.codeIntroduction{
+p.codeIntroduction{
 	width: auto;
 	line-height: 40px;
 	display: inline-block;
