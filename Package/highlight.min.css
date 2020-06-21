@@ -8,11 +8,12 @@ pre{
 	background: #2B2B2B;	
 }
 pre p{
-	padding: 15px 5px;
-	width: 40px;
+	padding: 15px 0.3em;
+	width: 1.2em;
 	color: #fff;
 	background: #2B2B2B;
   	display: inline-block;
+  	text-align: right;
   	float: left;
   	border-right: 3px solid #FFA500;
 }
