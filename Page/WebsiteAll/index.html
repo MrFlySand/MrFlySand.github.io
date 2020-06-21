@@ -5,18 +5,18 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
 		<title>网站大全</title>
 		<head><link rel="icon" type="image/jpeg" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg"/><head>
-		<link rel="stylesheet" type="text/css" href="../../Package/package.css"/>
-		<script src="../../Package/package.js" type="text/javascript" charset="UTF-8"></script>
-		<script src="../../Package/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../Package/package.css"/>		
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 	</head>
 	<body>
 		<nav class="box headNav">
-			<a href="https://MrFlySand.github.io">主页</a>
-			<a href="https://MrFlySand.github.io/html/WebsiteAll.html">网站大全</a>
-			<a href="#">github的使用方法</a>
-			<a href="#">github的使用方法</a>
-			<a href="#">github的使用方法</a>
+			<a href="../../index.html">主页</a>
+			<a href="https://.github.io/html/WebsiteAll.html">网站大全</a>		
+			<a href="#it">计算机</a>
+			<a href="#entertainment">娱乐</a>
+			<a href="#smallTools">小工具</a>
+			<a href="#read">阅读</a>
+			<a href="#other">其它</a>
 		</nav>
 		<div class="WebsiteAll">
 			<p class="titel">站主</p>											
@@ -29,7 +29,7 @@
 				<a target="_blank" style="background-position:-120px 0px;" href="https://MrFlySand.github.io/html/Lovers/LoveTree/index.html">
 					<p>爱心树</p>
 				</a>	
-			<p class="titel it">计算机</p>
+			<p class="titel it" id="it">计算机</p>
 				<a target="_blank" style="background-position:-180px 0px;" href="http://www.google.cn/">
 					<p class="label">google搜索</p>
 				</a>
@@ -66,7 +66,7 @@
 				<a target="_blank" style="background-position:-120px -60px;" href="http://www.fontawesome.com.cn/faicons/">
 					<p class="label">awesome图标库</p>					
 				</a>	
-			<p class="titel it">娱乐</p>
+			<p class="titel" id="entertainment">娱乐</p>
 				<a target="_blank" style="background-position:-360px -180px;" href="https://www.youtube.com">
 					<p class="label">youtobe</p>
 				</a>
@@ -97,7 +97,7 @@
 				<a target="_blank" style="background-position:-120px -120px;" href="https://www.xiami.com">
 					<p class="label">虾米音乐</p>				
 				</a>
-			<p class="titel it">小工具</p>
+			<p class="titel" id="smallTools">小工具</p>
 				<a target="_blank" style="background-position:-180px -120px;" href="https://www.uupoop.com">
 					<p class="label">PS</p>					
 				</a>	
@@ -132,7 +132,7 @@
 				<a target="_blank" style="background-position:-420px -180px;" href="https://www.sj520.cn">
 					<p class="label">520设计网</p>				
 				</a>
-			<p class="titel ">阅读</p>
+			<p class="titel" id="read">阅读</p>
 				<a target="_blank" style="background-position:-240px -120px;" href="https://www.jianshu.com/">
 					<p class="label">简书</p>					
 				</a>								
@@ -145,7 +145,7 @@
 				<a target="_blank" style="background-position:-0px -240px;" href="https://www.quora.com/">
 					<p class="label">Quora</p>					
 				</a>
-			<p class="titel ">其它</p>
+			<p class="titel" id="other">其它</p>
 				<a target="_blank"  style="background-position:-420px -120px;" href="https://pc.qq.com">
 					<p class="label">腾讯软件</p>					
 				</a>					
@@ -167,6 +167,8 @@
 			<a href="#"><p id="word2">top</p></a>
 			<a href="#"><p id="word3" style="display: none;margin-top: -30px;">分享</p></a>
 		</div>
+		<script src="../../Package/package.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="../../Package/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
 		<script type="text/javascript">
 			var flag = 0; //标记是拖曳还是点击
 			var oDiv = document.getElementById('SuspendedBall');
