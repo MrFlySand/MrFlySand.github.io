@@ -87,11 +87,11 @@ p.title{
 	list-style: square;
 	margin-left: 90px;
 }
-.container p .codeIntroduction{
+p,.codeIntroduction{
 	width: auto;
 	line-height: 40px;
 	display: inline-block;
-	margin: 30px 0 10px 0;
+
 }
 #container #main .post .label{
 	width: auto;height: 20px;
@@ -102,4 +102,22 @@ p.title{
 	font-size: 14px;
 	text-align: center;
 	line-height: 20px;
+}
+h1.headTitle{
+	color: #0044ff;
+}
+h1.codeTitle{
+	color: #0044ff;
+	margin-top: 0;
+	display: block;
+}
+h2.codeTitle{
+	color: #0055dd;
+	margin-top: 0.8em;
+	display: block;
+}
+h3.codeTitle{
+	color: #0066bb;
+	margin-top: 0.8em;
+	display: block;
 }
