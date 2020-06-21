@@ -1,3 +1,8 @@
+/*WebsiteAll网站大全样式*/
+body{
+	background:linear-gradient(135deg,#9796F0,#9796f0,#FBC7D4,#fbc7d4) no-repeat;
+	padding: 0;margin: 0;	
+}
 .headNav{
 	width: 100%;
 	background:#24292E;
@@ -10,8 +15,8 @@
 }
 .headNav a{
 	color: #ffffff;
-	font-size: 14px;
-	font-weight: 800;
+	font-size: 1em;
+	font-weight: 500;
 	margin: 0 10px;	
 }
 /*小图标play*/
@@ -22,6 +27,9 @@
 }
 .WebsiteAll .one{
 	width: 100%;display: fixed;
+}
+.WebsiteAll>a>p{
+	color: #000;
 }
 .WebsiteAll a{
 	width: 60px;
