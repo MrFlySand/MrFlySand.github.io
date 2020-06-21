@@ -44,7 +44,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	width: 100%;
 }
 footer .hello{
-	width: 370px;
+	width: auto;
 	margin: 40px auto;
 	text-align: center;
 }
@@ -57,11 +57,8 @@ footer #footer .icons a,svg{
 	margin:0px 5px;
 }
 footer #footer .timers{
-	width: 550px;
+	width: auto;
 	margin: 40px auto;
-	display: block;
-}
-footer #footer .timers p{
-	margin:  0 auto;
-	display: block;
+	display: inline;
+	text-align: center;
 }
