@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+	<head>
+<html>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+		<title>QQ Send</title>
+		<link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">
+		<style type="text/css">
+			*{padding:0; margin: 0;}			
+			html{height: 100%;}
+			body{
+				/*background-image 属性用于为一个元素设置一个或者多个背景图像*/
+				background:rgb(114,135,254) ;
+				width: 100%;height: 100%;
+				overflow-x:hidden; overflow-y:hidden;
+			}
+			a{
+				color: #0077aa;
+				text-decoration: none;
+			}
+			body .login-container{
+				background: linear-gradient(to bottom right,rgb(118,76,163),rgb(92,103,211));
+				width: 80%;height: 315px;
+				border-radius: 15px;/*圆角边框*/
+				box-shadow: 0 10px 50px 0 rgb(59,45,159);/*阴影*/
+				background-color: rgb(95,76,194);
+				margin: 100px auto;
+				padding: 20px 0;
+			}
+			body .login-container .left-container{
+				
+				width: 100%; 
+				display:block;/*行内块级元素显示*/
+				border-top-left-radius:15px;/*圆角边框*/
+				border-bottom-left-radius: 15px;
+				margin: 40px auto;
+			}
+			body .login-container .left-container .titel{
+				color: #fff;font-size: 18px;
+				text-align: center;
+			}
+			body .login-container .left-container .input-container{
+				padding:10px 0;
+			}
+			body .login-container .left-container .input-container input{
+				border: 0;/*不显示输入框*/
+				background: none;
+				
+				color: #fff;
+				margin:50px auto;
+				display: block;width:80%;
+				border-bottom:1px solid rgb(199,191,219);
+				padding: 5px 10px;
+				/*transition: 0.2s;*//*过渡时间*/
+			}
+			body .login-container .left-container .input-container input:hover{
+				border-bottom: #fff;/*将元素的下边框改变*/
+			}
+			::-webkit-input-placeholder{/*改变输入框中的文字为白色*/
+				color: rgb(199,191,219);				
+			}	
+			body .login-container .left-container .button{
+				font-size: 10px;
+				font-weight: 800;
+				color: #fff;
+				width: 200px;
+				height: 50px;
+				margin: 0 auto;
+			}
+			body .login-container .left-container .button span{
+				
+				border:2px solid rgb(237,221,22);
+				padding:10px;
+				margin: 0 25px;
+				border-radius: 100%;			
+				transform: 0.2s;
+				color: #fff;
+			}
+			body .login-container .left-container .button span:hover{
+				background-color:rgb(237,221,22);
+				color:#000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="login-container">
+			<div class="left-container">
+				<div class="titel"><span>QQ发送信息</span></div>
+				<div class="input-container">
+					<input id="QQNum" type="text" name="username" placeholder="对方QQ"/>
+				</div>				
+				<div class="button">
+					<a href="https://mrflysand.github.io"><span class="more">更多</span></a>
+					<span class="submit" onclick="submitFun()">提交</span>		
+				</div>					
+			</div>		
+		</div>
+		<script type="text/javascript">
+			function submitFun(){
+				var QQNum =document.getElementById("QQNum").value;
+				window.location.href='mqqwpa://im/chat?chat_type=wpa&uin='+QQNum;	
+			}
+		</script>
+	</body>	
+</html>
