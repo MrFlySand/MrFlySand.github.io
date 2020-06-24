@@ -35,7 +35,11 @@ button{
 button:hover{
 	background: #ccc;
 }
-img{border:none;vertical-align:middle;/*对齐方式*/}
+img{
+	border:none;
+	vertical-align:middle;/*对齐方式*/
+	width: 100%;
+}
 li{list-style:none;}
 .fl{float:left;}
 .fr{float:right;}
