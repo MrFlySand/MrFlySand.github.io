@@ -77,15 +77,15 @@ p.title{
 }
 ul>li.first{
 	list-style:	disc;
-	margin-left:30px;
+	margin-left:1em;
 }
-ul li.second{
+ul>li.second{
 	list-style: circle;
-	margin-left: 60px;	
+	margin-left: 2em;	
 }
-ul li.third{
+ul>li.third{
 	list-style: square;
-	margin-left: 90px;
+	margin-left: 3em;
 }
 p.codeIntroduction{
 	width: auto;
@@ -124,5 +124,5 @@ h3.codeTitle{
 	font-size: 1.2em;
 	color: #0066bb;
 	margin-top: 0.8em;
-	display: block; 
+	display: block;
 }
