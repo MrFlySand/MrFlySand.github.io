@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    <title>排序|Fly Sand&#39;s blog</title>    
+    <title>排序算法|Fly Sand&#39;s blog</title>    
     <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">
     <link rel="stylesheet" href="../../../Package/highlight.min.css"/>
-    <link rel="stylesheet" href="../../../Package/package.css">
-    
+    <link rel="stylesheet" href="../../../Package/package.css">    
     <link rel="stylesheet" href="../../../Package/style.css">    
-    
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>    
 	<header class="header"></header>
@@ -17,15 +16,16 @@
 <!----------------------------------------可以修改的内容play------------------------------------>
 		<div id="main">
 			<section class="post" itemscope itemprop="blogPost">
-				<h1 class="headTitle">简单排序</h1>
+				<h1 class="headTitle">排序算法</h1>
 				<div class="label">更新时间:2020061708</div>
 				<div class="label">JS</div>
 				<div class="label"><a href="../index.html">算法</a></div>
-				<div class="label"><a href="#">冒泡排序</a></div>
-				<div class="label"><a href="#">选择排序</a></div>
-				<div class="label"><a href="#">插入排序</a></div>
-				<div class="label"><a href="#">希尔排序</a></div>
-				<div class="label"><a href="#">快速排序</a></div>
+				<div class="label"><a href="#bubbleSort">冒泡排序</a></div>
+				<div class="label"><a href="#selectionSort">选择排序</a></div>
+				<div class="label"><a href="#insertionSort">插入排序</a></div>
+				<div class="label"><a href="#shellSort">希尔排序</a></div>
+				<div class="label"><a href="#quickSort">快速排序</a></div>
+				<div class="label"><a href="#">归并排序</a></div>
 				<li style="margin-left: 10px; list-style: disc;">排序算法有很多:冒泡排序/选择排序/插入排序/归并排序/计数排序(counting sort)/基数排序(radix sort)/希尔排序/堆排序/桶排序</li>							
 				<pre><p></p><code class="language-js" id="code1">封装属性:
 //属性
@@ -47,7 +47,7 @@ ArrayList.prototype.swap = function(x,y){
   this.array[y] = temp;
 }
 				</code></pre>
-				<h2 class="codeTitle">冒泡排序的思路</h2>
+				<h2 class="codeTitle" id="bubbleSort">冒泡排序的思路</h2>
 				<ul>
 					<li class="first">冒泡排序算法相对其他排序运行效率较低但是在概念上它是排序算法中最简单的</li>
 					<li class="first">思路</li>
@@ -57,8 +57,9 @@ ArrayList.prototype.swap = function(x,y){
 					<li class="second">当走到最右端时，最高的队员一定被放在了最右边</li>
 					<li class="second">按照这个思路，从最左端重新开始，这次走到倒数第二个位置的队员即可</li>
 				</ul>
-				<pre><p></p><code class="language-js" id="code2">
-//冒泡排序
+				<div class="imgBubbleSort"></div>
+				<pre><p></p><code class="language-js" id="code2">源码:
+//冒泡排序的封装
 ArrayList.prototype.bubbleSort = function(){
 	//1. 获取数组的长度
 	var length = this.array.length;	
@@ -84,7 +85,212 @@ ArrayList.prototype.bubbleSort = function(){
 					<li>冒泡排序的交换次数:</li>
 					<li class="second">如果有两次比较才需要交换一次(不可能每次比较都交换次)， 那么交换次数为N²/4</li>
 					<li class="second">由于常量不算在大0表示法中，因此，我们可以认为交换次数的大0表示也是O(N²)</li>
+				</ul>				
+				<h2 class="codeTitle" id="selectionSort">选择排序</h2>
+				<ul>
+					<li>选择排序改进了冒泡排序</li>
+					<li class="second">将交换的次数由O(N²)减少到O(N)</li>
+					<li class="second">但是比较的次数依然是O(N²)</li>
+					<li>选择排序的思路:</li>
+					<li class="second">选定第一个索引位置，然后和后面元素依次比较</li>
+					<li class="second">如果后面的队员，小于第个索引位置的队员， 则交换位置</li>
+					<li>经过几轮的比较后，可以确定第一个位置是最小的</li>
+					<li class="second">然后使用同样的方法把剩下的元素逐个比较即可</li>
+					<li class="second">可以看出选择排序，第轮会选出最小值，第二轮会选出第二小的值,直到最后</li>
+				</ul>				
+				<div class="imgSelectionSort"></div>
+				<pre><p></p><code class="language-js" id="code3">源码:
+//选择排序
+ArrayList.prototype.selectionSort = function(){
+	//1. 获取数组的长度
+	var length = this.array.length;
+	for (var j = 0; j < length -1 ; j++){
+		var min = j;
+		for (var i = min +1;i < length; i++) {
+			if (this.array[min] > this.array[i]) {
+				min = i;
+			}
+		}
+		this.swap(min,j);
+	}					
+}					
+				</code></pre>
+				<h3 class="codeTitle">选择排序的效率</h3>
+				<ul>
+					<li>选择排序的比较次数:</li>
+					<li class="second">选择排序和冒泡排序的比较次数:N*(N-1)/2</li>
+					<li class="second">大O表示法:O(N²)</li>
+					<li>选择排序的交换次数:</li>
+					<li class="second">选择排序毎次进行选择的吋候最多需要交换1次.一共遍历N - 1次</li>
+					<li class="second">选择排序的交換次数只有N-1次,用大0表示法就是O(N)</li>
+					<li class="second">所以选择排序通常认为在执行效率上是高于冒泡排序的</li>
 				</ul>
+				<h2 class="codeTitle" id="insertionSort">插入排序</h2>
+				<ul>
+					<li>局部有序:</li>
+					<li class="second">插入排序思想的核心是局部有序</li>
+					<li class="second">比如在一个队列中的人，我们选择其中一个作为标记的队员</li>
+					<li class="second">这个被标记的队员左边的所有队员已经是局部有序的.</li>
+					<li class="second">这意味着，有一部门人是按顺序排列好的有一 部分还没有顺序</li>
+					<li>插入排序的思路:</li>
+					<li class="second">从第一个元素开始 ，该元素可以认为已经被排序</li>
+					<li class="second">取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
+					<li class="second">如果该元素(已排序)大于新元素，将该元素移到下一位置</li>
+					<li class="second">重复上一个步骤，直到找到已排序的元素小于或者等于新元素的位置</li>
+					<li class="second">将新元素插入到该位置后，重复上面的步骤.</li>
+				</ul>
+				<div class="imgInsertionSort"></div>
+				<pre><p></p><code class="language-js" id="code4">源码:
+//插入排序
+ArrayList.prototype.insertionSort = function(){
+	//1. 获取数组长度
+	var length = this.array.length;
+	for (var i = 1; i< length; i++ ) {
+		var j = i;
+		var temp = this.array[i];			
+		while (this.array[j-1] > temp && j > 0){
+			this.array[j] = this.array[j-1];
+			j--;
+		}
+		//2. 将j位置的数据,放置到temp
+		this.array[j] = temp;
+	}
+}					
+				</code></pre>
+				<h3 class="codeTitle">插入排序的效率</h3>
+				<ul>
+					<li>插入排序的比较次数:</li>
+					<li class="second">第一趟时， 需要的最多次数是1,第二趟最多次数是2,依次类推,最后趟是N-1次.</li>
+					<li class="second">因此是插入排序的最多次数:1+2+3+...+N-1=N*(N-1)/2</li>
+					<li class="second">然而每趟发现插入点之前,平均只有全体数据项的一 半需要进行比较</li>
+					<li class="second">我们可以除以2得到N*(N-1)/4.所以相对于选择排序,其他比较次数是少了一半的</li>
+					<li>插入排序的复制次数:</li>
+					<li class="second">第一趟时,需要的最多复制次数是1,第趟最多次数是2.依次类推最后一趟是N-1次</li>
+					<li class="second">因此复制次数最多是1+2+3+...+N-1=N*(N-1)/2</li>
+					<li class="second">平均次数N*(N-1)/4</li>
+					<li>对于基本有序的情况:</li>
+					<li class="second">对于已经有序或基本有序的数据来说,插入排序要好很多</li>
+					<li class="second">当数据有序的时候 while循环的条件总是为假所以它变成了外层循环中的一个简单语句,执行N-1次</li>
+					<li class="second">在这种情况下，算法运行至需要N(N)的时间效率相对来说会更高</li>
+					<li class="second">比较次数是选择排序的半所以这个算法的效率是高于选择排序的</li>
+				</ul>
+				<h2 class="codeTitle" id="shellSort">希尔排序</h2>
+				<h3 class="codeTitle">希尔原稿的做法</h3>
+				<ul>
+					<li>选择合适的增量:</li>
+					<li class="second">在希尔排序的原稿中,他建议的初始间距是N/2,简单的把每趟排序分成两半.</li>
+					<li class="second">也就是说,对于N = 100的数组，增量间隔序列为: 50, 25, 12, 6, 3, 1.</li>
+					<li class="second">这个方法的好处是不需要在开始排序前为找合适的增量而进行任何的计算</li>
+					<li>Hibbard增量序列:</li>
+					<li class="second">增量的算法为2<sup>k</sup>-1.也就是为1,3,5,7...</li>
+					<li class="second">这种增量的最坏复杂度为O(N<sup>3/2</sup>),猜想的平均复杂度为O(N<sup>5/4</sup>),目前尚未被证明.</li>
+					<li>Sedgewick增量序列:</li>
+					<li class="second">{1, 5, 19, 41, 109, ...},该序列中的项或者是94<sup>i</sup>-9*2<sup>i</sup>+1或者是4<sup>i</sup>-32<sup>i</sup>+1</li>
+					<li class="second">这种增量的最坏复杂度为O(N<sup>4/3</sup>),平均复杂度为O(N<sup>7/6</sup>),但是均末被证明.</li>
+				</ul>
+				<pre><p></p><code class="language-js" id="code5">源码:
+//希尔排序
+ArrayList.prototype.shellSort = function(){
+	//1. 获取数组长度
+	var length = this.array.length;
+	//2. 初始化的增量
+	var gap = Math.floor(length/2);
+	//3. while循环(gap不断减小)
+	while (gap >= 1){
+		//4. 以gap为间隔,进行分组,对分组进行插入排序
+		for(var i = gap; i < length; i++){
+			var temp = this.array[i];
+			var j = i;
+			while (this.array[j - gap] > temp && j > gap -1){
+				this.array[j] = this.array[j - gap];
+				j -= gap;
+				console.log(i);
+			}
+			//5. 将j位置的元素赋值给temp
+			this.array[j] = temp;
+		}
+		//6. 增量变化gap / 2
+		gap = Math.floor(gap / 2);
+	}				
+}					
+				</code></pre>
+				<h2 class="codeTitle" id="quickSort">快速排序</h2>
+				<h3 class="codeTitle">认识快速排序</h3>			
+				<ul>
+					<li>希尔排序相当于插入排序的升级版,快速排序其实是我们学习过的最慢的冒泡排序的升级版</li>
+					<li class="second">我们知道冒泡排序需要经过很多次交换,才能在一次循环中,将最大值放在正确的位置</li>
+					<li class="second">而快速排序可以在次循环中(递归),找出某个元素的正确位置并且该元素之后不需要任何移动</li>
+					<li>快速排序最重要的思想是分而治之:</li>
+					<li class="second">第一步:从其中选出了65.(其实可以是选出任意的数字,以65举个栗子)</li>
+					<li class="second">第二步:我们通过算法将所有小于65的数字放在65的左边,将所有大于65的数字放在65的右边</li>
+					<li class="second">第三步:递归的处理左边的数据.(此如你选择31来处理左侧),递归的处理右边的数据(比如选择75来处理右侧,当然选择81可能更合适)</li>
+				</ul>
+				<h3 class="codeTitle">快速排序的枢纽</h3>
+					<ul>
+					<li>在快速排序中有 一个很重要的步骤就是选取枢纽(pivot也有人称为主元)</li>
+					<li class="second">第一种:直接选择第一个元素作为枢纽,但第一个作为枢纽在某些情况下,效率并不是特别高</li>
+					<li class="second">第二种:使用随机数,但是随即函数本身就是一个耗性能的操作</li>
+					<li class="second">第三种:比较优秀的解决方案取头、中尾的中位数口例如8,12,3的中位数就是8</li>
+				</ul>
+				<div class="imgQuickSort"></div>
+				<pre><p></p><code class="language-js" id="code6">源码:
+//快速排序
+//1. 选择枢纽
+ArrayList.prototype.median = function(left,right){
+	//1. 取出中间的数字
+	var center = Math.floor((left + right) / 2);
+	//2. 交换数据
+	if (this.array[left] > this.array[center]) {
+		this.swap(left,center);
+	}
+	if(this.array[center] > this.array[right]){
+		this.swap(center,right);
+	}
+	if (this.array[left] > this.array[right]) {
+		this.swap(left,right);
+	}
+	//3. 将center换到right - 1的位置
+	this.swap(center,right-1);
+	return this.array[right - 1];
+}
+//2. 快速排序的实现
+ArrayList.prototype.quickSort = function(){
+	this.quick(0,this.array.length - 1);
+}
+ArrayList.prototype.quick = function(left,right){
+	//1. 结束条件
+	if (left >= right) return ;
+	//2. 获取枢纽
+	var pivot = this.median(left,right);
+	//3. 定义变量,用于记录当前找到 的位置
+	var i = left;
+	var j = right - 1;
+	//4.开始进行交换 
+	while(true){
+		while(this.array[++i] < pivot) {};
+		while(this.array[--j] > pivot) {};
+		if(i < j){
+			this.swap(i,j);
+		}else{
+			break;
+		}
+	}
+	//6. 将枢纽放置在i的位置
+	this.swap(i, right - 1);
+	//7. 分栏治之
+	this.quick(left, i - 1);
+	this.quick(i + 1, right);
+}					
+				</code></pre>
+				<h2 class="codeTitle">快速排序的效率</h2>
+				<ul>
+					<li>快速排序的最坏情况效率</li>
+					<li class="second">什么情况下会有最坏的效率呢?就是每次选择的枢纽都是最左边或者最后边的.</li>
+					<li class="second">那么效率等同于冒泡排序.</li>
+					<li class="second">而我们的例子可能有最坏的情况吗?是不可能的.因为我们是选择三个值的中位值.</li>
+					<li class="second">快速排序的平均效率是0(N * logN).</li>
+				</ul>
+				<div class="imgSortEffectiveness"></div>
 			</section>
 		</div>
 <!----------------------------------------可以修改的内容end------------------------------------>
