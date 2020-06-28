@@ -9,8 +9,10 @@
 </head>
 <body>
 
-<div id="qrcode" style="width: 10px;height: 10px;background: red;display: inline-block;"></div>
+<div id="qrcode" style="width: 10px;height: 300px;background: red;display: block;"></div>
+<div id="qrcodeWord" style="width: 300px; display: inline-block;"></div>
 <script type="text/javascript">
+document.getElementById("qrcodeWord").innerText  = document.location.href; 
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	text: document.location.href,
 	width : 300,
