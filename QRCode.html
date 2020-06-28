@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div id="qrcode" style="width:110px; height:110px; margin-top:15px;"></div>
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	text: document.location.href,
@@ -19,6 +19,611 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
     colorLight : "red",
     correctLevel : QRCode.CorrectLevel.H
 });
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>Javascript 二维码生成库：QRCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="Package/jquery.min.js"></script>
+<script type="text/javascript" src="Package/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:110px; height:110px; margin-top:15px;"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
+});
+function save(selector, name) {
+    // 通过选择器获取img元素，
+    var img = document.querySelector(selector)
+    // 将图片的src属性作为URL地址
+    var url = img.src
+    var a = document.createElement('a')
+    var event = new MouseEvent('click')
+    
+    a.download = name || '下载图片名称'
+    a.href = url
+    
+    a.dispatchEvent(event)
+}
 </script>
 </body>
 </html>
