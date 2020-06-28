@@ -6,31 +6,31 @@ body{
 }
 @keyframes animate{
 	0%{
-		background: rgba(255,0,0,0.5);
+		background: rgba(255,0,0,0.3);
 	}
 	12%{
-		background: rgba(255,165,0,0.5);
+		background: rgba(255,165,0,0.3);
 	}
 	24%{
-		background: rgba(255,255,0,0.5);
+		background: rgba(255,255,0,0.3);
 	}
 	36%{
-		background: rgba(0,255,0,0.5);
+		background: rgba(0,255,0,0.3);
 	}
 	48%{
-		background: rgba(0,255,165,0.5);
+		background: rgba(0,255,165,0.3);
 	}
 	60%{
-		background: rgba(0,255,255,0.5);
+		background: rgba(0,255,255,0.3);
 	}
 	72%{
-		background: rgba(255,0,165,0.5);
+		background: rgba(255,0,165,0.3);
 	}	
 	84%{
-		background: rgba(255,0,255,0.5);
+		background: rgba(255,0,255,0.3);
 	}
 	100%{
-		background: rgba(255,0,0,0.5);		
+		background: rgba(255,0,0,0.3);		
 	}
 }
 .headNav{
