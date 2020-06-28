@@ -6,11 +6,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 <script type="text/javascript" src="Package/jquery.min.js"></script>
 <script type="text/javascript" src="Package/qrcode.min.js"></script>
+<style type="text/css">
+	img{
+		z-index: 999;
+	}
+</style>
 </head>
 <body>
 
 <div id="qrcode" style="width: 10px;height: 300px;background: red;display: block;"></div>
-<div id="qrcodeWord" style="width: 300px; display: inline-block;"></div>
+<div id="qrcodeWord" style="width: 300px;height: 100px;background: #fff;display: block;"></div>
 <script type="text/javascript">
 document.getElementById("qrcodeWord").innerText  = document.location.href; 
 var qrcode = new QRCode(document.getElementById("qrcode"), {
