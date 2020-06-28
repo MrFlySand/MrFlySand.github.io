@@ -8,36 +8,17 @@
 <script type="text/javascript" src="Package/qrcode.min.js"></script>
 </head>
 <body>
-<input id="text" type="text" value="http://www.runoob.com" style="width:80%" /><br />
-<div id="qrcode" style="width:110px; height:110px; margin-top:15px;"></div>
 
+<div id="qrcode" style="width:110px; height:110px; margin-top:15px;"></div>
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 100,height : 100
+	text: document.location.href,
+	width : 100,
+	height : 100,
+	colorDark : "#000000",
+    colorLight : "red",
+    correctLevel : QRCode.CorrectLevel.H
 });
-
-function makeCode () {		
-	var elText = document.getElementById("text");
-	if (!elText.value) {
-		alert("Input a text");
-		elText.focus();
-		return;
-	}
-	
-	qrcode.makeCode(document.location.href);
-}
-
-makeCode();
-
-$("#text").
-	on("blur", function () {
-		makeCode();
-	}).
-	on("keydown", function (e) {
-		if (e.keyCode == 13) {
-			makeCode();
-		}
-	});
 </script>
 </body>
 </html>
