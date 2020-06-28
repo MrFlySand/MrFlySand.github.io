@@ -9,8 +9,7 @@
 </head>
 <body>
 
-<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:0px; height:0px; margin-top:15px;"></div>
-<span id="saveImg" οnclick="save()" style="width: 100px;height: 100px;background: red; margin-top:200px;">保存图片</span>
+<div id="qrcode" style="width:0px; height:0px; margin-top:15px;"></div>
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	text: document.location.href,
@@ -20,16 +19,6 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
     colorLight : "#fff",
     correctLevel : QRCode.CorrectLevel.H
 });
-function save() {
-
-	    var img = document.getElementById("qrcode");
-	
-	    var alink = document.createElement("a");
-	
-	    alink.href = img.src;
-	
-	    alink.click();			
-	}
 </script>
 </body>
 </html>
