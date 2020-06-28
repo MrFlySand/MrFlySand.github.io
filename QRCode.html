@@ -26,6 +26,10 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
     colorLight : "#fff",
     correctLevel : QRCode.CorrectLevel.H
 });
+
+ var canvas=$('canvas')[0];  
+ $('#qrcode').attr('src',canvas.toDataURL('image/jpg'))  
+
 </script>	
 </body>
 </html>
