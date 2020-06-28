@@ -1,7 +1,37 @@
 /*WebsiteAll网站大全样式*/
 body{
-	background:linear-gradient(135deg,#9796F0,#9796f0,#FBC7D4,#fbc7d4) no-repeat;
 	padding: 0;margin: 0;	
+	width: 100%;height: 100%;
+	animation: animate 15s linear infinite;
+}
+@keyframes animate{
+	0%{
+		background: rgba(255,0,0,0.5);
+	}
+	12%{
+		background: rgba(255,165,0,0.5);
+	}
+	24%{
+		background: rgba(255,255,0,0.5);
+	}
+	36%{
+		background: rgba(0,255,0,0.5);
+	}
+	48%{
+		background: rgba(0,255,165,0.5);
+	}
+	60%{
+		background: rgba(0,255,255,0.5);
+	}
+	72%{
+		background: rgba(255,0,165,0.5);
+	}	
+	84%{
+		background: rgba(255,0,255,0.5);
+	}
+	100%{
+		background: rgba(255,0,0,0.5);		
+	}
 }
 .headNav{
 	width: 100%;
@@ -30,6 +60,7 @@ body{
 }
 .WebsiteAll>a>p{
 	color: #000;
+	font-weight: 800;
 }
 .WebsiteAll a{
 	width: 60px;
