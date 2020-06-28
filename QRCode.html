@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<img id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:300px; height:300px; margin-top:15px;"></img>
+<div id="qrcode" class="qrcode" οnclick="save('qrcode','qrcode')" style="width:0px; height:0px; margin-top:15px;"></div>
 <span id="saveImg" οnclick="save()" style="width: 100px;height: 100px;background: red; margin-top:200px;">保存图片</span>
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
