@@ -95,7 +95,7 @@ a{
     z-index: 999;
     padding: 5px;
 }
-#SuspendedBall a{
+#SuspendedBall a{ 
 	text-decoration: none;
 	color: #000000;
 }
