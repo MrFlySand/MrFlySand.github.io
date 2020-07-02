@@ -1,6 +1,6 @@
 <!--悬浮球-->
-<div id="SuspendedBall">
-	<div id="word1">更多</div>
+<div id="SuspendedBall" onclick="SuspendedBall()">
+	<div id="word1" >更多</div>
 	<a href="#" id="word2"><div>顶部</div></a>
 	<div id="SuspendedBallWord3">分享</div>
 </div>
@@ -11,7 +11,7 @@
 	  <button>复制链接</button>
 	</div>
 </div>
-<div id="blackBackground" style="opacity: 0;"></div>
+<div id="blackBackground"></div>
 <script src="Package/jquery.min.js"></script>
 <script src="Package/qrcode.min.js"></script>
 <script type="text/javascript">
@@ -58,7 +58,7 @@
 	});
 	$(function(){	
 		var a = 1;
-		$("#SuspendedBall").click(function(){
+		$("#SuspendedBall").click(function SuspendedBall(){
 			if(a == 1){
 				word1.style.display = "none";
 				word2.style.display = "inline-block";
