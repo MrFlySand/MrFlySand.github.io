@@ -1,5 +1,5 @@
 <!--悬浮球-->
-<div id="SuspendedBall" onclick="SuspendedBall()">
+<div id="SuspendedBall">
 	<div id="word1" >更多</div>
 	<a href="#" id="word2"><div>顶部</div></a>
 	<div id="SuspendedBallWord3">分享</div>
@@ -59,24 +59,26 @@
 	$(function(){	
 		var a = 1;
 		$("#SuspendedBall").click(function SuspendedBall(){
-			if(a == 1){
-				word1.style.display = "none";
-				word2.style.display = "inline-block";
-				SuspendedBallWord3.style.display = "inline-block";						
-				$("#SuspendedBall").animate({width:"100px"},500);
+			if(a == 1){								
+				$("#SuspendedBall").animate({width:"6em"},500);
+				setTimeout(function(){
+					word1.style.display = "none";
+					word2.style.display = "inline-block";
+					SuspendedBallWord3.style.display = "inline-block";	
+				},500)
 				a = 0;
-			}else{
-				word1.style.display = "block";
-				word2.style.display = "none";
-				SuspendedBallWord3.style.display = "none";
-				$("#SuspendedBall").animate({width:"24px"},500);
+			}else{				
+				$("#SuspendedBall").animate({width:"3em"},500);
+				setTimeout(function (){
+					word1.style.display = "block";
+					word2.style.display = "none";
+					SuspendedBallWord3.style.display = "none";	
+				},500)
 				a = 1;
 			}
-		});
-		$("body").click(function(){				
-			$("#SuspendedBall p:not([id='word2'])").animate({width:"24px"},500);	//JQuery2-10			
-		});
-	})				
+		});		
+	})			
+	//点击分享显示黑色背景和二维码
 	$("#SuspendedBallWord3").click(function(){
 		$("#blackBackground").animate({opacity:"0.5"},500);
 		$("#share").animate({opacity:"1"},500);
