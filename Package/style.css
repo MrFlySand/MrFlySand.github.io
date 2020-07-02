@@ -80,37 +80,37 @@ a{
 
 /*悬浮球play*/
 #SuspendedBall{
-    width: 25px;
-    height: 25px;
+    width: 3em;    
     position:fixed;
     top: 70%;right: 10px;
     background-color: rgba(255,0,0,0.8);
-    border-radius:25px;
+    border-radius:3em;
     text-align: center;
-    font-size: 0.3em;
+    font-size: 0.5em;
     color: #000; 		    
     border:1.5px solid #000;
     user-select:none;
     margin: 0;
     z-index: 999;
-    padding: 0.2em;
+    /*padding: 0.2em;*/
     font-weight: 800;
+    text-align: center;
 }
 #SuspendedBall>a{
 	text-decoration: none;
-	color: #000000;
+	color: #000;
 }
 #SuspendedBall>a>div{
 	width: auto;
 	background: rgba(0,0,0,0);
 }
 #SuspendedBall>#word1{
-	margin: 5px 0;
+	line-height: 2em;
 }
 #SuspendedBall>#word2,#SuspendedBallWord3{
-	width: 30px;
-	height: 25px;
-	line-height: 25px;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
 	background: rgba(0,0,0,0);
 	display: none;	
 }  
