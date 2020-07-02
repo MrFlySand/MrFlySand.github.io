@@ -84,20 +84,25 @@ a{
     height: 25px;
     position:fixed;
     top: 70%;right: 10px;
-    background-color: rgba(255,0,0,0.3);
+    background-color: rgba(255,0,0,0.8);
     border-radius:25px;
     text-align: center;
-    font-size: 10px;
+    font-size: 0.3em;
     color: #000; 		    
     border:1.5px solid #000;
     user-select:none;
     margin: 0;
     z-index: 999;
-    padding: 5px;
+    padding: 0.2em;
+    font-weight: 800;
 }
-#SuspendedBall a{ 
+#SuspendedBall>a{
 	text-decoration: none;
 	color: #000000;
+}
+#SuspendedBall>a>div{
+	width: auto;
+	background: rgba(0,0,0,0);
 }
 #SuspendedBall>#word1{
 	margin: 5px 0;
@@ -110,6 +115,7 @@ a{
 	display: none;	
 }  
 /*悬浮球end*/
+/*分享网站play*/
 #share{
 	display: none;
 	position: fixed;
@@ -138,7 +144,9 @@ a{
 #blackBackground{
 	background: #000;
 	display: none;
+	opacity: 0;
 	width: 100%;height: 100%;
 	position: fixed;
 	top: 0;left: 0;
 }
+/*分享网站end*/
