@@ -86,11 +86,9 @@
 		blackBackground.style.display = "block";		
 	});
 	$("#blackBackground").click(function(){				
-			$("#blackBackground,#share").animate({opacity:"0"},500);						
-			setTimeout(function () {
-				blackBackground.style.display = "none";
-				share.style.display = "none";
-			},500);
+		$("#blackBackground,#share").animate({opacity:"0"},500);									
+			blackBackground.style.display = "none";
+			share.style.display = "none";
 	});
 	//生成二维码
 	qrcode = new QRCode(document.getElementById("qrcode"), {
