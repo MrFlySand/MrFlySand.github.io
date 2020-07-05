@@ -87,7 +87,7 @@ body{
 /*小图标end*/
 #reachTop{
 	position: fixed;
-	top: 80%;right: 10px;
+	top: 80%;right: 0px;
 	z-index: 999;
 	width: 1.5em;
 }
