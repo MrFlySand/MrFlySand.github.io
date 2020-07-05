@@ -79,47 +79,9 @@ footer #footer .timers{
 	display: inline;
 	text-align: center;
 }
-
 a{
 	padding: 0;margin: 0;
 }
-
-
-/*悬浮球play*/
-#SuspendedBall{  
-    position:fixed;
-    top: 70%;right: 10px;
-    z-index: 999;
-} 
-/*悬浮球end*/
-/*分享网站play*/
-/*#share{
-	display: none;
-	position: fixed;
-	top: 50%;left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 999;
-}
-#share>#qrcodeWord{
-	text-align: center;
-	position: relative;
-}
-#share>#qrcodeWord>textarea{
-	position: absolute;
-	top: 0;left: 0;
-	opacity: 0;
-	z-index: -10;
-}
-#share>#qrcodeWord>button{
-	width: auto;
-	border: 1.5px solid #000;
-	font-size: 30px; 
-	margin: 10px;
-	 background: #ccc;
-	 padding:5px 10px;
-}*/
-
-/*分享网站end*/
 /*内容的底部play*/
 .sectionBottom>.iconBox{
 	width: 110px;
@@ -131,10 +93,6 @@ a{
 	width: 620px;	
 	margin: 0 auto;		
 }
-/*.sectionBottom>.defrayBox>img{
-	width: 200px;	
-	max-width: 100%;
-}*/
 .sectionBottom>.shareBox>#blackBackground{
 	background: #000;
 	/*display: none;*/
@@ -175,5 +133,9 @@ a{
 	margin:0 auto;
 	font-size: 1em;
 }
-/*内容的底部end*/
-/*style="text-align: center;position: relative; top:7em;"*/ 	
+#reachTop{
+	position: fixed;
+	top: 80%;right: 10px;
+	z-index: 999;
+}
+/*内容的底部end*/ 
