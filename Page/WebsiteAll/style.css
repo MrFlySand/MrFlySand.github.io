@@ -32,7 +32,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	float: left;
 }
 .animated #searchText{
-	width: 180px;height: 30px;
+	width: 180px;height: 30px; 
 	border-radius: 3px;	
 	padding: 0 10px;
 	border-style:ridge;
