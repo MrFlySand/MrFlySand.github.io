@@ -162,81 +162,9 @@
 					<p class="label">CSS,JS动画</p>	
 				</a>				
 		</div>
-		<a href="#headNav"><div id="SuspendedBall">top</div></a>
-		<script src="../../Package/package.js" type="text/javascript" charset="UTF-8"></script>
-		<script src="../../Package/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
-		<script type="text/javascript">
-			var flag = 0; //标记是拖曳还是点击
-			var oDiv = document.getElementById('SuspendedBall');
-			var disX,moveX,L,T,starX,starY,starXEnd,starYEnd;        
-			oDiv.addEventListener('touchstart',function(e){
-			    flag = 0;
-			    e.preventDefault();//阻止触摸时页面的滚动，缩放
-			    disX = e.touches[0].clientX - this.offsetLeft;
-			    disY = e.touches[0].clientY - this.offsetTop;
-					//手指按下时的坐标
-			    starX = e.touches[0].clientX;
-			    starY = e.touches[0].clientY;            
-			});
-			oDiv.addEventListener('touchmove',function(e){
-			    flag = 1;
-			    L = e.touches[0].clientX - disX ;
-			    T = e.touches[0].clientY - disY ;
-					//移动时 当前位置与起始位置之间的差值
-			    starXEnd = e.touches[0].clientX - starX;
-			    starYEnd = e.touches[0].clientY - starY;
-			    if(L<0){//限制拖拽的X范围，不能拖出屏幕
-					L = 0;
-			    }else if(L > document.documentElement.clientWidth - this.offsetWidth){
-					L=document.documentElement.clientWidth - this.offsetWidth;
-			    }
-			    if(T<0){//限制拖拽的Y范围，不能拖出屏幕
-					T=0;
-			    }else if(T>document.documentElement.clientHeight - this.offsetHeight){
-					T = document.documentElement.clientHeight - this.offsetHeight;
-			    }
-			    moveX = L + 'px';
-			    moveY = T + 'px';
-			    this.style.left = moveX;
-			    this.style.top = moveY;                  
-			});
-			SuspendedBall.addEventListener('touchend',function(e){
-			    if(flag === 0) {//点击
-					var word1 = document.getElementById("word1");
-//					word1.style.display = "none";
-			    }            							 						
-			});
-//			var a = 1;
-//			var word1 = document.getElementById("word1");
-//			var word2 = document.getElementById("word2");
-//			oDiv.onclick = function(){				
-//				if (a == 1) {					
-//					word1.style.display = "none";
-//					word2.style.display = "block";										
-//					word3.style.display = "inline-block";
-//					a = 0;
-//				}else{
-//					word1.style.display = "block";
-//					word2.style.display = "none";
-//					a = 1;
-//				}
-//			}			
-//			$(function(){	
-//				var a = 1;
-//				$("#SuspendedBall").click(function(){
-//					if(a == 1){
-//						$("#SuspendedBall").animate({width:"100px"},500);
-//						a = 0;
-//					}else{
-//						$("#SuspendedBall").animate({width:"24px"},500);
-//						a = 1;
-//					}
-//				});
-//				$("body").click(function(){				
-//					$("#SuspendedBall p:not([id='word2'])").animate({width:"24px"},500);	//JQuery2-10			
-//				});
-//			})			
-		</script>
+		<a href="#" id="reachTop" >
+			<svg t="1593722109571" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1603"><path d="M511.808072 0a511.808072 511.808072 0 1 0 511.808072 511.808072A511.808072 511.808072 0 0 0 511.808072 0z m0 960.791703" fill="#1296db" p-id="1604" data-spm-anchor-id="a313x.7781069.0.i1" class="selected"></path><path d="M721.905286 252.577284h-419.682619a31.604148 31.604148 0 1 0 0 63.208296h419.682619a31.604148 31.604148 0 0 0 0-63.208296zM531.000875 360.952643a30.964388 30.964388 0 0 0-17.529427-8.828689h-9.852305a31.7321 31.7321 0 0 0-17.529427 8.828689l-190.648506 190.904411a31.604148 31.604148 0 0 0 44.655254 44.655254l136.908659-136.908659v343.551168a31.604148 31.604148 0 1 0 63.208297 0V459.475697l136.908659 136.908659a31.604148 31.604148 0 0 0 44.655254-44.655254z m0 0" fill="#FFFFFF" p-id="1605"></path></svg>
+		</a>		
 	</body>
 </html>
 	
