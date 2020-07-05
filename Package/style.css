@@ -145,10 +145,11 @@ a{
 	position: fixed;
 	top: 80%;right: 0px;
 	z-index: 999;	
-	width: 2em;		
 }
 #reachTop>svg{	
 	background: #000;
 	border-radius: 5px;
+	margin: 0;
+	width: 1.5em;height: 1.5em;
 }
 /*内容的底部end*/ 
