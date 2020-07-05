@@ -1,19 +1,5 @@
 <!--悬浮球-->
-<div id="SuspendedBall">
-	<div id="word1" >更多</div>
-	<a href="#" id="word2"><div>顶部</div></a>
-	<div id="SuspendedBallWord3">分享</div>
-</div>
-<div id="share">
-	<div id="qrcode" onclick="download()"></div>
-	<div id="qrcodeWord" onclick="copyHref()">
-	  <textarea id="input"></textarea>
-	  <button>复制链接</button>
-	</div>
-</div>
-<div id="blackBackground"></div>
-<script src="Package/jquery.min.js"></script>
-<script src="Package/qrcode.min.js"></script>
+<a href="#"><svg id="SuspendedBall" t="1593722109571" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1603"><path d="M511.808072 0a511.808072 511.808072 0 1 0 511.808072 511.808072A511.808072 511.808072 0 0 0 511.808072 0z m0 960.791703" fill="#1296db" p-id="1604" data-spm-anchor-id="a313x.7781069.0.i1" class="selected"></path><path d="M721.905286 252.577284h-419.682619a31.604148 31.604148 0 1 0 0 63.208296h419.682619a31.604148 31.604148 0 0 0 0-63.208296zM531.000875 360.952643a30.964388 30.964388 0 0 0-17.529427-8.828689h-9.852305a31.7321 31.7321 0 0 0-17.529427 8.828689l-190.648506 190.904411a31.604148 31.604148 0 0 0 44.655254 44.655254l136.908659-136.908659v343.551168a31.604148 31.604148 0 1 0 63.208297 0V459.475697l136.908659 136.908659a31.604148 31.604148 0 0 0 44.655254-44.655254z m0 0" fill="#FFFFFF" p-id="1605"></path></svg></a>
 <script type="text/javascript">
 	//悬浮球的移动
 	var flag = 0; //标记是拖曳还是点击
@@ -55,65 +41,5 @@
 			var word1 = document.getElementById("word1");
 //					word1.style.display = "none";
 	    }            							 						
-	});
-	$(function(){	
-		var a = 1;
-		$("#SuspendedBall").click(function SuspendedBall(){
-			if(a == 1){								
-				$("#SuspendedBall").animate({width:"6em"},500);
-				setTimeout(function(){
-					word1.style.display = "none";
-					word2.style.display = "inline-block";
-					SuspendedBallWord3.style.display = "inline-block";	
-				},500)
-				a = 0;
-			}else{				
-				$("#SuspendedBall").animate({width:"3em"},500);
-				word1.style.display = "block";
-				word2.style.display = "none";
-				SuspendedBallWord3.style.display = "none";	
-				a = 1;
-			}
-		});		
-	})			
-	//点击分享显示黑色背景和二维码
-	$("#SuspendedBallWord3").click(function(){
-		$("#blackBackground").animate({opacity:"0.5"},500);
-		$("#share").animate({opacity:"1"},500);
-		share.style.display = "inline-block";
-		blackBackground.style.display = "block";		
-	});
-	$("#blackBackground").click(function(){				
-		$("#blackBackground,#share").animate({opacity:"0"},500);									
-			blackBackground.style.display = "none";
-			share.style.display = "none";
-	});
-	//生成二维码
-	qrcode = new QRCode(document.getElementById("qrcode"), {
-		text: document.location.href,
-		width : 300,
-		height : 300,
-		colorDark : "#000000",
-	    colorLight : "#fff",
-	    correctLevel : QRCode.CorrectLevel.H
-	});
-	//点击二维码下载
-	function download(){
-		var data = $("canvas")[0].toDataURL().replace("image/png", "image/octet-stream;");//获取二维码值，并修改响应头部。　　　
-		var filename='blog-'+document.title+'.png';//保存的图片名称和格式，canvas默认使用的png格式。这个格式效果最好。
-		var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
-		save_link.href = data;
-		save_link.download = filename;
-		var event = document.createEvent('MouseEvents');
-		event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-		save_link.dispatchEvent(event);
-		alert
-	}
-	 function copyHref(){ 
-	   var input = document.getElementById("input");
-	   input.value = document.location.href; // 修改文本框的内容
-	   input.select(); // 选中文本
-	   document.execCommand("copy"); // 执行浏览器复制命令
-	   alert("复制成功");
-	} 			
+	});		
 </script>
