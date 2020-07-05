@@ -135,7 +135,7 @@ a{
 }
 #reachTop{
 	position: fixed;
-	top: 80%;right: 10px;
+	top: 80%;right: 0px;
 	z-index: 999;
 }
 /*内容的底部end*/ 
