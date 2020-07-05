@@ -1,81 +1,242 @@
-<div class="iconBox">
-	<svg id="money" t="1593723126472" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2569" data-spm-anchor-id="a313x.7781069.0.i6" width="200" height="200"><path d="M483.555556 487.736889v76.430222h-120.888889a28.444444 28.444444 0 0 0 0 56.888889H483.555556v72.903111a28.444444 28.444444 0 1 0 56.888888 0v-72.903111h120.888889a28.444444 28.444444 0 1 0 0-56.888889H540.444444v-76.430222h120.888889a28.444444 28.444444 0 1 0 0-56.888889h-80.668444l80.355555-80.384a28.444444 28.444444 0 1 0-40.220444-40.220444l-107.576889 107.605333c-0.711111 0.711111-1.365333 1.422222-1.991111 2.190222a28.728889 28.728889 0 0 0-2.360889-2.645333l-106.268444-106.268445a28.444444 28.444444 0 0 0-40.220445 40.220445l79.502222 79.502222H362.666667a28.444444 28.444444 0 0 0 0 56.888889H483.555556zM512 967.111111C260.636444 967.111111 56.888889 763.363556 56.888889 512S260.636444 56.888889 512 56.888889c109.084444 0 212.280889 38.542222 293.831111 107.576889a456.590222 456.590222 0 0 1 117.902222 153.400889C952.177778 378.055111 967.111111 443.989333 967.111111 512c0 251.363556-203.747556 455.111111-455.111111 455.111111z m0-56.888889c219.932444 0 398.222222-178.289778 398.222222-398.222222S731.932444 113.777778 512 113.777778 113.777778 292.067556 113.777778 512s178.289778 398.222222 398.222222 398.222222z m0-28.444444c-204.231111 0-369.777778-165.546667-369.777778-369.777778S307.768889 142.222222 512 142.222222s369.777778 165.546667 369.777778 369.777778-165.546667 369.777778-369.777778 369.777778z" p-id="2570" data-spm-anchor-id="a313x.7781069.0.i5" class="selected" fill="#e64b37"></path></svg>
-	<svg id="share" t="1593728552120" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2522" width="200" height="200"><path d="M748.34 127.982H272.978c-80.101 0-145.035 64.935-145.035 145.035V748.38c0 80.101 64.935 145.035 145.035 145.035H748.34c80.101 0 145.035-64.935 145.035-145.035V273.017c0-80.101-64.934-145.035-145.035-145.035zM578.373 621.505v-101.47c-210.823-35.294-322.51 247.553-322.51 247.553 0-438.25 322.51-411.89 322.51-411.89V253.123l189.175 184.19-189.175 184.191z" p-id="2523" fill="#1296db"></path></svg>
-</div>
-<div class="defrayBox">
-	<img src="https://MrFlySand.github.io/Package/Image/WeChatDefray.png"/>
-	<img src="https://MrFlySand.github.io/Package/Image/alipayDefray.png"/>
-	<img src="https://MrFlySand.github.io/Package/Image/QQDefray.png"/>
-</div>
-<div class="shareBox">
-	<div id="qrcode" onclick="download()"></div>
-	<div id="qrcodeWord" onclick="copyHref()" onclick="copyHref()">
-	   <textarea id="inputTextarea"></textarea>
-	   <button>复制链接</button>
-	</div>
-	<div id="blackBackground"></div>		
-</div>
-<script type="text/javascript">
-	$(function(){
-		var w = document.documentElement.offsetWidth || document.body.offsetWidth;
-		console.log(w)
-		if (w < 685) {
-			$(".defrayBox").css({width:"300px",margin:"0 auto"})	
-			$(".defrayBox").children().css({width:"300px",display:"block",margin:"10px 0"});
-		}else{
-			$(".defrayBox").children().css({width:"200px",display:"inline-block"});
-		}
-	})	
-	var  a = 1;
-	$("#money").click(function(){
-		if (a == 1) {
-			$(".defrayBox").css("display","block");
-			a = 0;
-		} else{
-			$(".defrayBox").css("display","none");
-			a = 1;
-		}
-	})
-	$("#share").click(function(){
-			$("#blackBackground").animate({opacity:"0.5"},500);
-			$(".shareBox").animate({opacity:"1"},500);
-			$("#blackBackground").css("display","block");
-			$(".shareBox").css("display","block");											
-	})
-	$("#blackBackground").click(function(){
-		$("#blackBackground").animate({opacity:"0.5"},500);
-		$(".shareBox").animate({opacity:"1"},500);
-		setTimeout(function(){
-			$("#blackBackground").css("display","none");
-			$(".shareBox").css("display","none");
-		},500);
-	})
-	//生成二维码
-	qrcode = new QRCode(document.getElementById("qrcode"), {
-		text: document.location.href,
-		width : 300,
-		height : 300,
-		colorDark : "#000000", 
-	    colorLight : "#fff",
-	    correctLevel : QRCode.CorrectLevel.H
-	});
-	//点击二维码下载
-	function download(){
-		var data = $("canvas")[0].toDataURL().replace("image/png", "image/octet-stream;");//获取二维码值，并修改响应头部。　　　
-		var filename='blog-'+document.title+'.png';//保存的图片名称和格式，canvas默认使用的png格式。这个格式效果最好。
-		var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
-		save_link.href = data;
-		save_link.download = filename;
-		var event = document.createEvent('MouseEvents');
-		event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-		save_link.dispatchEvent(event);
-	}
-	//复制链接
-	 function copyHref(){ 
-	   var input = document.getElementById("inputTextarea");
-	   input.value = document.location.href; // 修改文本框的内容
-	   input.select(); // 选中文本
-	   document.execCommand("copy"); // 执行浏览器复制命令
-	   alert("复制成功");
-	} 		
-</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+		<title>网站大全</title>
+		<head><link rel="icon" type="image/jpeg" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg"/><head>
+		<link rel="stylesheet" type="text/css" href="../../Package/package.css"/>		
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<nav class="box headNav" id="headNav">
+			<a href="../../index.html">主页</a>
+			<a href="https://MrFlySand.github.io/Package/WebsiteAll">网站大全</a>		
+			<a href="#it">计算机</a>
+			<a href="#entertainment">娱乐</a>
+			<a href="#smallTools">小工具</a>
+			<a href="#read">阅读</a>
+			<a href="#other">其它</a>
+		</nav>
+		<div class="WebsiteAll">
+			<p class="titel">站主</p>											
+				<a target="_blank" style="background-position:-60px 0px;" href="https://MrFlySand.github.io/html/Lovers/520-girl-01.html">					
+					<p>520</p>
+				</a>					
+				<a target="_blank" style="background-position:-120px 0px;" href="https://MrFlySand.github.io/html/Lovers/Birthday-girl-01.html">
+					<p>生日快乐</p>
+				</a>		
+				<a target="_blank" style="background-position:-120px 0px;" href="https://MrFlySand.github.io/html/Lovers/LoveTree/index.html">
+					<p>爱心树</p>
+				</a>	
+			<p class="titel it" id="it">计算机</p>
+				<a target="_blank" style="background-position:-180px 0px;" href="http://www.google.cn/">
+					<p class="label">google搜索</p>
+				</a>
+				<a target="_blank" style="background-position:-240px 0px;" href="https://cn.bing.com/">
+					<p class="label">必应</p>
+				</a>	
+				<a target="_blank" style="background-position:-300px 0px;"  href="http://github.com">
+					<p>github</p>
+				</a>
+				<a target="_blank" style="background-position:-360px 0px;"  href="http://gitee.com">
+					<p>码云</p>
+				</a>														
+				<a target="_blank" style="background-position:-420px 0px;" href="https://www.51zxw.net/">
+					<p class="label">我要自学网</p>
+				</a>	
+				<a target="_blank" style="background-position:-480px 0px;" href="https://www.csdn.net/">
+					<p class="label">CSDN</p>				
+				</a>					
+				<a target="_blank" style="background-position:-0px -60px;" href="https://www.w3cschool.cn/">
+					<p class="label">W3C</p>
+				</a>					
+				<a target="_blank" style="background-position:-540px 0px;"  href="https://www.w3school.com.cn/">
+					<p class="label">W3</p>
+				</a>							
+				<a target="_blank" style="background-position:-60px -60px;" href="https://www.adobe.com/">
+					<p class="label">Adobe</p>
+				</a>
+				<a target="_blank" style="background-position:-240px -180px;" href="http://musictool.top">
+					<p>音乐搜索器</p>
+				</a>
+				<a target="_blank" style="background-position:-540px -120px;" href="https://www.iconfont.cn">
+					<p class="label">矢量图库</p>					
+				</a>
+				<a target="_blank" style="background-position:-120px -60px;" href="http://www.fontawesome.com.cn/faicons/">
+					<p class="label">awesome图标库</p>					
+				</a>	
+			<p class="titel" id="entertainment">娱乐</p>
+				<a target="_blank" style="background-position:-360px -180px;" href="https://www.youtube.com">
+					<p class="label">youtobe</p>
+				</a>
+				<a target="_blank" style="background-position:-240px -60px;" href="https://www.bilibili.com/">
+					<p class="label">哔哩哔哩</p>
+				</a>			
+				<a target="_blank" style="background-position:-300px -60px;" href="https://v.qq.com/">
+					<p class="label">腾讯视频</p>
+				</a>				
+				<a target="_blank" style="background-position:-360px -60px;" href="https://www.iqiyi.com">
+					<p class="label">爱奇艺</p>					
+				</a>			
+				<a target="_blank" style="background-position:-420px -60px;"  href="https://www.youku.com">
+					<p class="label">优酷</p>					
+				</a>			
+				<a target="_blank" style="background-position:-480px -60px;"  href="https://www.douyu.com">
+					<p class="label">斗鱼</p>					
+				</a>				
+				<a target="_blank" style="background-position:-540px -60px;"  href="https://y.qq.com">
+					<p class="label">QQ音乐</p>					
+				</a>	
+				<a target="_blank" style="background-position:-0px -120px;" href="https://music.163.com">
+					<p class="label">网易云音乐</p>					
+				</a>		
+				<a target="_blank" style="background-position:-60px -120px;" href="http://www.kugou.com">
+					<p class="label">酷狗音乐</p>
+				</a>
+				<a target="_blank" style="background-position:-120px -120px;" href="https://www.xiami.com">
+					<p class="label">虾米音乐</p>				
+				</a>
+			<p class="titel" id="smallTools">小工具</p>
+				<a target="_blank" style="background-position:-180px -120px;" href="https://www.uupoop.com">
+					<p class="label">PS</p>					
+				</a>	
+				<a target="_blank" style="background-position:-180px -180px;" href="http://markdown.xiaoshujiang.com/">
+					<p class="label">小书匠</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://processon.com">
+					<p class="label">processOn</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://translate.google.cn">
+					<p class="label">Google翻译</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://cn.bing.com/Translator">
+					<p class="label">必应翻译</p>					
+				</a>
+				<a target="_blank" style="background-position:-180px -180px;" href="https://www.youzack.com">
+					<p class="label">youzack</p>					
+				</a>
+				<a target="_blank" style="background-position:-120px -180px;" href="https://www.dooccn.com/c/">
+					<p class="label">dooccn编译器</p>					
+				</a>
+				<a target="_blank" style="background-position:-300px -180px;" href="https://mh.cli.im">
+					<p class="label">草料二维码</p>					
+				</a>	
+			<p class="titel ">影视设计</p>
+				<a target="_blank" style="background-position:-480px -180px;" href="http://www.aigei.com/sound">
+					<p class="label">爱给</p>				
+				</a>
+				<a target="_blank" style="background-position:-540px -180px;" href="http://zhongguose.com/">
+					<p class="label">中国传统色</p>				
+				</a>
+				<a target="_blank" style="background-position:-420px -180px;" href="https://www.sj520.cn">
+					<p class="label">520设计网</p>				
+				</a>
+			<p class="titel" id="read">阅读</p>
+				<a target="_blank" style="background-position:-240px -120px;" href="https://www.jianshu.com/">
+					<p class="label">简书</p>					
+				</a>								
+				<a target="_blank" style="background-position:-300px -120px;" href="https://www.zhihu.com/">
+					<p class="label">知乎</p>					
+				</a>	
+				<a target="_blank" style="background-position:-360px -120px;" href="https://www.douban.com/">
+					<p class="label">豆瓣</p>					
+				</a>
+				<a target="_blank" style="background-position:-0px -240px;" href="https://www.quora.com/">
+					<p class="label">Quora</p>					
+				</a>
+			<p class="titel" id="other">其它</p>
+				<a target="_blank"  style="background-position:-420px -120px;" href="https://pc.qq.com">
+					<p class="label">腾讯软件</p>					
+				</a>					
+				<a target="_blank"  style="background-position:-480px -120px;" href="https://dl.pconline.com.cn">
+					<p class="label">电脑网</p>					
+				</a>									
+				<a target="_blank" style="background-position:-60px -180px;" href="http://www.4399.com/">
+					<p class="label">4399</p>					
+				</a>	
+				<a target="_blank" style="background-position:-0px -180px;" href="http://www.7k7k.com/">
+					<p class="label">7k7k</p>	
+				</a>
+				<a target="_blank" class="#Anim" style="background-position:-60px -180px;" href="http://MrFlySand.github.io/Other/AnimateEffect/index.html">
+					<p class="label">CSS,JS动画</p>	
+				</a>				
+		</div>
+		<a href="#headNav"><div id="SuspendedBall">top</div></a>
+		<script src="../../Package/package.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="../../Package/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
+		<script type="text/javascript">
+			var flag = 0; //标记是拖曳还是点击
+			var oDiv = document.getElementById('SuspendedBall');
+			var disX,moveX,L,T,starX,starY,starXEnd,starYEnd;        
+			oDiv.addEventListener('touchstart',function(e){
+			    flag = 0;
+			    e.preventDefault();//阻止触摸时页面的滚动，缩放
+			    disX = e.touches[0].clientX - this.offsetLeft;
+			    disY = e.touches[0].clientY - this.offsetTop;
+					//手指按下时的坐标
+			    starX = e.touches[0].clientX;
+			    starY = e.touches[0].clientY;            
+			});
+			oDiv.addEventListener('touchmove',function(e){
+			    flag = 1;
+			    L = e.touches[0].clientX - disX ;
+			    T = e.touches[0].clientY - disY ;
+					//移动时 当前位置与起始位置之间的差值
+			    starXEnd = e.touches[0].clientX - starX;
+			    starYEnd = e.touches[0].clientY - starY;
+			    if(L<0){//限制拖拽的X范围，不能拖出屏幕
+					L = 0;
+			    }else if(L > document.documentElement.clientWidth - this.offsetWidth){
+					L=document.documentElement.clientWidth - this.offsetWidth;
+			    }
+			    if(T<0){//限制拖拽的Y范围，不能拖出屏幕
+					T=0;
+			    }else if(T>document.documentElement.clientHeight - this.offsetHeight){
+					T = document.documentElement.clientHeight - this.offsetHeight;
+			    }
+			    moveX = L + 'px';
+			    moveY = T + 'px';
+			    this.style.left = moveX;
+			    this.style.top = moveY;                  
+			});
+			SuspendedBall.addEventListener('touchend',function(e){
+			    if(flag === 0) {//点击
+					var word1 = document.getElementById("word1");
+//					word1.style.display = "none";
+			    }            							 						
+			});
+//			var a = 1;
+//			var word1 = document.getElementById("word1");
+//			var word2 = document.getElementById("word2");
+//			oDiv.onclick = function(){				
+//				if (a == 1) {					
+//					word1.style.display = "none";
+//					word2.style.display = "block";										
+//					word3.style.display = "inline-block";
+//					a = 0;
+//				}else{
+//					word1.style.display = "block";
+//					word2.style.display = "none";
+//					a = 1;
+//				}
+//			}			
+//			$(function(){	
+//				var a = 1;
+//				$("#SuspendedBall").click(function(){
+//					if(a == 1){
+//						$("#SuspendedBall").animate({width:"100px"},500);
+//						a = 0;
+//					}else{
+//						$("#SuspendedBall").animate({width:"24px"},500);
+//						a = 1;
+//					}
+//				});
+//				$("body").click(function(){				
+//					$("#SuspendedBall p:not([id='word2'])").animate({width:"24px"},500);	//JQuery2-10			
+//				});
+//			})			
+		</script>
+	</body>
+</html>
+	
