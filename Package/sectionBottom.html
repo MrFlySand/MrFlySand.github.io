@@ -1,0 +1,81 @@
+<div class="iconBox">
+	<svg id="money" t="1593723126472" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2569" data-spm-anchor-id="a313x.7781069.0.i6" width="200" height="200"><path d="M483.555556 487.736889v76.430222h-120.888889a28.444444 28.444444 0 0 0 0 56.888889H483.555556v72.903111a28.444444 28.444444 0 1 0 56.888888 0v-72.903111h120.888889a28.444444 28.444444 0 1 0 0-56.888889H540.444444v-76.430222h120.888889a28.444444 28.444444 0 1 0 0-56.888889h-80.668444l80.355555-80.384a28.444444 28.444444 0 1 0-40.220444-40.220444l-107.576889 107.605333c-0.711111 0.711111-1.365333 1.422222-1.991111 2.190222a28.728889 28.728889 0 0 0-2.360889-2.645333l-106.268444-106.268445a28.444444 28.444444 0 0 0-40.220445 40.220445l79.502222 79.502222H362.666667a28.444444 28.444444 0 0 0 0 56.888889H483.555556zM512 967.111111C260.636444 967.111111 56.888889 763.363556 56.888889 512S260.636444 56.888889 512 56.888889c109.084444 0 212.280889 38.542222 293.831111 107.576889a456.590222 456.590222 0 0 1 117.902222 153.400889C952.177778 378.055111 967.111111 443.989333 967.111111 512c0 251.363556-203.747556 455.111111-455.111111 455.111111z m0-56.888889c219.932444 0 398.222222-178.289778 398.222222-398.222222S731.932444 113.777778 512 113.777778 113.777778 292.067556 113.777778 512s178.289778 398.222222 398.222222 398.222222z m0-28.444444c-204.231111 0-369.777778-165.546667-369.777778-369.777778S307.768889 142.222222 512 142.222222s369.777778 165.546667 369.777778 369.777778-165.546667 369.777778-369.777778 369.777778z" p-id="2570" data-spm-anchor-id="a313x.7781069.0.i5" class="selected" fill="#e64b37"></path></svg>
+	<svg id="share" t="1593728552120" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2522" width="200" height="200"><path d="M748.34 127.982H272.978c-80.101 0-145.035 64.935-145.035 145.035V748.38c0 80.101 64.935 145.035 145.035 145.035H748.34c80.101 0 145.035-64.935 145.035-145.035V273.017c0-80.101-64.934-145.035-145.035-145.035zM578.373 621.505v-101.47c-210.823-35.294-322.51 247.553-322.51 247.553 0-438.25 322.51-411.89 322.51-411.89V253.123l189.175 184.19-189.175 184.191z" p-id="2523" fill="#1296db"></path></svg>
+</div>
+<div class="defrayBox">
+	<img src="https://MrFlySand.github.io/Package/Image/WeChatDefray.png"/>
+	<img src="https://MrFlySand.github.io/Package/Image/alipayDefray.png"/>
+	<img src="https://MrFlySand.github.io/Package/Image/QQDefray.png"/>
+</div>
+<div class="shareBox">
+	<div id="qrcode" onclick="download()"></div>
+	<div id="qrcodeWord" onclick="copyHref()" onclick="copyHref()">
+	   <textarea id="inputTextarea"></textarea>
+	   <button>复制链接</button>
+	</div>
+	<div id="blackBackground"></div>		
+</div>
+<script type="text/javascript">
+	$(function(){
+		var w = document.documentElement.offsetWidth || document.body.offsetWidth;
+		console.log(w)
+		if (w < 685) {
+			$(".defrayBox").css({width:"300px",margin:"0 auto"})	
+			$(".defrayBox").children().css({width:"300px",display:"block",margin:"10px 0"});
+		}else{
+			$(".defrayBox").children().css({width:"200px",display:"inline-block"});
+		}
+	})	
+	var  a = 1;
+	$("#money").click(function(){
+		if (a == 1) {
+			$(".defrayBox").css("display","block");
+			a = 0;
+		} else{
+			$(".defrayBox").css("display","none");
+			a = 1;
+		}
+	})
+	$("#share").click(function(){
+			$("#blackBackground").animate({opacity:"0.5"},500);
+			$(".shareBox").animate({opacity:"1"},500);
+			$("#blackBackground").css("display","block");
+			$(".shareBox").css("display","block");											
+	})
+	$("#blackBackground").click(function(){
+		$("#blackBackground").animate({opacity:"0.5"},500);
+		$(".shareBox").animate({opacity:"1"},500);
+		setTimeout(function(){
+			$("#blackBackground").css("display","none");
+			$(".shareBox").css("display","none");
+		},500);
+	})
+	//生成二维码
+	qrcode = new QRCode(document.getElementById("qrcode"), {
+		text: document.location.href,
+		width : 300,
+		height : 300,
+		colorDark : "#000000",
+	    colorLight : "#fff",
+	    correctLevel : QRCode.CorrectLevel.H
+	});
+	//点击二维码下载
+	function download(){
+		var data = $("canvas")[0].toDataURL().replace("image/png", "image/octet-stream;");//获取二维码值，并修改响应头部。　　　
+		var filename='blog-'+document.title+'.png';//保存的图片名称和格式，canvas默认使用的png格式。这个格式效果最好。
+		var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+		save_link.href = data;
+		save_link.download = filename;
+		var event = document.createEvent('MouseEvents');
+		event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+		save_link.dispatchEvent(event);
+	}
+	//复制链接
+	 function copyHref(){ 
+	   var input = document.getElementById("inputTextarea");
+	   input.value = document.location.href; // 修改文本框的内容
+	   input.select(); // 选中文本
+	   document.execCommand("copy"); // 执行浏览器复制命令
+	   alert("复制成功");
+	} 		
+</script>
