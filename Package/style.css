@@ -138,17 +138,17 @@ a{
 	display: block;
 	margin:0 auto;
 	font-size: 1em;
+	padding: 3px 8px;
 	width: auto;
 }
 #reachTop{
 	position: fixed;
 	top: 80%;right: 0px;
-	z-index: 999;
-	width: 1.5em;
+	z-index: 999;	
+	width: 2em;		
 }
-#reachTop>svg{
-	border-radius: 5px;	
+#reachTop>svg{	
 	background: #000;
-	/*width: 100%;*/
+	border-radius: 5px;
 }
 /*内容的底部end*/ 
