@@ -7,7 +7,9 @@
     <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">
     <link rel="stylesheet" href="../../../Package/highlight.min.css"/>
     <link rel="stylesheet" href="../../../Package/package.css">    
-    <link rel="stylesheet" href="../../../Package/style.css">        
+    <link rel="stylesheet" href="../../../Package/style.css">
+    <script src="../../../Package/jquery.min.js"></script>
+    <script src="../../../Package/qrcode.min.js"></script>
 </head>
 <body>    
 	<header class="header"></header>
@@ -290,14 +292,14 @@ ArrayList.prototype.quick = function(left,right){
 					<li class="second">快速排序的平均效率是0(N * logN).</li>
 				</ul>
 				<img src="image/sortEffectiveness.png"/>
+				<div class="sectionBottom"></div>
 			</section>
 		</div>
 <!----------------------------------------可以修改的内容end------------------------------------>
 		<div id="asidepart"></div>
 	</div>
 	<footer class="footer"></footer>
-	<div class="SuspBall"></div>
-		<script src="../../../Package/jquery.min.js"></script>
+	<div class="SuspBall"></div>		
 		<script src="../../../Package/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 		<script src="../../../Package/package.js"></script>
@@ -309,6 +311,7 @@ ArrayList.prototype.quick = function(left,right){
 				$('#asidepart').load('../../../Package/right.html');
 				$('.footer').load('../../../Package/footer.html');
 				$('.SuspBall').load('../../../Package/SuspendedBall.html');
+				$('.sectionBottom').load('../../../Package/sectionBottom.html')
 			});			
 		</script>
 		<script type="text/javascript">			
