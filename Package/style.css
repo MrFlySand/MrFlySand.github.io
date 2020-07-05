@@ -93,6 +93,12 @@ a{
 	width: 620px;	
 	margin: 0 auto;		
 }
+.sectionBottom>.defrayBox>p{
+	display: block;
+	width: auto;
+	font-size: 0.8em;
+	text-align: center;
+}
 .sectionBottom>.shareBox>#blackBackground{
 	background: #000;
 	/*display: none;*/
@@ -132,10 +138,17 @@ a{
 	display: block;
 	margin:0 auto;
 	font-size: 1em;
+	width: auto;
 }
 #reachTop{
 	position: fixed;
 	top: 80%;right: 0px;
 	z-index: 999;
+	width: 1.5em;
+}
+#reachTop>svg{
+	border-radius: 5px;	
+	background: #000;
+	/*width: 100%;*/
 }
 /*内容的底部end*/ 
