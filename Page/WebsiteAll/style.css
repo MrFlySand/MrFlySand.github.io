@@ -88,7 +88,11 @@ body{
 #reachTop{
 	position: fixed;
 	top: 80%;right: 0px;
-	z-index: 999;
-	width: 1.5em;
+	z-index: 999;			
+}
+#reachTop>svg{
+	width: 2em;
+	background: #000;
+	border-radius: 7px;
 }
 /*https://www.zhangxinxu.com/wordpress/2014/04/animateion-line-drawing-svg-path-动画-路径/*/
