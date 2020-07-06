@@ -95,7 +95,7 @@
 				$("#word").css({fontSize:fontSize,color:fontColor});				
 				document.getElementById("word").style.animationDuration = speed;
 				var style = document.styleSheets[0];
-				style.insertRule("@keyframes wordAnimation{from{margin-left: 110%;}to{margin-left:"+-($("body").width()+10)+"px");							
+				style.insertRule("@keyframes wordAnimation{from{margin-left: 110%;}to{margin-left:"+-($("body").width()+wordWidth+10)+"px");							
 			});
 			$("#help").click(function(){
 				$(".use").css({display:"block"})
