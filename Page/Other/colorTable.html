@@ -20,13 +20,44 @@
         tr{
         	width: 50%;
         }
+        #leftBox{
+        	width: 45%;
+        	display: inline-block;
+        	float: left;
+        	margin: 0 10px;        
+        }
         @media(max-width:740px){
         	#rgba-colors .rgba-colors-item{
-        		-ms-flex:0 100%;flex:0 100%
+        		-ms-flex:0 100%;flex:0 100%;
+        	}
+        	#leftBox{
+        		width: 90%;        		
         	}
         	tr{
         		width: 100%;
-        	}
+        	}        	
+        }
+        #rgbaMain-cssMode{
+        	width: 100%;
+        }
+        input{
+        	border: 1.5px solid #000;
+        	background:#ccc;
+        	padding: 3px 8px;        
+        }
+        button{
+        	border: 1.5px solid #000;
+        	background:#ccc;        	
+        }
+        button:active{
+        	font-weight: 800;
+        }       
+        .rbgaBbox{
+        	display: inline-block;
+        	
+        }
+        .rbgaBbox>input{
+        	width: 50px;
         }
         #rgba-colors{margin:30px 0}
         h1.title{
@@ -63,52 +94,103 @@
 </head>
 
 <body id="rgba">
-	<h1 class="title">RGB颜色查询对照表</h1><br />
+	<h1 class="title">颜色对照表</h1><br />
     <div id="main" class="pure-g">
-        <div class="pure-u-1 pure-u-sm-1-2 pure-form">        	
-            <div id="rgbaMain-cssMode">
-                <p>CSS格式</p>
-                <p><input id="rgbaInput_css" type="text" placeholder='rgba(128,128,128,1)' /></p>              
-            </div>
-            <div id="rgbaMain-rgbaMode" class="pure-form pure-form-aligned">
-                <p>RGBA格式</p>
-                <div class="pure-control-group">
-                    <label class="r">R</label>
-                    <input id="rgbaInput_r" type="text" placeholder='0~255' />
-                </div>
-                <div class="pure-control-group">
-                    <label class="g">G</label>
-                    <input id="rgbaInput_g" type="text" placeholder='0~255' />
-                </div>
-                <div class="pure-control-group">
-                    <label class="b">B</label>
-                    <input id="rgbaInput_b" type="text" placeholder='0~255' />
-                </div>
-                <div class="pure-control-group">
-                    <label class="a">A</label>
-                    <input id="rgbaInput_a" type="text" placeholder='0~1' />
-                </div>
-            </div>
+        <div class="settings">
+        	<div class="pure-u-1 pure-u-sm-1-2 pure-form" id="leftBox">        	
+	            <div id="rgbaMain-cssMode">
+	                <p>CSS格式:<input id="rgbaInput_css" type="text" placeholder='rgb(128,128,128	)' /></p>              
+	            </div> 
+	             <div id="rgbaMain-hexMode">
+	                <p>Hex格式:<input type="text" id="rgbaInput_hex" placeholder='#999' /></p>          
+	            </div>
+	
+	            <div class="">
+	            	<p>渐变色:<input type="text" id="rgbaInput_gradient" placeholder='45deg,#fbc2eb,#a6c1ee' /></p>
+	            </div>
+	             <div id="rgbaMain-rgbaMode" class="pure-form pure-form-aligned">
+	                <p>RGBA格式</p>
+	                <div class="pure-control-group">
+	                    <div class="rbgaBbox">
+							<label class="r">R</label>
+	                 	    <input id="rgbaInput_r" type="text" placeholder='0~255' />                    	
+	                    </div>
+	                    <div class="rbgaBbox">
+	                    	<label class="g">G</label>
+	                    	<input id="rgbaInput_g" type="text" placeholder='0~255' />	
+	                    </div>
+	                    <div class="rbgaBbox">
+		                    <label class="b">B</label>
+		                    <input id="rgbaInput_b" type="text" placeholder='0~255' />                    	
+	                    </div>
+	                    <div class="rbgaBbox">
+		                    <label class="a">A</label>
+	                    	<input id="rgbaInput_a" type="text" placeholder='0~1' />                    	
+	                    </div>
+	                </div>	                
+	            </div>   
+	        </div>
+	        
+	        <div class="pure-u-1 pure-u-sm-1-2 pure-form" id="leftBox">                             
+	            <div id="rgbaMain-previewMode">
+	                <p style="display: inline-block;">预览</p>
+	                <button id="submit">提交</button>
+	           		<button id="empty">清空</button>
+	                <div id="rgbaMain-preview"></div>
+	            </div>
+	        </div>
+	        
+<script src="https://MrFlySand.github.io/Package/jquery.min.js"></script>
+<script type="text/javascript">
+	$("#submit").click(function(){
+		var packageCss = $("#rgbaInput_css").val();
+		var hex = $("#rgbaInput_hex").val();
+		var gradient = $("#rgbaInput_gradient").val();
+		var rgbaInput_r = $("#rgbaInput_r").val();
+		var rgbaInput_g = $("#rgbaInput_g").val();
+		var rgbaInput_b = $("#rgbaInput_b").val();
+		var rgbaInput_a = $("#rgbaInput_a").val();
+		console.log(packageCss)
+		console.log(hex)
+		console.log(gradient)
+		console.log(rgbaInput_a+"|"+rgbaInput_g+"|"+rgbaInput_b+"|"+rgbaInput_a)
+		if (packageCss != "") {			
+			backColor = packageCss;
+			if(packageCss[0] == '#'){				
+				$("#rgbaInput_hex").val(packageCss);	
+			}else if(!isNaN(packageCss[0])){
+				backColor = "linear-gradient("+packageCss+")";
+			}else{
+				backColor = packageCss;
+			}
+		} else if(hex != ""){
+			backColor = hex;
+		}else if(gradient != ""){
+			backColor = 'linear-gradient('+gradient+')';
+		}else if(rgbaInput_r != "" && rgbaInput_a != "" && rgbaInput_b != "" && rgbaInput_a){
+			backColor = 'rgba('+rgbaInput_r+','+rgbaInput_g+','+rgbaInput_b+','+rgbaInput_a+')';
+			$("#rgbaInput_css").val(backColor);
+		}else{
+			alert("请输入...")
+		}
+		$("#rgbaMain-preview").css({background:backColor});
+	});
+	$("#empty").click(function(){
+		$("#rgbaInput_css").val("");
+		$("#rgbaInput_hex").val("");
+		$("#rgbaInput_gradient").val("");
+		$("#rgbaInput_r").val("");
+		$("#rgbaInput_g").val("");
+		$("#rgbaInput_b").val("");
+		$("#rgbaInput_a").val("");
+	});
+</script>	
+
         </div>
-        <div class="pure-u-1 pure-u-sm-1-2 pure-form">
-            <div id="rgbaMain-hexMode">
-                <p>Hex 格式</p>
-                <p><input type="text" id="rgbaInput_hex" placeholder='#999' /></p>          
-            </div>
-            <div id="rgbaMain-constMode">
-                <p>常量名</p>
-                <p><input type="text" placeholder='如：green' id="rgbaInput_const" /></p>                
-            </div>
-            <div class="">
-            	<p>渐变色</p>
-            </div>
-            <div id="rgbaMain-previewMode">
-                <p>预览</p>
-                <div id="rgbaMain-preview"><div></div></div>
-            </div>
-        </div>
-        <div class="pure-u-1-1">
-            <p>颜色对照表</p>
+    </div>   
+        
+     <div style="display: inline-block;margin-top: 100px;">
+            <p style="text-align: center;">Hex格式与RGB颜色</p>
             <div id="rgba-colors">
                 <div class="rgba-colors-item">
                     <div style="background-color:#f0f8ff;"></div>
@@ -1966,19 +2048,9 @@
 <td bgcolor=#dedede>#000000</td>
 <td bgcolor=#dedede>0,0,0</td>
 </tr>
-</tbody></table>
-                
-                
-            </div>
-        </div>
-    </div>
-    <!--<script src="https://MrFlySand.github.io/Package/jquery.min.js"></script>
-    <script type="text/javascript">
-    	if($("body").width() < 740){
-    		$("tr").css({width:"100%"});
-    	}else{
-    		$("tr").css({width:"50%"});
-    	}
-    </script>-->
+</tbody></table>                
+	</div>
+</div>   
 </body>
 </html>
+
