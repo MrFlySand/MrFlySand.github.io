@@ -16,14 +16,25 @@
         .pure-control-group{
         	margin:0 0 5px 0
         }
-        .pure-form-aligned .pure-control-group label{display:inline-block;width:18px;font-weight:700;font-size:20px}.pure-form-aligned .pure-control-group label.r{color:red}.pure-form-aligned .pure-control-group label.g{color:green}.pure-form-aligned .pure-control-group label.b{color:blue}.pure-form-aligned .pure-control-group label.a{color:rgba(0,0,0,.2)}#rgbaMain-preview{width:180px;height:180px;background:#fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMzMz0oyR4AAAARSURBVAgdY/jPwIAVYRf9DwB+vw/xbMOy9QAAAABJRU5ErkJggg==) 50%;border-radius:2px}#rgbaMain-preview div{width:100%;height:100%;border-radius:2px}#rgba-colors{-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:14px}#rgba-colors,#rgba-colors .rgba-colors-item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal}#rgba-colors .rgba-colors-item{background: #dedede; border-bottom:1px solid #000;-webkit-box-flex:0;-ms-flex:0 50%;flex:0 50%;-ms-flex-direction:row;flex-direction:row}#rgba-colors .rgba-colors-item:hover div{background:#ffc;color:#660}#rgba-colors .rgba-colors-item div{padding:.5em 0;height:25px;line-height:25px;}#rgba-colors .rgba-colors-item div:first-child{-webkit-box-flex:0;-ms-flex:0 36px;flex:0 36px}#rgba-colors .rgba-colors-item div:nth-child(2){-webkit-box-flex:1;-ms-flex:1 100px;flex:1 100px;text-transform:capitalize;font-size:13px;padding-left:10px}#rgba-colors .rgba-colors-item div:nth-child(3){-webkit-box-flex:0;-ms-flex:0 80px;flex:0 80px;text-transform:uppercase}#rgba-colors .rgba-colors-item div:nth-child(4){-webkit-box-flex:1;-ms-flex:1 80px;flex:1 80px}@media(max-width:480px){#rgba-colors .rgba-colors-item{-ms-flex:0 100%;flex:0 100%}}#rgba-colors{margin:30px 0}
+        .pure-form-aligned .pure-control-group label{display:inline-block;width:18px;font-weight:700;font-size:20px}.pure-form-aligned .pure-control-group label.r{color:red}.pure-form-aligned .pure-control-group label.g{color:green}.pure-form-aligned .pure-control-group label.b{color:blue}.pure-form-aligned .pure-control-group label.a{color:rgba(0,0,0,.2)}#rgbaMain-preview{width:180px;height:180px;background:#fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMzMz0oyR4AAAARSURBVAgdY/jPwIAVYRf9DwB+vw/xbMOy9QAAAABJRU5ErkJggg==) 50%;border-radius:2px}#rgbaMain-preview div{width:100%;height:100%;border-radius:2px}#rgba-colors{-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:14px}#rgba-colors,#rgba-colors .rgba-colors-item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal}#rgba-colors .rgba-colors-item{background: #dedede; border-bottom:1px solid #000;-webkit-box-flex:0;-ms-flex:0 50%;flex:0 50%;-ms-flex-direction:row;flex-direction:row}#rgba-colors .rgba-colors-item:hover div{background:#ffc;color:#660}#rgba-colors .rgba-colors-item div{padding:.5em 0;height:25px;line-height:25px;}#rgba-colors .rgba-colors-item div:first-child{-webkit-box-flex:0;-ms-flex:0 36px;flex:0 36px}#rgba-colors .rgba-colors-item div:nth-child(2){-webkit-box-flex:1;-ms-flex:1 100px;flex:1 100px;text-transform:capitalize;font-size:13px;padding-left:10px}#rgba-colors .rgba-colors-item div:nth-child(3){-webkit-box-flex:0;-ms-flex:0 80px;flex:0 80px;text-transform:uppercase}#rgba-colors .rgba-colors-item div:nth-child(4){-webkit-box-flex:1;-ms-flex:1 80px;flex:1 80px}
+        tr{
+        	width: 50%;
+        }
+        @media(max-width:740px){
+        	#rgba-colors .rgba-colors-item{
+        		-ms-flex:0 100%;flex:0 100%
+        	}
+        	tr{
+        		width: 100%;
+        	}
+        }
+        #rgba-colors{margin:30px 0}
         h1.title{
         	text-align: center;
         	display: block;
         } 
         tr{
-        	float: left;
-        	width: 50%; 
+        	float: left;        	 
         	background: #dedede;
         	border-bottom: 1px solid #000;
         }
@@ -88,6 +99,9 @@
                 <p>常量名</p>
                 <p><input type="text" placeholder='如：green' id="rgbaInput_const" /></p>                
             </div>
+            <div class="">
+            	<p>渐变色</p>
+            </div>
             <div id="rgbaMain-previewMode">
                 <p>预览</p>
                 <div id="rgbaMain-preview"><div></div></div>
@@ -137,12 +151,6 @@
                     <div>bisque</div>
                     <div>#ffe4c4</div>
                     <div>255,228,196</div>
-                </div>
-                <div class="rgba-colors-item">
-                    <div style="background-color:#000000;"></div>
-                    <div>black</div>
-                    <div>#000000</div>
-                    <div>0,0,0</div>
                 </div>
                 <div class="rgba-colors-item">
                     <div style="background-color:#ffebcd;"></div>
@@ -977,7 +985,7 @@
                     <div>yellowgreen</div>
                     <div>#9acd32</div>
                     <div>154,205,50</div>
-                </div>
+                </div>               
                 <table width='100%'><tbody>
 <tr>
 <td bgcolor=#ffb6c1>&nbsp;</td>
@@ -1963,6 +1971,14 @@
                 
             </div>
         </div>
-    </div>    
+    </div>
+    <!--<script src="https://MrFlySand.github.io/Package/jquery.min.js"></script>
+    <script type="text/javascript">
+    	if($("body").width() < 740){
+    		$("tr").css({width:"100%"});
+    	}else{
+    		$("tr").css({width:"50%"});
+    	}
+    </script>-->
 </body>
 </html>
