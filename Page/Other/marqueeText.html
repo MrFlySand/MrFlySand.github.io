@@ -66,10 +66,13 @@
 				<ul>
 					<li>速度:以s为单位-->输入格式5s、10s、30s、90s</li>
 					<li>文字大小:以px、em为单位-->输入格式10px、10em、100em</li>
-					<li>文字颜色:可以使用英文、16进制、rgb、rgba-->输入格式white、#FFFFFF、rbg(255,255,255)</li>
+					<li>文字颜色:可以使用英文、16进制、rgb、rgba-->输入格式white、#FFFFFF、rbg(255,255,255)、rbga(255,0,0,0.5)</li>
 					<li>
-						背景颜色:可以使用英文、16进制、rgb、rgba-->输入格式white、#FFFFFF、rbg(255,255,255)<br />
-						渐变背景:角度,颜色,颜色-->输入格式45deg,#fbc2eb,#a6c1ee
+						背景颜色:可以使用英文、16进制、rgb、rgba-->输入格式black、#000、rbg(0,0,0)、rbga(255,0,255,0.5)<br />
+						渐变背景:角度,颜色,颜色-->输入格式90deg,#000000,#ffffff<br />
+						角度:0~360<br />
+						rgba(0~255,0~255,0~255,0~1)<br />
+						0~1:透明度<br />
 					</li>
 					<li>PS.输入前输入法要切换成英文状态</li>
 					<a target="_blank" href="https://MrFlySand.github.io/Page/Other/marqueeText.html"><li>点击查看颜色表</li></a>
@@ -86,8 +89,12 @@
 				var backgroundColor = document.getElementById("backgroundColor").value==''?document.getElementById("backgroundColor").placeholder:document.getElementById("backgroundColor").value;				
 				var word = document.getElementById("content").value==''?document.getElementById("content").placeholder:document.getElementById("content").value;	  				
 				$("#word").text(word);				
-				$(".bigBox").css({display:"none"});
-				$("body").css({background:"linear-gradient("+backgroundColor+")"});
+				$(".bigBox").css({display:"none"});	
+				console.log(backgroundColor[0]+"|"+!isNaN(backgroundColor[1]))
+				if (!isNaN(backgroundColor[0])) {
+					backgroundColor = "linear-gradient("+backgroundColor+")"
+				}
+				$("body").css({background:backgroundColor});
 				$("#word").css({fontSize:fontSize,color:fontColor});
 				var wordWidth = $("#word").width();
 				var bodyWidth = $("body").width();
