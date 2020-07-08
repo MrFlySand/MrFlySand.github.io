@@ -75,7 +75,7 @@
 						0~1:透明度<br />
 					</li>
 					<li>PS.输入前输入法要切换成英文状态</li>
-					<a target="_blank" href="https://MrFlySand.github.io/Page/Other/marqueeText.html"><li>点击查看颜色表</li></a>
+					<a target="_blank" href="https://MrFlySand.github.io/Page/Other/colorTable.html"><li>点击查看颜色表</li></a>
 				</ul>
 			</div>
 		</div>	
@@ -92,7 +92,7 @@
 				$(".bigBox").css({display:"none"});	
 				console.log(backgroundColor[0]+"|"+!isNaN(backgroundColor[1]))
 				if (!isNaN(backgroundColor[0])) {
-					backgroundColor = "linear-gradient("+backgroundColor+")"
+					backgroundColor = "linear-gradient("+backgroundColor+")";
 				}
 				$("body").css({background:backgroundColor});
 				$("#word").css({fontSize:fontSize,color:fontColor});
