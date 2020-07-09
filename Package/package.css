@@ -6,14 +6,17 @@ body{
     color: #000;
     line-height: 1.5em;
 }
-b{font-weight:normal;}
-i{font-style:normal;}
+b{
+	font-weight:normal;
+}
 a,a:hover,a:active{
 	text-decoration: none;
 	color:#2ca6cb;	
 }
+i{font-style:normal;}
+
 input{
-	width: 100px;height: 30px;
+	width: auto;height: 30px;
 	border-radius: 3px;
 	border-style:ridge;
 	border-color:black;
@@ -26,11 +29,11 @@ input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:#666;
 }
 button{
-	width: 50px;
+	width: auto;
 	border-radius: 3px;
 	border-style:ridge;
 	border-color:black;
-	height: 2.2em;	
+	padding:3px 8px;margin: 10px;	
 }
 button:hover{
 	background: #ccc;
@@ -129,4 +132,30 @@ h3.codeTitle{
 	color: #0066bb;
 	margin-top: 0.8em;
 	display: block;
+}
+#main>section.file>a{
+	border-left: none;
+	border-bottom: 1.5px solid #ccc;
+}
+#main>section.file>a>svg{
+	margin-bottom: -10px;
+}
+#main>section.file>.searchFile{
+	margin:  0 5px;
+}
+#main>section.file>.searchFile>input{
+	width: 15em;
+}
+#main>section.file>a>p{
+	display: inline-block;
+}
+#main>section.file>a>p:hover{
+	color: #ea6753;
+}
+#main>section.file>a>p#fileTime{
+	float: right;
+}
+#main>section.file>.searchFile{
+	padding:0.4em 1em;
+	margin: 0 5px;
 }
