@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <title>C语言,%号的用法|Fly Sand&#39;s blog</title>    
+    <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">    
+    <link rel="stylesheet" href="../../../Package/package.css">
+    <link rel="stylesheet" href="../../../Package/style.css">    
+    <link rel="stylesheet" href="../../../Package/highlight.min.css"/>
+    <style type="text/css">
+    	#container .post .BalanceOperation input{
+				width: 50px;
+				position: relative;
+				top: -5px;
+				padding:  0 10px;
+			}
+			#container .post .BalanceOperation button{
+				position: relative;
+				top: -5px;
+			}
+    </style>
+</head>
+<body>    
+	<header class="header"></header>
+	<div id="container">
+<!----------------------------------------可以修改的内容play------------------------------------>
+		 <div id="main">
+				<section class="post" itemscope itemprop="blogPost">
+				  <h1 class="headTitle">C语言,%号的用法</h1>
+					<div class="label">更新时间:200617</div>
+					<div class="label"><a href="../index.html">C语言</a>	</div>  
+					<div class="label"><a href="#BalanceOperation">模除</a></div>
+					<div class="label"><a href="#print">输出</a></div>
+					<div class="BalanceOperation">
+					<p style="width: 100%; display: block;">模除的运算</p>
+					<input id="BalanceOperationOne" placeholder="第1个数"/>％
+					<input id="BalanceOperationTwo" placeholder="第2个数"/>=
+					<input id="BalanceOperationThree" placeholder="结果"/>
+					<button onclick="BalanceOperationFun()">确定</button>
+				</div>
+				<h2 class="codeTitle" id="BalanceOperation">%号模除</h2>				
+				<h3 class="codeTitle">当是正整数时:</h3>
+				<pre><p></p><code class="language-cpp" id="code1">源码:
+#include "stdio.h"
+int main(){
+ printf("%d\n",7%3);//7÷3=2...1
+ printf("%d\n",21%3);//21÷3=7...0
+ printf("%d\n",21%10);//21÷10=2...1
+ printf("%d\n\n",21%11);//21÷11=1...10
+}				
+				</code></pre>
+				<pre><p></p><code class="language-cpp" id="code2">运行结果:
+1
+0
+1
+10
+				</code></pre>
+				<p class="codeIntroduction">模除的运算的结果:当被除数不够整除时余下的数.</p>
+				
+				<h3 class="codeTitle">当是负整数时:</h3>
+				<pre><p></p><code class="language-cpp" id="code3">源码:
+#include "stdio.h"
+int main(){
+ printf("%d\n",-7%3);
+ printf("%d\n",-21%3);
+ printf("%d\n",-21%10);
+ printf("%d\n\n",-21%11);
+ 
+ printf("%d\n",7%-3);
+ printf("%d\n",21%-3);
+ printf("%d\n",21%-10);
+ printf("%d\n\n",21%-11);
+ 
+ printf("%d\n",-7%-3);
+ printf("%d\n",-21%-3);
+ printf("%d\n",-21%-10);
+ printf("%d\n",-21%-11);
+}
+				</code></pre>
+				<pre><p></p><code class="language-cpp" id="code4">运行结果:
+-1
+0
+-1
+-10
+
+1
+0
+1
+10
+
+-1
+0
+-1
+-10
+				</code></pre>
+				<p class="codeIntroduction">当%号前面是正数时,结果为正数</p>
+				<p class="codeIntroduction">当%号前面是负数时,结果为负数</p>
+				<h2 class="codeTitle" id="print">%号输出</h2>
+				<pre><p></p><code class="language-cpp" id="code5">源码:
+#include "stdio.h"
+int main(){  
+    int x=2;   
+    printf("%d\n",x);
+    printf("%%d\n",x); 
+    printf("$%d\n",x); 
+    printf("*%d\n",x); 
+    printf("%%%d\n",x); 
+    printf("%%%%d\n",x);
+    printf("%%%%%d\n",x); 
+}  
+				</code></pre>
+					<pre><p></p><code class="language-cpp" id="code6">运行结果:
+2
+%d
+$2
+*2
+%2
+%%d
+%%2				
+					</code></pre>
+					<p>任意符号+%,输出显示的都是任意符号.</p>
+					<p>%d就是取后面的值</p>
+					<div class="sectionBottom"></div>
+				</section>				
+			</div>
+<!----------------------------------------可以修改的内容end------------------------------------>
+		<div id="asidepart"></div>
+	</div>
+	<footer class="footer"></footer>
+		<script src="../../../Package/jquery.min.js"></script>
+		<script src="../../../Package/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script src="../../../Package/package.js"></script>
+		<script type="text/javascript">
+/*-----------------------------------------Essential play-----------------------------------------------------*/			
+			$(document).ready(function(){
+				$('.header').load('../../../Package/top.html');
+				$('#asidepart').load('../../../Package/right.html');
+				$('.sectionBottom').load('../../../Package/sectionBottom.html');
+				$('.footer').load('../../../Package/footer.html');
+			});			
+		</script>
+		<script type="text/javascript">			
+			function searchFunction(){
+			 	var searchText = document.getElementById("searchText").value;	
+				window.open('https://cn.bing.com/search?q='+searchText);
+			}						
+/*-----------------------------------------Essential End-----------------------------------------------------*/
+			function BalanceOperationFun () {
+				var one = parseInt(document.getElementById("BalanceOperationOne").value);
+				var two = parseInt(document.getElementById("BalanceOperationTwo").value);
+				document.getElementById("BalanceOperationThree").value = one%two; 
+			}
+			code(document.getElementById("code1"));
+			code(document.getElementById("code2"));
+			code(document.getElementById("code3"));
+			code(document.getElementById("code4"));
+			code(document.getElementById("code5"));
+			code(document.getElementById("code6"));
+		</script>
+  </body>
+ </html>
