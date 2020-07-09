@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <title>C语言,||和&&的运算|Fly Sand&#39;s blog</title>    
+    <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">    
+    <link rel="stylesheet" href="../../../Package/package.css">
+    <link rel="stylesheet" href="../../../Package/style.css">    
+    <link rel="stylesheet" href="../../../Package/highlight.min.css"/>    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>    
+	<header class="header"></header>
+	<div id="container">
+<!----------------------------------------可以修改的内容play------------------------------------>
+		 <div id="main">
+				<section class="post" itemscope itemprop="blogPost">
+				  <h1 class="headTitle">C语言,||和&&的运算</h1>
+					<div class="label">更新时间:200623</div>
+					<div class="label"><a href="../index.html">C语言</a>	</div>  
+					<div class="label"><a href="#">与运算</a></div>
+					<div class="label"><a href="#">或运算</a></div>
+					<div class="label"><a href="#BlockingOperation">拦路运算</a></div>
+						<pre><p></p><code id="code1">源码:
+#include"stdio.h"
+main(){
+    int a = 2 && 3;//1
+    int b = 3 && 2;//1
+    int c = 0 && 2;//0
+    int d = 2 && 0;//0
+    int e = 0 && 0;//0
+    int f = 2 && 2;//1
+    int g = -2 && 2;//1
+    int h = 2 && -2;//1
+    int j = -3 && -3;//1
+    int aa = 2 || 3;//1
+    int bb = 3 || 2;//1
+    int cc = 0 || 2;//1
+    int dd = 2 || 0;//1
+    int ee = 0 || 0;//0
+    int ff = 2 || 2;//1
+    int gg = -2 || 2;//1
+    int hh = 2 || -2;//1
+    int jj = -3 || -3;//1
+    printf("%d,%d,%d,%d,%d,%d,%d,%d,%d\n",a,b,c,d,e,f,g,h,j);
+    printf("%d,%d,%d,%d,%d,%d,%d,%d,%d\n",aa,bb,cc,dd,ee,ff,gg,hh,jj);
+}			
+								</code></pre>
+								<pre><p></p><code class="language-cpp" id="code2">运行结果:
+1,1,0,0,0,1,1,1,1
+1,1,1,1,0,1,1,1,1			
+								</code></pre>
+								<ul>
+									<li>逻辑与(&&),只有“||”两边都为0,则值为0,否则为1</li>
+									<li>逻辑或(||),只要“&&”两边有一个为0,则值为0,否则为1</li>
+								</ul>
+								<h2 class="codeTitle" id="BlockingOperation">拦路运算</h2>								
+								<pre><p></p><code class="language-cpp" id="code3">源码:
+#include "stdio.h"
+int main(){
+    int a,b = 2;
+    int c = (a=3>5) && (b=7>5);
+    printf("%d %d\n",b,c);
+    
+    int x,y = 2;
+    int z = (a=8>5) && (y=7>5);
+    printf("%d %d\n",y,z);
+    
+    int aa,bb = 2;
+    int cc = (aa=3>5) || (bb=7>5);
+    printf("%d %d\n",bb,cc);
+    
+    int xx,yy = 2;
+    int zz = (aa=8>5) || (yy=7>5);
+    printf("%d %d\n",yy,zz);
+}			
+								</code></pre>
+								<pre><p></p><code class="language-cpp" id="code4">运行结果:
+2 0
+1 1
+1 1
+2 1			
+								</code></pre>
+								<ul>
+									<li>逻辑与(&&),前面为0,后面不算</li>
+									<li>逻辑或(||),前面!0,后面不算</li>
+								</ul>
+								<div class="sectionBottom"></div>
+				</section>				
+			</div>
+<!----------------------------------------可以修改的内容end------------------------------------>
+		<div id="asidepart"></div>
+	</div>
+	<footer class="footer"></footer>
+		<script src="../../../Package/jquery.min.js"></script>
+		<script src="../../../Package/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script src="../../../Package/package.js"></script>
+		<script type="text/javascript">
+/*-----------------------------------------Essential play-----------------------------------------------------*/			
+			$(document).ready(function(){
+				$('.header').load('../../../Package/top.html');
+				$('#asidepart').load('../../../Package/right.html');
+				$('.sectionBottom').load('../../../Package/sectionBottom.html');
+				$('.footer').load('../../../Package/footer.html');
+			});			
+		</script>
+		<script type="text/javascript">			
+			function searchFunction(){
+			 	var searchText = document.getElementById("searchText").value;	
+				window.open('https://cn.bing.com/search?q='+searchText);
+			}						
+/*-----------------------------------------Essential End-----------------------------------------------------*/
+			function BalanceOperationFun () {
+				var one = parseInt(document.getElementById("BalanceOperationOne").value);
+				var two = parseInt(document.getElementById("BalanceOperationTwo").value);
+				document.getElementById("BalanceOperationThree").value = one%two; 
+			}
+			code(document.getElementById("code1"));
+			code(document.getElementById("code2"));
+			code(document.getElementById("code3"));
+			code(document.getElementById("code4"));
+		</script>
+  </body>
+ </html>
