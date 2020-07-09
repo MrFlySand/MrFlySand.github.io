@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     <title>Other|Fly Sand&#39;s blog</title>    
     <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">    
-    <link rel="stylesheet" href="../../Package/package.css">
-    <link rel="stylesheet" href="../../Package/style.css">    
-    <link rel="stylesheet" href="../../Package/highlight.min.css"/>    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../Package/package.css">
+    <link rel="stylesheet" href="../../../Package/style.css">    
+    <link rel="stylesheet" href="../../../Package/highlight.min.css"/>    
 </head>
 <body>    
 	<header class="header"></header>
 	<div id="container">
 <!----------------------------------------可以修改的内容play------------------------------------>
 		 <div id="main">
-			<section class="post" itemscope itemprop="blogPost">
+			<section class="post file" itemscope itemprop="blogPost">
 			  <h1 class="headTitle">Other</h1>				
+			  
 				<a target="_blank" href="Love">
 					<svg t="1592846280999" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2636" width="200" height="200"><path d="M176 160h304a472.432 472.432 0 0 1 64 64l128 208a64 64 0 0 1-64 64H176a64 64 0 0 1-64-64V224a64 64 0 0 1 64-64z" fill="#A1CBFE" p-id="2637"></path><path d="M112 288m64 0l688 0q64 0 64 64l0 432q0 64-64 64l-688 0q-64 0-64-64l0-432q0-64 64-64Z" fill="#4799FE" p-id="2638"></path><path d="M304 688m32 0l368 0q32 0 32 32l0 0q0 32-32 32l-368 0q-32 0-32-32l0 0q0-32 32-32Z" fill="#FFFFFF" p-id="2639"></path><path d="M800 336m32 0l16 0q32 0 32 32l0 16q0 32-32 32l-16 0q-32 0-32-32l0-16q0-32 32-32Z" fill="#A1CBFE" p-id="2640"></path></svg>
 					<p style="display: inline-block;">Love</p>
@@ -33,69 +33,31 @@
 					<svg t="1592846495434" class="icon" viewBox="0 0 1170 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5107" width="200" height="200"><path d="M73.142857 73.142857v731.428572h1024V73.142857H73.142857z m1097.142857-73.142857v877.714286H0V0h1170.285714z" fill="#00C1DE" p-id="5108" data-spm-anchor-id="a313x.7781069.0.i1" class="selected"></path><path d="M146.285714 950.857143h877.714286v73.142857H146.285714v-73.142857z m321.828572-702.171429L270.628571 438.857143l190.171429 190.171428-51.2 58.514286L168.228571 438.857143l248.685715-248.685714 51.2 58.514285z m285.257143 0l51.2-58.514285L1053.257143 438.857143 804.571429 687.542857l-51.2-51.2L943.542857 438.857143l-190.171428-190.171429zM621.714286 138.971429l73.142857 14.628571-131.657143 570.514286-73.142857-14.628572 131.657143-570.514285z" fill="#00C1DE" p-id="5109" data-spm-anchor-id="a313x.7781069.0.i0" class=""></path></svg>
 					<p style="display: inline-block;">走马灯文字</p>		
 				</a>
+				<div class="sectionBottom"></div>
 			</section>				
 		</div>
 <!----------------------------------------可以修改的内容end------------------------------------>
 		<div id="asidepart"></div>
 	</div>
 	<footer class="footer"></footer>
-		<script src="../../Package/jquery.min.js"></script>
-		<script src="../../Package/highlight.min.js"></script>
+		<script src="../../../Package/jquery.min.js"></script>
+		<script src="../../../Package/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
-		<script src="../../Package/package.js"></script>
+		<script src="../../../Package/package.js"></script>
+		<script src="../../../Package/qrcode.min.js"></script>
 		<script type="text/javascript">
 /*-----------------------------------------Essential play-----------------------------------------------------*/			
 			$(document).ready(function(){
-				$('.header').load('../../Package/top.html');
-				$('#asidepart').load('../../Package/right.html');
-				$('.footer').load('../../Package/footer.html');
-			});			
-		</script>
-		<script type="text/javascript">			
+				$('.header').load('../../../Package/top.html');
+				$('#asidepart').load('../../../Package/right.html');
+				$('.sectionBottom').load('../../../Package/sectionBottom.html');
+				$('.footer').load('../../../Package/footer.html');
+			});	
 			function searchFunction(){
 			 	var searchText = document.getElementById("searchText").value;	
 				window.open('https://cn.bing.com/search?q='+searchText);
 			}						
 /*-----------------------------------------Essential End-----------------------------------------------------*/
-			function BalanceOperationFun () {
-				var one = parseInt(document.getElementById("BalanceOperationOne").value);
-				var two = parseInt(document.getElementById("BalanceOperationTwo").value);
-				document.getElementById("BalanceOperationThree").value = one%two; 
-			}
-			code(document.getElementById("code1"));
-			code(document.getElementById("code2"));
-			code(document.getElementById("code3"));
-			code(document.getElementById("code4"));
-			function File(){
-				function Element(date,name,link){
-					this.date = date;
-					this.name = name;					
-					this.link = link;
-				};		
-				//封装属性,创建数组
-				this.array = [];
-				File.prototype.plus= function(date,name,link){
-					var element = new Element(date,name,link);
-					if (this.array.length == 0) {
-						this.array.push(element);							
-					}else{
-						for(var i = 0; array[i].date < date; i++){
-							
-						}
-				}
-				File.prototype.toString = function(){
-					var resultString = '';
-					for (var i=0;i<this.array.length;i++) {
-						resultString += this.array[i].name + '-' + this.array[i].date + "<br>";
-					}
-					return resultString;
-				};
-			}
-			var file = new File();
-			file.plus(200626,'continue和break的区别','http1');
-			file.plus(200623,'%号的用法','http2');
-			file.plus(200627,'与,或运算','http3');
-			console.log(file.toString())
-		</script>
+		</script>	
   </body>
  </html>
