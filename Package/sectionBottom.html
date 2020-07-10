@@ -23,7 +23,6 @@
 <script type="text/javascript">
 	$(function(){
 		var w = document.documentElement.offsetWidth || document.body.offsetWidth;
-		console.log(w)
 		if (w < 685) {
 			$(".defrayBox").css({width:"300px",margin:"0 auto"})	
 			$(".defrayBox").children("img").css({width:"300px",display:"block",margin:"10px 0"});
@@ -81,6 +80,6 @@
 	   input.value = document.location.href; // 修改文本框的内容
 	   input.select(); // 选中文本
 	   document.execCommand("copy"); // 执行浏览器复制命令
-	   alert("复制成功(手机浏览器设置成桌面版显示可以转发二维码或点击下载二维码)");
+	   alert("复制成功\n(点击下载二维码或使用手机浏览器设置成桌面版显示可以转发二维码)");
 	} 		
 </script>
