@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+		<title>走马灯文字</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{
+				width: 100vw;
+				height: 100vh;
+				overflow: hidden;
+				background: linear-gradient(45deg,#fbc2eb,#a6c1ee);
+			}
+			.bigBox{
+				padding: 10px;
+			}
+			input{
+				border: 1.5px solid #000000;
+				padding: 3px 8px;
+				color: #111;
+				background: #ddd;	
+				margin: 5px;			
+			}
+			button{
+				border:1.5px solid #000000;
+				padding: 3px 8px;
+				margin: 5px;
+			}
+			button:active{
+				font-weight: 800;
+			}
+			#word{
+				width: auto;
+				display: inline-block;			
+				position: relative;
+				top: 50%;	
+				transform: translateY(-50%);
+				white-space: nowrap;	
+				animation: wordAnimation linear infinite;														
+			}
+			.use{
+				display: none;
+			}
+			ul{
+				margin-left: 2em;
+				font-size: 0.5em;
+			}		
+		</style>
+	</head>
+	<body>
+		<div class="bigBox">
+			<div class="propertyBox">
+				内容:<input type="text" id="content" placeholder="小姐姐加QQ吗？"/><br />
+				速度:<input type="text" id="speed" placeholder="8s" /><br />
+				文字大小:<input type="text" id="fontSize" placeholder="5em" /><br />
+				文字颜色:<input type="text" id="fontColor" placeholder="#000" /><br />
+				背景颜色:<input type="text" id="backgroundColor" placeholder="45deg,#fbc2eb,#a6c1ee" /><br />				
+			</div>
+			<div class="buttonBox">
+				<a target="_blank" href="https://mrflysand.github.io/Page/Other"><button id="more">更多</button></a>
+				<button id="submit">提交</button>
+				<button id="help">帮助</button>
+			</div>	
+			<div class="use">	
+				<ul>
+					<li>速度:以s为单位-->输入格式5s、10s、30s、90s</li>
+					<li>文字大小:以px、em为单位-->输入格式10px、10em、100em</li>
+					<li>文字颜色:可以使用英文、16进制、rgb、rgba-->输入格式white、#FFFFFF、rbg(255,255,255)、rbga(255,0,0,0.5)</li>
+					<li>
+						背景颜色:可以使用英文、16进制、rgb、rgba-->输入格式black、#000、rbg(0,0,0)、rbga(255,0,255,0.5)<br />
+						渐变背景:角度,颜色,颜色-->输入格式90deg,#000000,#ffffff<br />
+						角度:0~360<br />
+						rgba(0~255,0~255,0~255,0~1)<br />
+						0~1:透明度<br />
+					</li>
+					<li>PS.输入前输入法要切换成英文状态</li>
+					<a target="_blank" href="https://MrFlySand.github.io/Page/Other/colorTable.html"><li>点击查看颜色表</li></a>
+				</ul>
+			</div>
+		</div>	
+		<p id="word"></p>
+		<script src="https://MrFlySand.github.io/Package/jquery.min.js"></script>
+		<script type="text/javascript">			
+			$("#submit").click(function(){ 		
+				var speed = document.getElementById("speed").value==''?document.getElementById("speed").placeholder:document.getElementById("speed").value;
+				var fontSize = document.getElementById("fontSize").value==''?document.getElementById("fontSize").placeholder:document.getElementById("fontSize").value;
+				var fontColor = document.getElementById("fontColor").value==''?document.getElementById("fontColor").placeholder:document.getElementById("fontColor").value;
+				var backgroundColor = document.getElementById("backgroundColor").value==''?document.getElementById("backgroundColor").placeholder:document.getElementById("backgroundColor").value;				
+				var word = document.getElementById("content").value==''?document.getElementById("content").placeholder:document.getElementById("content").value;	  				
+				$("#word").text(word);				
+				$(".bigBox").css({display:"none"});	
+				console.log(backgroundColor[0]+"|"+!isNaN(backgroundColor[1]))
+				if (!isNaN(backgroundColor[0])) {
+					backgroundColor = "linear-gradient("+backgroundColor+")";
+				}
+				$("body").css({background:backgroundColor});
+				$("#word").css({fontSize:fontSize,color:fontColor});
+				var wordWidth = $("#word").width();
+				var bodyWidth = $("body").width();
+				document.getElementById("word").style.animationDuration = speed;
+				var style = document.styleSheets[0];
+				console.log(wordWidth+"|"+bodyWidth)
+				style.insertRule("@keyframes wordAnimation{from{margin-left: 110%;}to{margin-left:"+-(wordWidth+bodyWidth+10)+"px");							
+			});
+			$("#help").click(function(){
+				$(".use").css({display:"block"})
+			})
+		</script>
+	</body>
+</html>
+
+
+										
