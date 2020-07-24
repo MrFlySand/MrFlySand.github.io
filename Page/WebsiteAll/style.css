@@ -52,7 +52,7 @@ a{
 	font-weight: 500;
 	margin: 0 0.6em;	
 }
-@media only screen and (min-width:768px){
+@media only screen and (max-width:768px){
 	.headNav a{
 		font-size: 0.8em;
 	}
@@ -105,4 +105,3 @@ a{
 }
 
 /*https://www.zhangxinxu.com/wordpress/2014/04/animateion-line-drawing-svg-path-动画-路径/*/
-   
