@@ -54,7 +54,7 @@ a{
 }
 @media only screen and (max-width:768px){	
 	.headNav{
-		padding: 0em 0 ;
+		padding: 0.2em 0 ;
 	}	
 	.headNav a{
 		font-size: 0.8em;
