@@ -9,7 +9,8 @@ body{
     line-height: 1.5em;    
 }
 a{
-	color:#817c7c;	
+	color:#817c7c;
+	text-decoration: ;	
 }
 a:hover,a:focus{
 	outline:0;
@@ -143,7 +144,7 @@ h1.codeTitle{
 }
 h2.codeTitle{
 	font-size: 1.4em;
-	color: #0055dd;
+	color: #2ca6ff;
 	margin-top: 0.8em;
 	display: block;
 }

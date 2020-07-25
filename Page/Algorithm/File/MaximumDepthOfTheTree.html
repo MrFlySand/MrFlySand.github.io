@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <title>二叉树的最大深度|Fly Sand&#39;s blog</title>    
+    <link rel="icon" href="https://gitee.com/MrFlySand/Other/raw/master/Material/Image/GithubPage/MrFlySandLOGO.jpg">    
+    <link rel="stylesheet" href="../../../Package/package.css">
+    <link rel="stylesheet" href="../../../Package/style.css">    
+    <link rel="stylesheet" href="../../../Package/highlight.min.css"/>
+    <style type="text/css">
+    	#container .post .BalanceOperation input{
+				width: 50px;
+				position: relative;
+				top: -5px;
+				padding:  0 10px;
+			}
+			#container .post .BalanceOperation button{
+				position: relative;
+				top: -5px;
+			}
+			.playBar{
+				background: #000;color: #fff;
+				width: 100%;height: 2em;						
+			}
+			.playBar>svg{
+				position: relative;
+				top: 0.3em;
+			}
+			.playBar>#imageNumber{
+				display: inline-block;
+			}
+    </style>
+</head>
+<body>    
+	<header class="header"></header>
+	<div id="container">
+<!----------------------------------------可以修改的内容play------------------------------------>
+		 <div id="main">
+				<section class="post" itemscope itemprop="blogPost">
+				  <h1 class="headTitle">二叉树的最大深度</h1>
+					<div class="label">更新时间:200726</div>
+					<div class="label"><a href="index.html">数据结构</a></div>  
+					<div class="label"><a href="index.html">算法</a></div>
+					<div class="label"><a href="">递归</a></div>
+					<div class="label"><a href="">树结构</a></div>
+				<h2 class="codeTitle">题目：</h2>
+				<p>
+					Given a binary tree, find its maximum depth.<br />
+					The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.<br />
+					<strong>Note</strong>: A leaf is a node with no children.<br />
+					<strong>Example:</strong><p>Given binary tree <code>[25,20,30,28,35]</code></p>					
+					<pre style="background: #ddd;color: #000;border: 1.5px solid #000; border-radius:3px;">
+    25
+   /  \
+  20  30
+     /  \
+    28  35 </pre>
+				</p>
+				<img src="https://pic.leetcode-cn.com/Figures/104/104_slide_1.png"/>
+				<div class="playBar">
+					<svg t="1595707714603" id="imagePrevious" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2131" width="200" height="200"><path d="M950.564571 836.022857c0 1.097143 0.292571 2.194286 0.292572 3.291429A73.837714 73.837714 0 0 1 878.372571 914.285714a68.973714 68.973714 0 0 1-36.278857-10.605714v0.365714l-3.84-2.56h-0.548571L659.017143 771.657143v44.617143c0 1.097143 0.329143 2.194286 0.329143 3.291428a73.691429 73.691429 0 0 1-72.886857 74.605715 69.083429 69.083429 0 0 1-36.571429-10.24v0.365714l-3.876571-2.56a0.512 0.512 0 0 1-0.548572-0.365714L112.859429 569.782857v-0.731428a74.934857 74.934857 0 0 1 0-132.754286v-1.097143l431.067428-310.857143a71.460571 71.460571 0 0 1 42.386286-14.262857 73.984 73.984 0 0 1 72.886857 74.971429c0 1.097143-0.256 1.828571-0.329143 2.925714v83.748571l177.188572-128.731428a70.802286 70.802286 0 0 1 42.166857-14.262857 73.837714 73.837714 0 0 1 72.484571 74.971428c0 1.097143-0.256 2.194286-0.292571 3.291429v629.028571z" p-id="2132" data-spm-anchor-id="a313x.7781069.0.i6" class="selected" fill="#1296db"></path></svg>
+					<p id="imageNumber">1</p>/10
+					<svg t="1595707796849" id="imageNext" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3975" width="200" height="200"><path d="M947.568 472.128L467.584 127.744c-31.824-17.072-68.272-21.12-68.304 44.624v149.904L128.176 127.744c-31.808-17.072-69.168-17.6-68.288 46.384v676.464c0.912 57.776 39.12 66.192 68.288 47.312l271.12-194.528v148.112c0.032 56.016 39.136 65.296 68.304 46.416l479.984-344.416a58.24 58.24 0 0 0-0.016-81.36z" fill="#1296db" p-id="3976"></path></svg>
+				</div>
+				<pre><p></p><code class="language-cpp" id="code1">//函数封装:
+BinarySearchTree.prototype.mxaDepthNode = function(node){			
+  if(node == null){
+	return 0;	
+  }
+  var leftMaxDepth = this.mxaDepthNode(node.left);
+  var rightMaxDepth = this.mxaDepthNode(node.right);
+  return Math.max(leftMaxDepth,rightMaxDepth)+1;
+}
+				</code></pre>
+					
+					<a href="">完整代码</a>					
+					<div class="sectionBottom"></div>
+				</section>				
+			</div>
+<!----------------------------------------可以修改的内容end------------------------------------>
+		<div id="asidepart"></div>
+	</div>
+	<footer class="footer"></footer>
+		<script src="../../../Package/jquery.min.js"></script>
+		<script src="../../../Package/qrcode.min.js"></script>
+		<script src="../../../Package/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script src="../../../Package/package.js"></script>
+		<script type="text/javascript">
+/*-----------------------------------------Essential play-----------------------------------------------------*/			
+			$(document).ready(function(){
+				$('.header').load('../../../Package/top.html');
+				$('#asidepart').load('../../../Package/right.html');
+				$('.sectionBottom').load('../../../Package/sectionBottom.html');
+				$('.footer').load('../../../Package/footer.html');
+			});			
+		</script>
+		<script type="text/javascript">			
+			function searchFunction(){
+			 	var searchText = document.getElementById("searchText").value;	
+				window.open('https://cn.bing.com/search?q='+searchText);
+			}						
+/*-----------------------------------------Essential End-----------------------------------------------------*/
+			function BalanceOperationFun () {
+				var one = parseInt(document.getElementById("BalanceOperationOne").value);
+				var two = parseInt(document.getElementById("BalanceOperationTwo").value);
+				document.getElementById("BalanceOperationThree").value = one%two; 
+			}
+			code(document.getElementById("code1"));
+			code(document.getElementById("code2"));
+			code(document.getElementById("code3"));
+			code(document.getElementById("code4"));
+			code(document.getElementById("code5"));
+			code(document.getElementById("code6"));
+		</script>
+  </body>
+ </html>
