@@ -302,7 +302,7 @@ footer #footer .timers{
 }
 /*内容play*/
 h1.headTitle{
-	color: #2ca6cb;
+	/*color: #2ca6cb;*/
 	margin-left: 10px;
 }
 #main>.post>.label>a{

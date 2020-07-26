@@ -134,23 +134,24 @@ div.label{
 
 h1.headTitle{
 	font-size: 1.6em;
-	color: #2ca6cb;
+	/*color: #2ca6cb;*/
+	color: #0077ff;
 }
 h1.codeTitle{
 	font-size: 1.6em;
-	color: #0044ff;
+	color: #0088ff;
 	margin-top: 0;
 	display: block;
 }
 h2.codeTitle{
 	font-size: 1.4em;
-	color: #2ca6ff;
+	color: #0099ff;
 	margin-top: 0.8em;
 	display: block;
 }
 h3.codeTitle{
 	font-size: 1.2em;
-	color: #0066bb;
+	color: #44aaff;
 	margin-top: 0.8em;
 	display: block;
 }
