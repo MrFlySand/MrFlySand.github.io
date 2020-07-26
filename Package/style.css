@@ -62,7 +62,7 @@ body >header{
 }
 @media only screen and (min-width:1024px){body >header{padding:1.8em 0 1.5em}}body >header >div{width:95%;margin:0 auto;position:relative;overflow:hidden;}@media only screen and (min-width:1024px){body >header >div{width:93%}}
 #imglogo{	
-	width:4em;height:4em;
+	width:4em;
 	display: inline;
 	vertical-align:top;
 	text-decoration: none;
@@ -78,7 +78,7 @@ body >header{
 #textlogo{	
 	display: inline-block;
 	text-decoration: none;
-	width:auto;height: 4em;
+	width:auto;
 	margin-right: 60px;			
 }
 #textlogo a{
@@ -210,6 +210,7 @@ nav.animated.shownav{
 	text-decoration: none;
 }
 #main>section.post>a{
+	text-decoration: none;
 	display:block;	
 	-webkit-transition:border-left 0.45s;
 	-moz-transition:border-left 0.45s;
