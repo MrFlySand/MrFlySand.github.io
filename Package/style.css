@@ -209,8 +209,7 @@ nav.animated.shownav{
 #main>section.post>a.mainHref{
 	text-decoration: none;
 }
-#main>section.post>a{
-	text-decoration: none;
+#main>section.post>a{	
 	display:block;	
 	-webkit-transition:border-left 0.45s;
 	-moz-transition:border-left 0.45s;
@@ -302,7 +301,6 @@ footer #footer .timers{
 }
 /*内容play*/
 h1.headTitle{
-	/*color: #2ca6cb;*/
 	margin-left: 10px;
 }
 #main>.post>.label>a{
