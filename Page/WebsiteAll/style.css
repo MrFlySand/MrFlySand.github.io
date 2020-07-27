@@ -1,40 +1,35 @@
 /*WebsiteAll网站大全样式*/
 body{
 	padding: 0;margin: 0;	
+	width: 100%;height: 100%;	
+	
+}
+@media only screen and (max-width: 605px) {
+	body{
+		background: url(https://tse2-mm.cn.bing.net/th/id/OIP.w83M2WUgJRQRHKsVdD-oNgHaLH?pid=Api&rs=1) no-repeat;
+		background-size: cover;
+	}
+}
+@media only screen and (min-width: 605px) and (max-width: 1000px) {
+	body{
+		background: url(http://img18.3lian.com/d/file/201711/18/687d3165f2db95299452dd57a305bdd2.png) no-repeat;
+		background-size: cover;
+	}
+}
+@media only screen and (min-width: 1000px) {
+	body{
+		background: url(http://c.hiphotos.baidu.com/zhidao/pic/item/a9d3fd1f4134970a12a4a85093cad1c8a6865dfd.jpg) no-repeat;
+		background-size: cover;
+	}
+}
+.blackBackground{
 	width: 100%;height: 100%;
-	animation: animate 15s linear infinite;
+	background:rgba(0,0,0,0.5);
+	z-index: -1;
+	position: fixed;
 }
 a{
 	text-decoration: none;
-}
-@keyframes animate{
-	0%{
-		background: rgba(255,0,0,0.3);
-	}
-	12%{
-		background: rgba(255,165,0,0.3);
-	}
-	24%{
-		background: rgba(255,255,0,0.3);
-	}
-	36%{
-		background: rgba(0,255,0,0.3);
-	}
-	48%{
-		background: rgba(0,255,165,0.3);
-	}
-	60%{
-		background: rgba(0,255,255,0.3);
-	}
-	72%{
-		background: rgba(255,0,165,0.3);
-	}	
-	84%{
-		background: rgba(255,0,255,0.3);
-	}
-	100%{
-		background: rgba(255,0,0,0.3);		
-	}
 }
 .headNav{
 	width: 100%;
@@ -70,8 +65,8 @@ a{
 	width: 100%;display: fixed;
 }
 .WebsiteAll>a>p{
-	color: #000;
-	font-weight: 800;
+	color: #fff;
+	font-weight: 400;
 }
 .WebsiteAll a{
 	width: 60px;
@@ -84,6 +79,9 @@ a{
 	background-position:0px 0;
 	/*overflow: hidden;*/
 	vertical-align:text-bottom;
+}
+.WebsiteAll p.titel{
+	color: #ffcc00;
 }
 .WebsiteAll a p{
 	font-size:12px ;
