@@ -16,32 +16,24 @@ function onePrint(word){
 //	$(id).prev().css("height",height);
 //}
 //计时器
+function customize(int year, int month, int day){
+   if(month<1 || month>12 || day<1 || day>31) return -1;
+   int arrDate[] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+   int sum=arrDate[month-1]+day;
+   if(month>=3 && year%4==0 && year%100!=0 || year%400==0){
+      return sum+1;
+   }else{
+      return sum;
+   }
+}
 function timer(y,mo,d,h,mi,id){
-setInterval(function(){
-	function customize(month){
-		switch (month){
-		 	case 1: return 0;
-		 	case 2: return 31;
-		 	case 3: return 59;
-		 	case 4: return 90;
-		 	case 5: return 120;
-		 	case 6: return 151;
-		 	case 7: return 181;
-			case 8: return 212;
-			case 9: return 243;
-			case 10: return 273;
-			case 11: return 304;
-			case 12: return 334;
-		}
-	}
-//  var now = new Date();
-    var myDate = new Date;
-	var year = myDate.getFullYear();
-	var mon = myDate.getMonth()+1;
-	var dat = myDate.getDate();
-	var hou = myDate.getHours(); 
-	var min = myDate.getMinutes();
-	var seco = myDate.getSeconds();
+ var nowDate = new Date;
+	var year = nowDate.getFullYear();
+	var mon = nowDate.getMonth()+1;
+	var dat = nowDate.getDate();
+	var hou = nowDate.getHours(); 
+	var min = nowDate.getMinutes();
+	var seco = nowDate.getSeconds();
 	year = year - y;
 	if (mon >= mo){
 		dat = customize(mon) - customize(mo) + dat - d;
