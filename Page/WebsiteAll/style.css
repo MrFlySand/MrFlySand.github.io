@@ -94,7 +94,7 @@ a{
 	top: 60px;
 	text-align: center;
     overflow:hidden;
-    white-space: nowrap;
+    white-space: nowrap; 
     text-overflow: ellipsis;
     -o-text-overflow:ellipsis;
 }
