@@ -125,10 +125,11 @@ setInterval(function(){
 		min = min - mi;
 
 	} else{
-
-		hou--;
+dat--;
+		hou=hou+23;
 
 		min = 60+min-mi;
+		
 
 	}
 
