@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+	<title>搜索翻译</title>
+	<style type="text/css">
+		body{
+			background:rgb(25,195,255);
+		}
+		a{
+			display: table-cell;
+		}
+		input{
+			padding: 3px 8px;
+			border: 1px solid #000;
+			width: 30em;height: 2em;
+			font-size: 24px;
+			border-radius: 3px;
+			background: rgba(255,255,255,0.5);
+			display: block;
+			margin: 50px auto;
+			margin-bottom:0px;
+		}
+		button{
+			width: 200px;height: 60px;
+			font-size: 1em;
+			margin:10px 8px;
+			background: #00b05f;
+			color: #fff;
+			border-radius: 3px;
+			padding: 8px 3px;
+			border-style: none;
+		}
+		button:active{
+			color: #000;
+		}
+		
+		@-o-keyframes buttonAnim /* Opera */{
+			from {background:red;}
+			to {background:yellow;}
+		}
+		iframe{
+			border-radius: 5px;
+			border-style: solid;
+		}
+		@media only screen and (max-width: 768px) {
+			input{
+				display: block;
+				width: 80%;height: 2em;
+				margin: 10px auto;
+			}
+			button{
+				width:auto;height:auto;
+				font-size: 1em;
+				padding: 8px 10px;
+			}
+		}
+		@media only screen and (max-width: 520px) {
+			input{
+				display: block;
+				width: 80%;height: 2em;
+				margin: 10px auto;
+			}
+			button{
+				width:auto;height:auto;
+				font-size: 0.8em;
+				padding:8px 10px;
+			}
+		}
+		#export{
+			display: block;
+			margin: 0 auto;
+		}
+		.seachButtonBox{
+		    display: table;
+		    margin: 0 auto;
+		    width: auto;
+		}
+	</style>
+</head>
+<body>
+	
+		<input id="searchText" type="text" name="内容" value="" placeholder="Search...">
+	<div class="seachButtonBox">
+		<button id="searchButt" type="button" onclick="searchFunction()">Submit</button>
+		<button id="collection" type="button" onclick="emptyFun()">Empty</button>
+		<button id="empty" type="button" onclick="collectionFun()">Collect</button>		
+	</div>		
+	<iframe id="iframe" src="https://fanyi.sogou.com" width="100%" height="1000px"></iframe>
+	<div class="seachButtonBox">
+		<a target="_blank" href="https://www.cnblogs.com/MrFlySand/p/13458782.html">
+			<button type="button" onclick="exportFun()">首页</button>
+		</a>			
+		<button id="export" type="button" onclick="exportFun()">导出搜索列表</button>
+	</div>
+	<p id="lexicon"></p>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		function searchFunction(){
+			var searchText = document.getElementById("searchText").value;
+			$("#iframe").attr("src","https://fanyi.sogou.com/?keyword="+searchText);			
+		}
+		function emptyFun(){		
+			var searchText = document.getElementById("searchText");
+			searchText.value = "";
+			
+		}
+		function Queue(){
+			//属性
+			this.items=[];
+			//方法
+			//1. 将元素加入到队列
+			Queue.prototype.enqueue = function(element){
+				this.items.push(element+" ");
+			}
+			//2. 从队列中删除前端元素
+			Queue.prototype.dequeue = function(){
+				return this.items.shift();
+			}
+			//3. 查看前端元素
+			Queue.prototype.front = function(){
+				return this.items[0];
+			}
+			//4. 查看队列是否为空
+			Queue.prototype.isEmpty = function(){
+				return this.items.length==0;
+			}
+			//5. 查看队列中元素的个数
+			Queue.prototype.size = function(){
+				return this.items.length;
+			}
+			//6. toString方法
+			Queue.prototype.toString = function(){
+				var resultString = '';
+				for (var i=0;i<this.items.length;i++) {
+					resultString += i + 1 + ". " + this.items[i] + "<br/>";
+				}
+				return resultString;
+			};
+		}
+		//使用队列
+		var queue = new Queue();		
+		//收藏单词
+		function collectionFun(){
+			var searchText = document.getElementById("searchText").value;		
+			if(searchText){				
+				queue.enqueue(searchText);//插入数据
+			}		
+		}
+		//导出词库
+		function exportFun(){
+//			console.log(ht)
+			var lexicon = document.getElementById("lexicon");
+			lexicon.innerHTML = queue;
+//			$("#lexicon").text(queue);			
+		}
+		
+	</script>
+</body>
+</html>
