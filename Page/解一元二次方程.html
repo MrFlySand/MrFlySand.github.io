@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+
+		<title>解一元二次方程</title>
+				<style type="text/css">
+		body{
+			background:rgb(25,195,255);
+		}
+		input{
+			padding: 3px 8px;
+			border: 1px solid #000;
+			width: 60px;height: 1em;
+			font-size: 1em;
+			border-radius: 3px;
+			background: rgba(255,255,255,0.5);
+			
+			margin-bottom:0px;
+		}
+		button{
+			width: 60px;height: 2em;
+			font-size: 1em;
+			margin:10px 8px;
+padding: 5px 8px;
+			background: #00b05f;
+			color: #fff;
+			border-radius: 3px;
+			
+			border-style: none;
+		}
+		iframe{
+			border-radius: 5px;
+		}
+		
+		#export{
+			display: block;
+			margin: 0 auto;
+		}
+		.seachButtonBox{
+		    display: table;
+		    margin: 0 auto;
+		    width: auto;
+		}
+	</style>
+		</style>
+	</head>
+	<body>
+		<div class="quadratic_equation">
+			<input id="numba" placeholder="第一项">X<sup>2</sup>+
+			<input id="numbb" placeholder="第二项">X+
+			<input id="numbc" placeholder="第三项">=0
+	   		<button id="butt" type="button" onclick="myFunction()">提交</button>
+		</div>
+		<p id="print"></p>
+		<script type="text/javascript">
+			function  myFunction(){
+				var print =document.getElementById("print");
+				var a =parseInt(document.getElementById("numba").value);
+				var b =parseInt(document.getElementById("numbb").value);
+				var c =parseInt(document.getElementById("numbc").value);
+				var san=b*b-4*a*c;
+				var s=Math.sqrt(san);
+				if(san<0)
+					print.innerText="无解";
+				if(san==0)
+					print.innerText="方程有两个相同的解:x1=x2="+(-(b/2*a));
+				if(san>0)
+					print.innerText="方程有两个不相同的解:x1="+((-b+s)/(2*a))+",x2="+(((-b-s)/(2*a)));
+				else
+					print.innerText="error";
+			};			
+		</script>
+	</body>
+</html>
