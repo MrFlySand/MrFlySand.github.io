@@ -57,9 +57,9 @@ padding: 5px 8px;
 		<script type="text/javascript">
 			function  myFunction(){
 				var print =document.getElementById("print");
-				var a =parseInt(document.getElementById("numba").value);
-				var b =parseInt(document.getElementById("numbb").value);
-				var c =parseInt(document.getElementById("numbc").value);
+				var a =parseFloat(document.getElementById("numba").value);
+				var b =parseFloat(document.getElementById("numbb").value);
+				var c =parseFloat(document.getElementById("numbc").value);
 				var san=b*b-4*a*c;
 				var s=Math.sqrt(san);
 				if(san<0)
