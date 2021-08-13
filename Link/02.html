@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>明年必分手</title>
+		<style type="text/css">			
+			body {
+		    background: #a0e2a0;
+		    font-size: 24px;
+			}		
+			img#img {
+		    width: auto;
+		    margin: auto;
+		    display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<img id="img" src="https://img10.360buyimg.com/ddimg/jfs/t1/196758/5/18044/212756/6115c7a2Ebbc75e43/b09ae3a3aeb67d1b.gif"/>
+		<audio src="http://m10.music.126.net/20210813095646/063b4da3558469ff37337f553d1a3047/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3035991187/b976/d30a/5119/6da7ba344efc58a4795c2fbe491d0088.mp3"  autoplay></audio>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$("#img").attr("url","https://img14.360buyimg.com/ddimg/jfs/t1/194890/24/18074/34301/6115c7a2Ee87455c1/7f6fa4c73d1baa53.png");
+		$(function(){
+		    //图片数组
+		    var sArr =["https://img14.360buyimg.com/ddimg/jfs/t1/194890/24/18074/34301/6115c7a2Ee87455c1/7f6fa4c73d1baa53.png","https://img13.360buyimg.com/ddimg/jfs/t1/186475/35/17968/34831/6115c6d5E4e1be3e5/6e4aba2ee8350b1e.png","https://img13.360buyimg.com/ddimg/jfs/t1/200078/27/2815/55903/6115c7a2E57d40796/2b3ff63ada6cdaef.gif","https://img10.360buyimg.com/ddimg/jfs/t1/185076/10/18963/37172/6115c6d5E33527e2b/50a06a98623a2ff1.png","https://img11.360buyimg.com/ddimg/jfs/t1/178157/2/18973/37149/6115c560E4ccea267/48968ebe58e10849.png","https://img11.360buyimg.com/ddimg/jfs/t1/180578/23/18657/9952/6115c6d5E7b0e00fc/0c70b7b28d3308cf.jpg","https://img10.360buyimg.com/ddimg/jfs/t1/191289/23/18076/66832/6115c5adE541bc30f/726fd6997046b56a.gif"];
+		    //定时更换背景
+		    var count = 0;
+		    setInterval(function(){    		    	
+		        $("#img").attr("src",sArr[count++]);
+		        if (count==9) {
+		        	count = 0;
+		        }
+		    },2000); //单位毫秒
+		})
+	</script>
+</html>
+
+<!--
+
+https://img10.360buyimg.com/ddimg/jfs/t1/196758/5/18044/212756/6115c7a2Ebbc75e43/b09ae3a3aeb67d1b.gif
+https://img14.360buyimg.com/ddimg/jfs/t1/194890/24/18074/34301/6115c7a2Ee87455c1/7f6fa4c73d1baa53.png
+https://img13.360buyimg.com/ddimg/jfs/t1/186475/35/17968/34831/6115c6d5E4e1be3e5/6e4aba2ee8350b1e.png
+https://img13.360buyimg.com/ddimg/jfs/t1/200078/27/2815/55903/6115c7a2E57d40796/2b3ff63ada6cdaef.gif
+https://img10.360buyimg.com/ddimg/jfs/t1/185076/10/18963/37172/6115c6d5E33527e2b/50a06a98623a2ff1.png
+https://img11.360buyimg.com/ddimg/jfs/t1/178157/2/18973/37149/6115c560E4ccea267/48968ebe58e10849.png
+https://img11.360buyimg.com/ddimg/jfs/t1/180578/23/18657/9952/6115c6d5E7b0e00fc/0c70b7b28d3308cf.jpg
+https://img10.360buyimg.com/ddimg/jfs/t1/191289/23/18076/66832/6115c5adE541bc30f/726fd6997046b56a.gif
+
+
+		    
+
+-->
