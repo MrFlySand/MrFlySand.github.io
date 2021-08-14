@@ -2,29 +2,67 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>明年必分手</title>
-		<style type="text/css">			
+		<meta name="keywords" content="MrFlySand,孤寡">
+		<meta name="description" content="MrFlySand的博客,孤寡青蛙">
+		<meta name="author" content="MrFlySand,飞沙,飞沙先生">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+		<title>孤寡 - 飞沙 - MrFlySand的博客</title>
+		<style type="text/css">
 			body {
 		    background: #a0e2a0;
-		    font-size: 24px;
 			}		
 			img#img {
 		    width: auto;
 		    margin: auto;
 		    display: block;
 			}
+			#gugua{
+				position: fixed;
+				z-index: 999;
+				width: 100%;
+				left: 100%;
+				top: 0;
+				animation:anim 20s infinite;
+			}
+			@media only screen and (max-width: 767px){
+				#gugua{
+					animation:anim 5s infinite;
+				}
+			}
+			@keyframes anim{
+				0%{left: 100%}
+				100%{left: -100%;}
+			}			
+			#img-gugua{
+				width: 100%;height: 80px;				
+				background: url(https://img10.360buyimg.com/ddimg/jfs/t1/180322/23/19026/1714/61165834E1b10d984/066e52cf9e8bbe2c.png);
+				
+			}
+			#img-gugua:nth-child(odd){
+				background-position-x:50px ;
+			}
 		</style>
 	</head>
 	<body>
-		<img id="img" src="https://img10.360buyimg.com/ddimg/jfs/t1/196758/5/18044/212756/6115c7a2Ebbc75e43/b09ae3a3aeb67d1b.gif"/>
-		<audio src="http://m10.music.126.net/20210813095646/063b4da3558469ff37337f553d1a3047/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3035991187/b976/d30a/5119/6da7ba344efc58a4795c2fbe491d0088.mp3"  autoplay></audio>
+		<audio src="http://m801.music.126.net/20210814101153/068387951b93e9c3854a882489e138f5/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/8016377400/8270/40ed/c267/474581d92801019375814dd3dd045ea6.mp3"  autoplay></audio>
+		<img id="img" src="https://img11.360buyimg.com/ddimg/jfs/t1/179660/26/19193/349868/61164dd3Efb648a60/45d8f7b41afca3e3.gif"/>		
+		<div id="gugua">
+			<div id="img-gugua"></div>
+			<div id="img-gugua"></div>
+			<div id="img-gugua"></div>
+			<div id="img-gugua"></div>
+			<div id="img-gugua"></div>
+			<div id="img-gugua"></div>
+			<div id="img-gugua"></div>
+			<div id="img-gugua"></div>
+		</div>
 	</body>
 	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-	<script type="text/javascript">
+	<script type="text/javascript">		
 		$("#img").attr("url","https://img14.360buyimg.com/ddimg/jfs/t1/194890/24/18074/34301/6115c7a2Ee87455c1/7f6fa4c73d1baa53.png");
 		$(function(){
 		    //图片数组
-		    var sArr =["https://img14.360buyimg.com/ddimg/jfs/t1/194890/24/18074/34301/6115c7a2Ee87455c1/7f6fa4c73d1baa53.png","https://img13.360buyimg.com/ddimg/jfs/t1/186475/35/17968/34831/6115c6d5E4e1be3e5/6e4aba2ee8350b1e.png","https://img13.360buyimg.com/ddimg/jfs/t1/200078/27/2815/55903/6115c7a2E57d40796/2b3ff63ada6cdaef.gif","https://img10.360buyimg.com/ddimg/jfs/t1/185076/10/18963/37172/6115c6d5E33527e2b/50a06a98623a2ff1.png","https://img11.360buyimg.com/ddimg/jfs/t1/178157/2/18973/37149/6115c560E4ccea267/48968ebe58e10849.png","https://img11.360buyimg.com/ddimg/jfs/t1/180578/23/18657/9952/6115c6d5E7b0e00fc/0c70b7b28d3308cf.jpg","https://img10.360buyimg.com/ddimg/jfs/t1/191289/23/18076/66832/6115c5adE541bc30f/726fd6997046b56a.gif"];
+		    var sArr =["https://img13.360buyimg.com/ddimg/jfs/t1/183450/39/19313/252254/61164dd3E3a47019e/50910d42e584e4c6.gif","https://img13.360buyimg.com/ddimg/jfs/t1/193601/18/18080/99865/61164dd2E675d306a/c736dc3c12024fa8.gif","https://img10.360buyimg.com/ddimg/jfs/t1/199360/5/2889/76768/61164dd2E41570366/17d067cdd417f401.png","https://img10.360buyimg.com/ddimg/jfs/t1/198657/9/3034/23448/61164dd2E952d5b95/86ddb585b8b3fd98.png","https://img13.360buyimg.com/ddimg/jfs/t1/193601/18/18080/99865/61164dd2E675d306a/c736dc3c12024fa8.gif"];
 		    //定时更换背景
 		    var count = 0;
 		    setInterval(function(){    		    	
@@ -34,21 +72,15 @@
 		        }
 		    },2000); //单位毫秒
 		})
-	</script>
+	</script>	
 </html>
-
 <!--
 
-https://img10.360buyimg.com/ddimg/jfs/t1/196758/5/18044/212756/6115c7a2Ebbc75e43/b09ae3a3aeb67d1b.gif
-https://img14.360buyimg.com/ddimg/jfs/t1/194890/24/18074/34301/6115c7a2Ee87455c1/7f6fa4c73d1baa53.png
-https://img13.360buyimg.com/ddimg/jfs/t1/186475/35/17968/34831/6115c6d5E4e1be3e5/6e4aba2ee8350b1e.png
-https://img13.360buyimg.com/ddimg/jfs/t1/200078/27/2815/55903/6115c7a2E57d40796/2b3ff63ada6cdaef.gif
-https://img10.360buyimg.com/ddimg/jfs/t1/185076/10/18963/37172/6115c6d5E33527e2b/50a06a98623a2ff1.png
-https://img11.360buyimg.com/ddimg/jfs/t1/178157/2/18973/37149/6115c560E4ccea267/48968ebe58e10849.png
-https://img11.360buyimg.com/ddimg/jfs/t1/180578/23/18657/9952/6115c6d5E7b0e00fc/0c70b7b28d3308cf.jpg
-https://img10.360buyimg.com/ddimg/jfs/t1/191289/23/18076/66832/6115c5adE541bc30f/726fd6997046b56a.gif
+https://img11.360buyimg.com/ddimg/jfs/t1/179660/26/19193/349868/61164dd3Efb648a60/45d8f7b41afca3e3.gif
+https://img13.360buyimg.com/ddimg/jfs/t1/183450/39/19313/252254/61164dd3E3a47019e/50910d42e584e4c6.gif
+https://img13.360buyimg.com/ddimg/jfs/t1/193601/18/18080/99865/61164dd2E675d306a/c736dc3c12024fa8.gif
+https://img10.360buyimg.com/ddimg/jfs/t1/199360/5/2889/76768/61164dd2E41570366/17d067cdd417f401.png
+https://img10.360buyimg.com/ddimg/jfs/t1/198657/9/3034/23448/61164dd2E952d5b95/86ddb585b8b3fd98.png
 
-
-		    
 
 -->
