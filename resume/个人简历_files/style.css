@@ -637,11 +637,11 @@ a {
 /* 我的标签begin */
 
 .mbr-white>.myLable {
-    font-size: 1.2em;
-    display: inline-table;
-    margin: 10px 5px;
-    padding: 3px 8px;
-    border-radius: 30px;
+    font-size: 1em !important;
+    display: inline-table !important;
+    margin: 10px 5px !important;
+    padding: 3px 8px !important;
+    border-radius: 30px !important;
 }
 
 
@@ -651,7 +651,7 @@ a {
 /* 新媒体begin */
 
 .mbr-section-text.mbr-white.pb-3>p {
-    font-size: 1.4em;
+    font-size: 1.4em !important;
 }
 
 
