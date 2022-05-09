@@ -593,6 +593,10 @@ nav .mbr-section-btn {
 
 /*# sourceMappingURL=style.css.map */
 
+a {
+    text-decoration: underline;
+}
+
 .engine {
     position: absolute;
     text-indent: -2400px;
@@ -615,4 +619,15 @@ nav .mbr-section-btn {
 .mbr-figure img,
 .mbr-figure iframe {
     width: 80% !important;
+}
+
+.soc-item .icon {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.soc-item img {
+    width: 60px;
+    margin-top: -42px;
 }
