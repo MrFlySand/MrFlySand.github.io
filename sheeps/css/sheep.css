@@ -1,18 +1,16 @@
-body
-{
+body {
     margin: 0;
     padding: 0;
-    background: white;
+    background: #cbff8d;
 }
+
 .div {
     margin: 0 auto;
     width: 430px;
     height: 800px;
 }
-#canvas
-{
+
+#canvas {
     background: bisque;
     z-index: 0;
 }
-
-
