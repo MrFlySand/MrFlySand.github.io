@@ -93,14 +93,14 @@
         .foot-box {
             background-color: #734A3D;
             border-radius: 10px;
-            box-shadow: 10px -10px 10px rgba(0, 0, 0, 0.3);
+            /* box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.3); */
             display: flex;
             justify-content: left;
             align-items: center;
             transition: all 0.5s;
-            background: #afa657;
+            background: #a6e5ff;
             padding: 0 3px;
-            border: 1px solid #afa657;
+            border: 1px solid #a6e5ff;
             box-sizing: border-box;
             position: fixed;
             bottom: 38px;
@@ -207,8 +207,8 @@
             border-radius: 4px;
             font-family: 'myfont';
             font-size: 1.7rem;
-            color: #a6e7ef;
-            background: linear-gradient(194deg, #b77b22, transparent);
+            color: #000;
+            background: #edffd7;
             top: 0;
             height: .8rem;
             display: flex;
@@ -321,11 +321,13 @@
     <audio style="display:none; height: 0" id="perspective" preload="auto" src="vender/perspective.wav"></audio>
     <audio style="display:none; height: 0" id="perspectiveClose" preload="auto" src="vender/perspectiveClose.wav"></audio>
     <header>
+        <p>城了个城—</p>
         第<text class="level"></text>关
         <div class="music">
             <img src="img/voice.png">
         </div>
-        <div class="myLevel" style=";">跳最高<text class="myLevelnum" style="color: aquamarine;">1</text>关纪录开始</div>
+        <div class="myLevel" style=";">跳最高<text class="myLevelnum" style="color: #000;">1</text>关纪录开始</div>
+
     </header>
     <div class="mask">
         <text style="display: none; margin-bottom: 200px;color: #4e5221;">游戏结束</text>
@@ -338,6 +340,10 @@
         <div id="bg"> </div>
         <div class="borad">
         </div>
+    </div>
+    <div id="text" style="text-align:center;">
+        <span id="textSpan"></span>
+        <a id="textHref" href=""></a>
     </div>
     <footer>
         <div class="foot-box">
@@ -403,7 +409,7 @@
             leftNum: 0
         },
         3: {
-            pic: "img/smoke.svg",
+            pic: "img/11.png",
             leftNum: 0
         },
         4: {
@@ -411,7 +417,7 @@
             leftNum: 0
         },
         5: {
-            pic: "img/yhg.svg",
+            pic: "img/12.png",
             leftNum: 0
         },
     }
@@ -600,9 +606,17 @@
             }
         })
         $(document).on('click', ".options", function() {
-            var name = prompt("请输入您的名字:");
+            question = [
+                ["Q1：学校的生日", "1904"],
+                ["Q2：学校学院个数？", "11"]
 
-            dislocate();
+            ]
+            var name = prompt(question[0][0]);
+            if (name == question[0][1]) {
+                dislocate();
+            } else {
+                alert("错误")
+            }
         })
         $(document).on('click', ".look", function() {
             perspective();
@@ -954,6 +968,33 @@
         });
         return this;
     }
+
+    function randomNum(minNum, maxNum) {
+        switch (arguments.length) {
+            case 1:
+                return parseInt(Math.random() * minNum + 1, 10);
+                break;
+            case 2:
+                return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+                break;
+            default:
+                return 0;
+                break;
+        }
+    }
+    arr = [
+        ["武汉城市职业学院官方QQ号：", "1307970971", "https://qm.qq.com/cgi-bin/qm/qr?k=97CZCKxUyWsU0RYQqS5DQthbV94RQwp_&noverify=0&personal_qrcode_source=4"],
+        ["武汉城市职业学院官方B站UID：", "1094006905", "https://b23.tv/5ku9Pki"],
+        ["武汉城市职业学院官方QQ号：", "1307970971", "https://qm.qq.com/cgi-bin/qm/qr?k=97CZCKxUyWsU0RYQqS5DQthbV94RQwp_&noverify=0&personal_qrcode_source=4"],
+        ["武汉城市职业学院官方B站UID：", "1094006905", "https://b23.tv/5ku9Pki"],
+        ["武汉城市职业学院官方QQ号：", "1307970971", "https://qm.qq.com/cgi-bin/qm/qr?k=97CZCKxUyWsU0RYQqS5DQthbV94RQwp_&noverify=0&personal_qrcode_source=4"],
+        ["武汉城市职业学院官方B站UID：", "1094006905", "https://b23.tv/5ku9Pki"],
+    ]
+    var num = randomNum(0, 5);
+    console.log(num)
+    $("#textSpan").text(arr[num][0]);
+    $("#textHref").text(arr[num][1]);
+    $("#textHref").attr("href", arr[num][2]);
 </script>
 
 </html>
