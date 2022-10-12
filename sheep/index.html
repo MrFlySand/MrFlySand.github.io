@@ -330,8 +330,8 @@
 
     </header>
     <div class="mask">
-        <text style="display: none; margin-bottom: 200px;color: #4e5221;">游戏结束</text>
-        <text style="display: none; margin-bottom: 200px;color: #4e5221;">恭喜通关！</text>
+        <text style="display: none; margin-bottom: 200px;color: #ff2020;">游戏结束</text>
+        <text style="display: none; margin-bottom: 200px;color: #ff2020;">恭喜通关！</text>
         <button class="again" style="display: none;">再来一把</button>
         <button class="nextLevel" style="display: none;">下一关</button>
     </div>
@@ -373,6 +373,19 @@
 <script type="application/javascript" src="js/fastclick.js"></script>
 <script type="application/javascript" src="js/explode.js"></script>
 <script>
+    function randomNum(minNum, maxNum) {
+        switch (arguments.length) {
+            case 1:
+                return parseInt(Math.random() * minNum + 1, 10);
+                break;
+            case 2:
+                return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+                break;
+            default:
+                return 0;
+                break;
+        }
+    }
     //本地缓存
     var STORAGE = window.localStorage;
     var BOARD = [];
@@ -607,12 +620,21 @@
         })
         $(document).on('click', ".options", function() {
             question = [
-                ["Q1：学校的生日", "1904"],
-                ["Q2：学校学院个数？", "11"]
-
+                ["Q1：学校建校时间是哪一年？", "1904"],
+                ["Q2：学校有几个教学学院？", "11"],
+                ["Q3：学校的邮编是多少？", "430064"],
+                ["Q4：学校现有两个校区，南校区紧临风景优美的____？", "汤逊湖"],
+                ["Q5：北校区坐落在风景秀丽的____？", "狮子山麓"],
+                ["Q6：两校区占地面积约____亩?", "1100"],
+                ["Q7：2019年10月19日-26日，第七届世界军人运动会击剑赛项，在学校南校区____举行", "体育馆"],
+                ["Q8：学校南校区地址是武汉市洪山区南李路___号", "127"],
+                ["Q9：学校北校区是武汉市洪山区野芷湖西路___号", "26"],
+                ["Q10：武汉城市职业学院官方微信公众号小编的昵称是？", "武小城"],
+                ["Q11：官方微信公众号的运营组织是？", "大学生记者团"]
             ]
-            var name = prompt(question[0][0]);
-            if (name == question[0][1]) {
+
+            var name = prompt(question[randomNum(0, 10)][0]);
+            if (name == question[randomNum(0, 10)][1]) {
                 dislocate();
             } else {
                 alert("错误")
@@ -969,19 +991,7 @@
         return this;
     }
 
-    function randomNum(minNum, maxNum) {
-        switch (arguments.length) {
-            case 1:
-                return parseInt(Math.random() * minNum + 1, 10);
-                break;
-            case 2:
-                return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
-                break;
-            default:
-                return 0;
-                break;
-        }
-    }
+
     arr = [
         ["武汉城市职业学院官方QQ号：", "1307970971", "https://qm.qq.com/cgi-bin/qm/qr?k=97CZCKxUyWsU0RYQqS5DQthbV94RQwp_&noverify=0&personal_qrcode_source=4"],
         ["武汉城市职业学院官方B站UID：", "1094006905", "https://b23.tv/5ku9Pki"],
