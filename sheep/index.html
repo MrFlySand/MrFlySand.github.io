@@ -1,4 +1,3 @@
-<!--作者ken， git地址 https://gitee.com/kenxq/ylgy.git ,持续更新-->
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width,	initial-scale=1.0,maximun-scale=1.0,user-scalable=no">
 <link rel="icon" href="img/smoke.svg" />
@@ -6,7 +5,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>烟了个烟</title>
+    <title>城了个城</title>
     <style>
         @font-face {
             font-family: 'myfont';
@@ -59,7 +58,7 @@
             justify-content: center;
             align-items: center;
             font-size: 2.5rem;
-            background: linear-gradient(180deg, #988e6e, #fefdfd);
+            /* background: linear-gradient(180deg, #988e6e, #fefdfd); */
         }
         
         footer {
@@ -99,7 +98,7 @@
             justify-content: left;
             align-items: center;
             transition: all 0.5s;
-            background: url(./img/bg.png);
+            background: #afa657;
             padding: 0 3px;
             border: 1px solid #afa657;
             box-sizing: border-box;
@@ -127,7 +126,7 @@
         
         .foot-item,
         .item {
-            background: linear-gradient(45deg, #919948, #d7cbba);
+            background: #a6e5ff;
             /* float: left; */
             border-radius: 6px;
             margin: 2px;
@@ -392,15 +391,15 @@
         //
     var resouceBase = {
         0: {
-            pic: "img/htx.png",
+            pic: "img/1.png",
             leftNum: 0
         },
         1: {
-            pic: "img/zh.png",
+            pic: "img/2.png",
             leftNum: 0
         },
         2: {
-            pic: "img/ng.png",
+            pic: "img/3.png",
             leftNum: 0
         },
         3: {
@@ -408,7 +407,7 @@
             leftNum: 0
         },
         4: {
-            pic: "img/dhj.png",
+            pic: "img/4.png",
             leftNum: 0
         },
         5: {
@@ -418,27 +417,27 @@
     }
     var resouceExtends = {
         6: {
-            pic: "img/hhl.png",
+            pic: "img/5.png",
             leftNum: 0
         },
         7: {
-            pic: "img/yuxi.png",
+            pic: "img/6.png",
             leftNum: 0
         },
         8: {
-            pic: "img/wbl.png",
+            pic: "img/7.png",
             leftNum: 0
         },
         9: {
-            pic: "img/dhj1.png",
+            pic: "img/8.png",
             leftNum: 0
         },
         10: {
-            pic: "img/xj.png",
+            pic: "img/9.png",
             leftNum: 0
         },
         11: {
-            pic: "img/yhg1.png",
+            pic: "img/10.png",
             leftNum: 0
         },
     }
@@ -601,6 +600,8 @@
             }
         })
         $(document).on('click', ".options", function() {
+            var name = prompt("请输入您的名字:");
+
             dislocate();
         })
         $(document).on('click', ".look", function() {
