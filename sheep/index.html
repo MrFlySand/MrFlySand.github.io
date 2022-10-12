@@ -1,0 +1,958 @@
+<!--作者ken， git地址 https://gitee.com/kenxq/ylgy.git ,持续更新-->
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width,	initial-scale=1.0,maximun-scale=1.0,user-scalable=no">
+<link rel="icon" href="img/smoke.svg" />
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>烟了个烟</title>
+    <style>
+        @font-face {
+            font-family: 'myfont';
+            src: url('font/myfont.woff2') format('woff2'), url('font/myfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        html {
+            font-size: 62.5%;
+            /*10PX 100%为16px*/
+            height: 100%;
+            width: 100%;
+            font-family: 'myfont';
+        }
+        
+        body {
+            font-size: 1.6rem;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        
+        body::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #cbff8d;
+            content: " ";
+            opacity: 0.35;
+            z-index: -1;
+        }
+        
+        .left {
+            float: left;
+            width: 30%;
+        }
+        
+        .right {
+            float: right;
+            width: 70%;
+        }
+        
+        header {
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            background: linear-gradient(180deg, #988e6e, #fefdfd);
+        }
+        
+        footer {
+            box-sizing: border-box;
+            height: 15%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+            padding: 10px 10px;
+        }
+        
+        .content {
+            height: 75%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            box-sizing: border-box;
+        }
+        
+        .borad {
+            width: 85%;
+            height: 80%;
+            float: left;
+            z-index: 100;
+            position: relative;
+            z-index: 1001;
+        }
+        
+        .foot-box {
+            background-color: #734A3D;
+            border-radius: 10px;
+            box-shadow: 10px -10px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            transition: all 0.5s;
+            background: url(./img/bg.png);
+            padding: 0 3px;
+            border: 1px solid #afa657;
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 38px;
+            left: 5px;
+            right: 5px;
+            max-width: 700px;
+        }
+        
+        .marks {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            border-radius: 10px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: 0 3px;
+            box-sizing: border-box;
+        }
+        
+        .foot-item,
+        .item {
+            background: linear-gradient(45deg, #919948, #d7cbba);
+            /* float: left; */
+            border-radius: 6px;
+            margin: 2px;
+            z-index: 1000;
+            border: 1px solid rgb(199 180 174 / 0%);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 200ms;
+            font-size: 1.4rem;
+            height: 35px;
+            width: 35px;
+            position: relative;
+            box-shadow: 2px -2px 2px #7c786a;
+            /* 防止inline导致的位置变化 */
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        
+        .foot-item {
+            background: #ffffff40;
+            box-shadow: none;
+        }
+        
+        .item .block {
+            display: none;
+            /* width:100%; */
+            /* height:100%; */
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .foot-mark {
+            position: relative;
+            float: left;
+            z-index: 1999;
+            margin: 2px;
+            border: 1px solid #afa65700;
+        }
+        
+        .foot-mark>img {
+            position: absolute;
+            bottom: -24px;
+            right: -12px;
+            width: 18px;
+            height: 30px;
+            transform: rotateX(180deg);
+        }
+        
+        .layer {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            box-sizing: border-box;
+            display: table;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        button {
+            position: absolute;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 4px;
+            font-family: 'myfont';
+            font-size: 2rem;
+            color: #a6e7ef;
+            background: linear-gradient(45deg, #2a2727, transparent);
+        }
+        
+        .myLevel {
+            position: absolute;
+            padding: 8px 30px;
+            border: none;
+            border-radius: 4px;
+            font-family: 'myfont';
+            font-size: 1.7rem;
+            color: #a6e7ef;
+            background: linear-gradient(194deg, #b77b22, transparent);
+            top: 0;
+            height: .8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .mask {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #b3ab92a3;
+            z-index: 20000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+            opacity: 1;
+        }
+        
+        .pause {
+            display: none;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #b3ab92eb;
+            z-index: 1000;
+        }
+        
+        .overlayer {
+            border: 1px solid #939ea7;
+            background: #c7b4ae;
+            color: #9d8787;
+            box-shadow: 2px -2px 1px #ff00001f;
+        }
+        
+        .removeBottomLay {
+            z-index: -1;
+            opacity: 0;
+        }
+        
+        .options {
+            position: absolute;
+            top: -40px;
+            width: 45px;
+            box-shadow: -3px -3px 2px #00bcd4;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid #00bcd4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5f6f76;
+            z-index: 100000;
+            right: 5px;
+            cursor: pointer;
+            transform: rotateZ(3deg);
+        }
+        
+        .look {
+            position: absolute;
+            top: -40px;
+            width: 45px;
+            box-shadow: -3px -3px 2px #00bcd4;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid #00bcd4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5f6f76;
+            z-index: 100000;
+            left: 5px;
+            cursor: pointer;
+            transform: rotateZ(3deg);
+        }
+        
+        .music {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: antiquewhite;
+            font-size: 2.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .music img {
+            height: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <audio style="display:none; height: 0" id="bg-music" preload="auto" src="vender/bg.mp3" loop="loop"></audio>
+    <audio style="display:none; height: 0" id="di" preload="auto" src="vender/di.wav"></audio>
+    <audio style="display:none; height: 0" id="dong" preload="auto" src="vender/dong.wav"></audio>
+    <audio style="display:none; height: 0" id="water" preload="auto" src="vender/water.wav"></audio>
+    <audio style="display:none; height: 0" id="hash" preload="auto" src="vender/hash.wav"></audio>
+    <audio style="display:none; height: 0" id="no" preload="auto" src="vender/no.wav"></audio>
+    <audio style="display:none; height: 0" id="fail" preload="auto" src="vender/fail.wav"></audio>
+    <audio style="display:none; height: 0" id="scream" preload="auto" src="vender/scream.wav"></audio>
+    <audio style="display:none; height: 0" id="approve" preload="auto" src="vender/approve.wav"></audio>
+    <audio style="display:none; height: 0" id="perspective" preload="auto" src="vender/perspective.wav"></audio>
+    <audio style="display:none; height: 0" id="perspectiveClose" preload="auto" src="vender/perspectiveClose.wav"></audio>
+    <header>
+        第<text class="level"></text>关
+        <div class="music">
+            <img src="img/voice.png">
+        </div>
+        <div class="myLevel" style=";">跳最高<text class="myLevelnum" style="color: aquamarine;">1</text>关纪录开始</div>
+    </header>
+    <div class="mask">
+        <text style="display: none; margin-bottom: 200px;color: #4e5221;">游戏结束</text>
+        <text style="display: none; margin-bottom: 200px;color: #4e5221;">恭喜通关！</text>
+        <button class="again" style="display: none;">再来一把</button>
+        <button class="nextLevel" style="display: none;">下一关</button>
+    </div>
+    <div class="pause"></div>
+    <div class="content">
+        <div id="bg"> </div>
+        <div class="borad">
+        </div>
+    </div>
+    <footer>
+        <div class="foot-box">
+            <div class="marks">
+                <div class="options"><img style="height: 36px;transform: rotateZ(352deg );" src="img/reorder.svg"> 剩<text class="tooltimes">0</text></div>
+                <div class="look"><img style="height: 25px;transform: rotateZ(352deg );" src="img/eye.svg"> 剩<text class="looktimes">0</text></div>
+                <img src="img/mark.svg" style="position: absolute;width: 18px;height:30px;transform: rotateX(180deg);bottom: -13px;left:-3px;">
+                <span class="foot-mark"><img src="img/mark.svg"></span>
+                <span class="foot-mark"><img src="img/mark.svg"></span>
+                <span class="foot-mark"><img src="img/mark.svg"></span>
+                <span class="foot-mark"><img src="img/mark.svg"></span>
+                <span class="foot-mark"><img src="img/mark.svg"></span>
+                <span class="foot-mark"><img src="img/mark.svg"></span>
+                <span class="foot-mark"><img src="img/mark.svg"></span>
+            </div>
+            <span class="foot-item"></span>
+            <span class="foot-item"></span>
+            <span class="foot-item"></span>
+            <span class="foot-item"></span>
+            <span class="foot-item"></span>
+            <span class="foot-item"></span>
+            <span class="foot-item"></span>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="js/jquery1.10.min.js"></script>
+<script type="application/javascript" src="js/fastclick.js"></script>
+<script type="application/javascript" src="js/explode.js"></script>
+<script>
+    //本地缓存
+    var STORAGE = window.localStorage;
+    var BOARD = [];
+    //延迟安全控制参数，1允许入槽，0不允许
+    var HANDLE = 1;
+    var LEVEL = 1;
+    var FISTREND = 0;
+    var TOOLTIMES = 1;
+    var LOOKTIMES = 0;
+    var row = 0,
+        col = 0;
+
+    //图层参数
+    var lAYOFFSETFACTOR = {}
+        //
+        //偏移参数
+    const OFFSETFACTOR = {
+            0: [0, 0, 0, 0],
+            1: [-1, 1, -1, 1],
+            2: [1, -1, -1, 1]
+        }
+        //
+    var resouceBase = {
+        0: {
+            pic: "img/htx.png",
+            leftNum: 0
+        },
+        1: {
+            pic: "img/zh.png",
+            leftNum: 0
+        },
+        2: {
+            pic: "img/ng.png",
+            leftNum: 0
+        },
+        3: {
+            pic: "img/smoke.svg",
+            leftNum: 0
+        },
+        4: {
+            pic: "img/dhj.png",
+            leftNum: 0
+        },
+        5: {
+            pic: "img/yhg.svg",
+            leftNum: 0
+        },
+    }
+    var resouceExtends = {
+        6: {
+            pic: "img/hhl.png",
+            leftNum: 0
+        },
+        7: {
+            pic: "img/yuxi.png",
+            leftNum: 0
+        },
+        8: {
+            pic: "img/wbl.png",
+            leftNum: 0
+        },
+        9: {
+            pic: "img/dhj1.png",
+            leftNum: 0
+        },
+        10: {
+            pic: "img/xj.png",
+            leftNum: 0
+        },
+        11: {
+            pic: "img/yhg1.png",
+            leftNum: 0
+        },
+    }
+    var keymap = {}
+        //记录剩余未消的卡牌，为0时游戏通关，需要初始化为待消总卡牌，有重置卡牌，返回操作时，需要改动此值
+    var TOTAL = 0;
+    //指针记录上一个入槽的dom
+    var DOMPOS;
+    var bgMisic = document.getElementById('bg-music');
+    var clickVoice = document.getElementById('di');
+    clickVoice.volume = 1;
+    var disapearVoice = document.getElementById('dong');
+    disapearVoice.volume = 1;
+    var waterVoice = document.getElementById('water');
+    waterVoice.volume = 1;
+    var hashVoice = document.getElementById('hash');
+    hashVoice.volume = 1;
+    var noVoice = document.getElementById('no');
+    noVoice.volume = 1;
+    var failVoice = document.getElementById('fail');
+    failVoice.volume = 1;
+    var screamVoice = document.getElementById('scream');
+    screamVoice.volume = 1;
+    var approveVoice = document.getElementById('approve');
+    approveVoice.volume = 1;
+    var perspectiveVoice = document.getElementById('perspective');
+    perspectiveVoice.volume = 1;
+    var perspectiveCloseVoice = document.getElementById('perspectiveClose');
+    perspectiveCloseVoice.volume = 1;
+
+
+    var shaketimes;
+    var shakeSupport = false;
+    setTimeout(function() {
+        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+        if (navigator.vibrate) {
+            // shakeSupport=true;
+        }
+    }, 1000)
+
+
+    $(function() {
+        //加载fastclick，解决ios手机端延迟问题
+        FastClick.attach(document.body);
+        $(".tooltimes").html(TOOLTIMES);
+        $(".looktimes").html(LOOKTIMES);
+        $(".mask").fadeOut('fast');
+        $(window).resize(resizeFootBox);
+        resizeFootBox();
+        FISTREND = 1;
+        if (STORAGE.getItem("maxLevel")) {
+            try {
+                !isNaN(parseInt(STORAGE.getItem("maxLevel"))) ? "" : STORAGE.setItem("maxLevel", 1);
+            } catch (e) {
+                STORAGE.setItem("maxLevel", 1);
+            }
+        } else {
+            STORAGE.setItem("maxLevel", 1);
+        }
+        var myLevel = parseInt(STORAGE.getItem("maxLevel"));
+        $(".myLevelnum").html(myLevel);
+
+        $(document).on('click', ".item", function() {
+            if (!isOverLayer(this)) return false;
+            clickVoice.play();
+            if (shakeSupport) {
+                navigator.vibrate(500);
+            }
+            //停止上一个模块的动画和队列中的动画
+            if (DOMPOS) {
+                DOMPOS.stop(true, true);
+                $(".foot-item .block").css("display", "");
+            }
+            if (HANDLE == 0) return;
+            HANDLE = 0;
+            $(this).addClass("removeBottomLay");
+            var $dom = $(".foot-item").not(":has('.block')").eq(0);
+            var same = $(".foot-item").find(".block[data-type='" + $(this).children().attr("data-type") + "']");
+            if (same.length > 0) {
+                $dom.insertAfter(same.eq(same.length - 1).parent());
+            }
+            var top = $dom.offset().top;
+            var left = $dom.offset().left;
+            var nowtop = $(this).offset().top;
+            var nowleft = $(this).offset().left;
+            var that = this;
+            DOMPOS = $(this).children().clone().hide();
+            DOMPOS.appendTo($dom);
+            TOTAL--;
+            if ($(".foot-item").has(".block").length >= 7) {
+                if (!tribleDisapear($(this).children())) {
+                    gameOver();
+                }
+            }
+            if (TOTAL <= 0) {
+                approveLevel(myLevel);
+            }
+            HANDLE = 1;
+            $(this).children().css("top", nowtop + "px").css("left", nowleft + "px").css("position", "fixed");
+            $(this).children().animate({
+                top: top + "px",
+                left: left + "px"
+            }, 200, 'swing', function() {
+                $(this).remove();
+                $dom.find(".block").show();
+                tribleDisapear(this);
+                checkAllLayer();
+            })
+        })
+        $(document).on('click', ".again", function() {
+            BOARD = [];
+            HANDLE = 1;
+            FISTREND = 0;
+            TOOLTIMES = 1;
+            LOOKTIMES = 0;
+            lAYOFFSETFACTOR = {};
+            DOMPOS = null;
+            $(".foot-item .block").remove();
+            $(".layer").remove();
+            resizeFootBox();
+            $(".mask,.mask text,.mask button ").fadeOut();
+        });
+        $(document).on('click', ".myLevel", function() {
+            LEVEL = myLevel;
+            BOARD = [];
+            HANDLE = 1;
+            FISTREND = 0;
+            TOOLTIMES = 1;
+            LOOKTIMES = 0;
+            lAYOFFSETFACTOR = {};
+            DOMPOS = null;
+            $(".foot-item .block").remove();
+            $(".layer").remove();
+            resizeFootBox();
+            clearInterval(shaketimes);
+        })
+        $(document).on('click', ".nextLevel", function() {
+            BOARD = [];
+            HANDLE = 1;
+            LEVEL++;
+            FISTREND = 0;
+            TOOLTIMES = 1;
+            LOOKTIMES = 0;
+            lAYOFFSETFACTOR = {};
+            DOMPOS = null;
+            $(".foot-item .block").remove();
+            $(".layer").remove();
+            resizeFootBox();
+            $(".mask,.mask text,.mask button ").fadeOut();
+        });
+        $(document).on('click', ".music", function() {
+            waterVoice.play();
+            if (bgMisic.paused) {
+                $(this).css("opacity", 1);
+                bgMisic.play();
+                return;
+            } else {
+                $(this).css("opacity", 0.3);
+                bgMisic.pause();
+            }
+        })
+        $(document).on('click', ".options", function() {
+            dislocate();
+        })
+        $(document).on('click', ".look", function() {
+            perspective();
+        })
+
+        audioAutoPlay(bgMisic);
+        audioAutoPlay(hashVoice);
+    })
+
+    function audioAutoPlay(audio) {
+        var play = function() {
+            audio.play();
+            document.removeEventListener("touchstart", play, false);
+        };
+        audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function() {
+            play();
+        }, false);
+        document.addEventListener('YixinJSBridgeReady', function() {
+            play();
+        }, false);
+        document.addEventListener("touchstart", play, false);
+        //禁用下拉
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, {
+            passive: false
+        });
+    }
+    //响应式初始化，手机、电脑、ipad三端支持
+    function resizeFootBox() {
+        $(".level").html(LEVEL);
+        if (LEVEL <= 4) {
+            keymap = JSON.parse(JSON.stringify(resouceBase));
+        } else if (LEVEL > 4 && LEVEL <= 9) {
+            keymap = JSON.parse(JSON.stringify(resouceBase));
+            keys = Object.keys(resouceExtends);
+            for (i = 4; i < LEVEL && i < (4 + keys.length); ++i) {
+                keymap[keys[i - 4]] = resouceExtends[keys[i - 4]];
+            }
+        } else if (9 < LEVEL && LEVEL <= 16) {
+            keymap = JSON.parse(JSON.stringify(resouceBase));
+        } else if (LEVEL > 16) {
+            keymap = JSON.parse(JSON.stringify(resouceBase));
+            keys = Object.keys(resouceExtends);
+            for (i = 4; i < LEVEL && i < (4 + keys.length); ++i) {
+                keymap[keys[i - 4]] = resouceExtends[keys[i - 4]];
+            }
+        }
+        var availableWidth = $(".foot-box").innerWidth();
+        //根据屏幕计算行列
+        var itemWidth = availableWidth / 7 - 6 + 2 + 4;
+        //是否初次渲染
+        if (FISTREND == 0) {
+            var row = Math.ceil(availableWidth * 0.85 / itemWidth);
+            var col = Math.ceil($(window).height() * 0.75 * 0.7 / itemWidth);
+            iniMatrix(row, col);
+            initialBoard();
+        }
+        $(".foot-box").css("height", availableWidth / 7 + 15 + "px");
+        $(".foot-item,.item,.foot-mark,.block").css("width", availableWidth / 7 - 6 + "px")
+            .css("height", availableWidth / 7 - 6 + "px");
+        $(".block").css("height", (availableWidth / 7 - 6) * 0.8 + "px")
+            .css("max-width", (availableWidth / 7 - 6) * 0.8 + "px")
+            .css("width", "auto");
+        $(".content").css("padding-top", itemWidth + "px")
+        if ($(window).width() >= 770) {
+            $(".foot-box").css("left", ($(window).width() / 2 - $(".foot-box").width() / 2) + "px");
+        } else {
+            $(".foot-box").css("left", "5px");
+        }
+        layerOffsetCal();
+    }
+
+    //矩阵初始化
+    function iniMatrix(row, col) {
+        if (row * col == 1 && row > 0) return false;
+        var matrix = [];
+        for (i = row - 1; i >= 0; --i) {
+            matrix[i] = [];
+            for (j = col - 1; j >= 0; --j) {
+                matrix[i][j] = Math.round(Math.random() * (Object.keys(keymap).length - 1));
+            }
+        }
+        BOARD.push(matrix);
+        iniMatrix(row == 1 ? 1 : row - 1, col == 1 ? 1 : col - 1);
+    }
+    //初始化棋盘
+    function initialBoard() {
+        if (LEVEL <= 3) {
+            TOOLTIMES = 3;
+            BOARD = BOARD.reverse();
+        } else if (3 < LEVEL && LEVEL <= 6) {
+            TOOLTIMES = 5;
+        } else if (6 < LEVEL && LEVEL <= 9) {
+            TOOLTIMES = 5 - (LEVEL - 6);
+            TOOLTIMES < 1 ? TOOLTIMES = 1 : TOOLTIMES = TOOLTIMES;
+        } else if (9 < LEVEL && LEVEL <= 12) {
+            TOOLTIMES = 6;
+        } else {
+            TOOLTIMES = 6 - (LEVEL - 8);
+            TOOLTIMES < 1 ? TOOLTIMES = 1 : TOOLTIMES = TOOLTIMES;
+        }
+        if (LEVEL > 8) {
+            LOOKTIMES = 3;
+            $(".looktimes").html(LOOKTIMES);
+        }
+        var html = "";
+        var namespace = "lay";
+        var idcount = 0;
+        for (i = 0; i < BOARD.length; ++i) {
+            //层数遍历
+            lAYOFFSETFACTOR[namespace + i] = OFFSETFACTOR[i % 3];
+            if (LEVEL <= 6) {
+                if (i == 3) break;
+            }
+            html += '<div class="layer lay' + i + '">';
+            for (s = 0; s < BOARD[i].length; ++s) {
+                for (k = 0; k < BOARD[i][s].length; ++k) {
+                    html += '<span  id="' + idcount + '" class="item overlayer"><img data-type="' + BOARD[i][s][k] + '" class="block" src="' + keymap[BOARD[i][s][k]].pic + '"></span>';
+                    keymap[BOARD[i][s][k]].leftNum++;
+                    idcount++;
+                }
+            }
+            html += '</div>';
+        }
+        html += '<div class="layer lay' + BOARD.length + '">';
+        for (key in keymap) {
+            if (keymap[key].leftNum % 3 != 0) {
+                var count = 3 - (keymap[key].leftNum % 3);
+                for (i = 0; i < count; ++i) {
+                    html += '<span  id="' + idcount + '" class="item overlayer"><img data-type="' + key + '" class="block" src="' + keymap[key].pic + '"></span>';
+                    idcount++;
+                    keymap[key].leftNum++;
+                }
+            }
+        }
+        html += '</div>';
+        $(".borad").append(html);
+        if (LEVEL > 9) {
+            for (i = 9; i <= LEVEL; ++i) {
+                $(".item").eq(Math.floor(Math.random() * idcount)).find(".block").attr("src", "img/weizhi.svg");
+                $(".item").eq(Math.floor(Math.random() * idcount)).find(".block").attr("src", "img/weizhi.svg");
+            }
+        }
+        TOTAL = $(".item .block").length - $(".removeBottomLay .block").length;
+    }
+    //图层初始化偏移计算
+    function layerOffsetCal() {
+        var xs = ($(".foot-box").width() / 7 - 6) / 3;
+        for (key in lAYOFFSETFACTOR) {
+            $("." + key).css("top", lAYOFFSETFACTOR[key][0] * xs + "px")
+                .css("left", lAYOFFSETFACTOR[key][1] * xs + "px")
+                .css("bottom", lAYOFFSETFACTOR[key][2] * xs + "px")
+                .css("right", lAYOFFSETFACTOR[key][3] * xs + "px")
+        }
+        dislocate();
+    }
+    //碰撞单点计算，防渲染不及时
+    function isOverLayer(element) {
+        var left = $(element).offset().left;
+        var top = $(element).offset().top;
+        var width = $(element).width();
+        var height = $(element).height();
+        var el = [document.elementFromPoint(left + 2, top + 2),
+            document.elementFromPoint(left + width - 2, top + 2),
+            document.elementFromPoint(left + width - 2, top + height - 2),
+            document.elementFromPoint(left + 2, top + height - 2)
+        ]
+        for (i = 0; i < el.length; ++i) {
+            if ($(el[i]).hasClass("block")) {
+                el[i] = $(el[i]).parent();
+            }
+            if (element.id != $(el[i]).attr("id")) return false;
+        }
+        return true;
+    }
+    //碰撞动态计算
+    function checkAllLayer() {
+        $(".item").each(function() {
+            $(this).find(".block").slideDown("normal").css("display", "inline-block");
+            if ($(this).hasClass("overlayer")) {
+                if (isOverLayer(this)) {
+                    $(this).removeClass("overlayer");
+                    $(this).find(".block").css("opacity", "1");
+                } else {
+                    $(this).addClass("overlayer");
+                    $(this).find(".block").css("opacity", "0.3");
+                }
+            }
+        })
+    }
+    //三个一样消除检验
+    function tribleDisapear(ele) {
+        var count = $(".foot-item .block[data-type='" + $(ele).attr("data-type") + "']").length;
+        if (count >= 3) {
+            disapearVoice.play();
+            aniWorking = true;
+            $(".foot-item .block[data-type='" + $(ele).attr("data-type") + "']:lt(3)").hide("explode", {
+                pieces: 6
+            }, 180, function() {
+                $(this).parent().empty().insertAfter($(".foot-item:last-child"));
+                aniWorking = false;
+            });
+            return true;
+        }
+        return false;
+    }
+
+    function dislocate() {
+        if (HANDLE == 0) return;
+        if (TOOLTIMES <= 0) {
+            noVoice.play();
+            return;
+        }
+        hashVoice.play();
+        TOOLTIMES--;
+        $(".tooltimes").html(TOOLTIMES);
+        $(".pause").fadeIn(200);
+        setTimeout(function() {
+            $(".pause").fadeOut(200);
+            HANDLE = 1;
+            checkAllLayer();
+        }, 2200);
+
+        HANDLE = 0;
+        var $dom = $(".item").has(".block");
+        var directorArray = ["top", "left"];
+        var distanceFactorArray = [0.8, 1.5, -1.2, -0.5, 0.7, 1.3];
+        var toparray = [];
+        var leftarray = [];
+        //前一个移动会对后一个影响，需要数组记录全部位置
+        $dom.each(function(e) {
+            toparray.push($(this).offset().top);
+            leftarray.push($(this).offset().left);
+        })
+        $dom.each(function(e) {
+            $(this).css("top", toparray[e] - 2 + "px") //2为border
+                .css("left", leftarray[e] - 2 + "px")
+                .css("position", "fixed")
+            $(this).addClass("overlayer");
+            $(this).find(".block").css("opacity", "0");
+        })
+        $dom.each(function(e) {
+            var width = $(this).width();
+            for (i = 0; i < 3; ++i) {
+                var director = directorArray[Math.floor(Math.random() * 2)];
+                var param = $(this).offset()[director];
+                var distanceFactor = distanceFactorArray[Math.floor(Math.random() * 6)] * width * 2;
+                $(this).animate({
+                    [director]: param + distanceFactor + "px"
+                }, 350)
+                $(this).animate({
+                    [director]: param - distanceFactor + "px"
+                }, 150)
+            }
+            $(this).animate({
+                "top": toparray[e] - 2 + "px",
+                "left": leftarray[e] - 2 + "px"
+            }, 200)
+        })
+        exchange();
+        if (LEVEL < parseInt(STORAGE.getItem("maxLevel"))) {
+            if (!shaketimes) {
+                shaketimes = setInterval(function() {
+                    $(".myLevel").shake(2, 20, 200);
+                }, 5000);
+            }
+        } else {
+            clearInterval(shaketimes);
+        }
+    }
+
+    function perspective() {
+        if (HANDLE == 0) return;
+        if (LOOKTIMES <= 0) {
+            noVoice.play();
+            return;
+        }
+        HANDLE = 0;
+        perspectiveVoice.play();
+        LOOKTIMES--;
+        $(".looktimes").html(LOOKTIMES);
+        $(".block[src='img/weizhi.svg']").each(function() {
+            $(this).css("transform", "rotateY(90deg)")
+                .attr("src", keymap[$(this).attr("data-type")].pic)
+                .css("transform", "rotateY(720deg)").addClass("wenhao")
+        })
+        setTimeout(function() {
+            perspectiveCloseVoice.play();
+            $(".wenhao").css("transform", "rotateY(-90deg)")
+                .attr("src", "img/weizhi.svg")
+                .css("transform", "rotateY(-720deg)").removeClass("wenhao")
+            HANDLE = 1;
+        }, 3000)
+    }
+
+    function gameOver() {
+        if (shakeSupport) {
+            navigator.vibrate(500);
+        }
+        Math.round(Math.random() * 2) == 1 ? failVoice.play() : screamVoice.play();
+        $(".mask").fadeIn(200, function() {
+            $(this).find("text").eq(0).slideDown(2000);
+            $(this).find("button").eq(0).fadeIn(2000);
+        });
+        return;
+    }
+
+    function approveLevel(myLevel) {
+        if (myLevel < (parseInt(LEVEL) + 1)) {
+            var level = parseInt(LEVEL) + 1;
+            STORAGE.setItem("maxLevel", level);
+        }
+        $(".myLevelnum").html(STORAGE.getItem("maxLevel"));
+        $(".mask").fadeIn(200, function() {
+            approveVoice.play();
+            $(this).find("text").eq(1).slideDown(1000);
+            $(this).find("button").eq(1).fadeIn(1000);
+        });
+    }
+
+    function exchange() {
+        var allblock = $(".item").has(".block");
+        for (i = 0; i < allblock.length; ++i) {
+            var dom1 = allblock.eq(Math.floor(Math.random() * allblock.length));
+            var dom2 = allblock.eq(Math.floor(Math.random() * allblock.length));
+            dom1.find('.block').appendTo(dom2);
+            dom2.find('.block').eq(0).appendTo(dom1);
+        }
+    }
+
+    jQuery.fn.shake = function(intShakes, intDistance, intDuration) {
+        this.each(function() {
+            var jqNode = $(this);
+            var left = jqNode.offset().left;
+            var top = jqNode.offset().top;
+            for (var x = 1; x <= intShakes; x++) {
+                jqNode.animate({
+                        left: left + (intDistance * -1)
+                    }, (((intDuration / intShakes) / 4)))
+                    .animate({
+                        left: left + intDistance
+                    }, ((intDuration / intShakes) / 2))
+                    .animate({
+                        left: left
+                    }, (((intDuration / intShakes) / 4)));
+            }
+        });
+        return this;
+    }
+</script>
+
+</html>
