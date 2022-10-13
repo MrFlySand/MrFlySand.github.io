@@ -346,7 +346,7 @@
         <div class="foot-box">
             <div class="marks">
                 <div class="options"><img style="height: 36px;transform: rotateZ(352deg );" src="img/reorder.svg"> 剩<text class="tooltimes">0</text></div>
-                <div class="look"><img style="height: 25px;transform: rotateZ(352deg );" src="img/eye.svg"> 剩<text class="looktimes">0</text></div>
+                <div class="look" style="display: none;"><img style="height: 25px;transform: rotateZ(352deg );" src="img/eye.svg"> 剩<text class="looktimes">0</text></div>
                 <img src="img/mark.svg" style="position: absolute;width: 18px;height:30px;transform: rotateX(180deg);bottom: -13px;left:-3px;">
                 <span class="foot-mark"><img src="img/mark.svg"></span>
                 <span class="foot-mark"><img src="img/mark.svg"></span>
@@ -622,7 +622,7 @@
         $(document).on('click', ".options", function() {
             question = [
                 ["Q1：学校建校时间是哪一年？", "1904"],
-                ["Q2：学校有几个教学学院？", "11"],
+                ["Q2：学校起源于1904年清末湖广总督____创办的两湖总师范学堂", "张之洞"],
                 ["Q3：学校的邮编是多少？", "430064"],
                 ["Q4：学校现有两个校区，南校区紧临风景优美的____？", "汤逊湖"],
                 ["Q5：北校区坐落在风景秀丽的____？", "狮子山麓"],
