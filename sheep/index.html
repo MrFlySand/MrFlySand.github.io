@@ -344,14 +344,6 @@
     </div>
 
     <footer>
-        <div id="text" style="text-align:center;font-family:none">
-            <span id="textSpan"></span>
-            <a id="textHref" href="" style="color: #2196f3;"></a>
-            <br>
-            <p>原文：
-                <a href=""></a>
-            </p>
-        </div>
         <div class="foot-box">
             <div class="marks">
                 <div class="options"><img style="height: 36px;transform: rotateZ(352deg );" src="img/reorder.svg">剩<text class="tooltimes">0</text></div>
@@ -373,7 +365,10 @@
             <span class="foot-item"></span>
             <span class="foot-item"></span>
         </div>
-
+        <div id="text" style="text-align:center;font-family:none">
+            <span id="textSpan"></span>
+            <a id="textHref" href="" style="color: #2196f3;"></a>
+        </div>
     </footer>
 </body>
 <script type="text/javascript" src="js/jquery1.10.min.js"></script>
@@ -1002,12 +997,9 @@
     arr = [
         ["武汉城市职业学院官方QQ号：", "1307970971", "https://qm.qq.com/cgi-bin/qm/qr?k=97CZCKxUyWsU0RYQqS5DQthbV94RQwp_&noverify=0&personal_qrcode_source=4"],
         ["武汉城市职业学院官方B站UID：", "1094006905", "https://b23.tv/5ku9Pki"],
-        ["武汉城市职业学院官方QQ号：", "1307970971", "https://qm.qq.com/cgi-bin/qm/qr?k=97CZCKxUyWsU0RYQqS5DQthbV94RQwp_&noverify=0&personal_qrcode_source=4"],
-        ["武汉城市职业学院官方B站UID：", "1094006905", "https://b23.tv/5ku9Pki"],
-        ["武汉城市职业学院官方QQ号：", "1307970971", "https://qm.qq.com/cgi-bin/qm/qr?k=97CZCKxUyWsU0RYQqS5DQthbV94RQwp_&noverify=0&personal_qrcode_source=4"],
-        ["武汉城市职业学院官方B站UID：", "1094006905", "https://b23.tv/5ku9Pki"],
+        ["信息来源：", "城了个城", ""],
     ]
-    var num = randomNum(0, 5);
+    var num = randomNum(0, 2);
     console.log(num)
     $("#textSpan").text(arr[num][0]);
     $("#textHref").text(arr[num][1]);
