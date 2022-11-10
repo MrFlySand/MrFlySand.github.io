@@ -7,6 +7,14 @@
       "label": "echo",
       "type": "shell",
       "command": "echo Hello"
+    },
+    {
+      "type": "deno",
+      "command": "run",
+      "problemMatcher": [
+        "$deno"
+      ],
+      "label": "deno: run"
     }
   ]
 }
