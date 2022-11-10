@@ -1,0 +1,145 @@
+<!--效果：https://mrflysand.github.io/Love/520/girl-01.html-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <meta name="keyword" content="爱心跳动">
+    <meta name="description" content="爱心跳动">
+    <title>I love you</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .LiveYou{
+            background: linear-gradient(135deg,#ff9a9e,#fecfef) no-repeat;
+            width: 100vw;min-height: 100vh; padding-top:1px; z-index: 999;
+            padding-bottom: 100px;
+        }
+        .box{
+            width: 300px;
+            height: 250px;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: move 1s infinite alternate;
+            /*动画名称 运动时间 运动次数infinite表示无限次 alternate往返效果相同*/
+        }
+        @keyframes move {
+            100%{
+                transform: scale(1.2);/*变大1.2倍*/
+            }
+        }
+        .box .left, .box .right{
+            width: 100px;
+            height: 190px;
+            background-color: red;
+            border-radius: 75px 75px 0 0;
+            float: left;
+            position: relative;/*相对大div定位*/
+            left: 130px;
+            box-shadow: 0 0 40px red;/*设置阴影效果，其值分别表示水平偏移量，竖直偏移量，阴影大小，颜色*/
+        }
+        .box .left{
+             transform: rotate(45deg) ;
+         }
+        .box .right{
+            transform: rotate(-45deg);
+            margin-left: -165px;
+        }
+        p{
+            font-size: 40px;
+            text-align: center;
+            color: red;
+            font-family: "STLiti";
+        }
+        #aa{
+        	font-size: 18px;
+            text-align: center;
+            color: #000;
+            font-family: "STXingkai";
+        }
+        #SuspendedBall{
+		    width: 25px;
+		    height: 25px;
+		    position:fixed;
+		    background-color: rgba(0,0,0,0.5);
+		    border-radius:25px;
+		    text-align: center;
+		    font-size: 10px;
+		    color: #fff;
+		    line-height: 25px;      		    
+		    border-style: solid;
+		}       
+    </style>
+</head>
+<body>	
+	<div class="LiveYou">		
+		<div class="box">
+		    <div class="left"></div>
+		    <div class="right"></div>
+		</div>
+		<audio id="music1" src="http://music.163.com/song/media/outer/url?id=1365898499.mp3" autoplay loop></audio>
+		<p><span>
+			我爱你</br>
+			I Love You!</br>		
+		</span></p>
+		<div id="aa"></div>
+	</div>
+	<div id="SuspendedBall" onclick="SuspendedBallButt()" style="cursor:hand; top: 100px;left: 0;">更多</div>
+	<script>
+		function onePrint(word){
+			var index=0;
+			var word=word;
+			function type(){		
+				document.getElementById("aa").innerText = word.substring(0,index++);
+			}setInterval(type, 180);
+		}
+		onePrint("我这人特别小气\n你要是和我在一起了\n那么你只能是我的\n除了我别人都不能拥有你\n\n愿你三冬暖，愿你春不寒\n愿你天黑有灯，下雨有伞\n愿时光能缓，愿故人不散\n愿你惦念的人能和你道晚安\n愿你独闯的日子里不觉得孤单\n愿你余生所遇之人，都是好人\n愿你活的洒脱，不争不抢\n爱别人，更要懂得爱自己");
+		function SuspendedBallButt(){
+			window.location.href='https://www.cnblogs.com/MrFlySand/category/1839816.html';
+		}
+		(function(){ 
+			var flag = 0; //标记是拖曳还是点击
+			var oDiv = document.getElementById('SuspendedBall');
+			var disX,moveX,L,T,starX,starY,starXEnd,starYEnd;        
+			oDiv.addEventListener('touchstart',function(e){
+			    flag = 0;
+			    e.preventDefault();//阻止触摸时页面的滚动，缩放
+			    disX = e.touches[0].clientX - this.offsetLeft;
+			    disY = e.touches[0].clientY - this.offsetTop;
+					//手指按下时的坐标
+			    starX = e.touches[0].clientX;
+			    starY = e.touches[0].clientY;            
+			});
+			oDiv.addEventListener('touchmove',function(e){
+			    flag = 1;
+			    L = e.touches[0].clientX - disX ;
+			    T = e.touches[0].clientY - disY ;
+					//移动时 当前位置与起始位置之间的差值
+			    starXEnd = e.touches[0].clientX - starX;
+			    starYEnd = e.touches[0].clientY - starY;
+			    if(L<0){//限制拖拽的X范围，不能拖出屏幕
+				L = 0;
+			    }else if(L > document.documentElement.clientWidth - this.offsetWidth){
+				L=document.documentElement.clientWidth - this.offsetWidth;
+			    }
+			    if(T<0){//限制拖拽的Y范围，不能拖出屏幕
+				T=0;
+			    }else if(T>document.documentElement.clientHeight - this.offsetHeight){
+				T = document.documentElement.clientHeight - this.offsetHeight;
+			    }
+			    moveX = L + 'px';
+			    moveY = T + 'px';
+			    this.style.left = moveX;
+			    this.style.top = moveY;                  
+			});
+			SuspendedBall.addEventListener('touchend',function(e){
+			    if(flag === 0) {//点击
+				window.location.href='https://www.cnblogs.com/MrFlySand/category/1839816.html';
+			    }            													
+			});		
+		})()
+	</script>
+</body>
+</html>
