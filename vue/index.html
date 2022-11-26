@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue3.js"></script>
+</head>
+
+<body>
+    <!-- vue语法，告诉vue，这里放了一个变量，2个{}表示变量 -->
+    <div id="counter">
+        <p>{{id}}</p>
+        <p>{{name}}</p>
+    </div>
+    <script>
+        const Counter = { //配置方法
+            data: function() {
+                return {
+                    id: "公众号",
+                    name: "小知识酷",
+                    num: 2602629626,
+                }
+            }
+        }
+        app = Vue.createApp(Counter).mount("#counter"); //创建应用，将配置对象传入
+        console.log(app)
+    </script>
+</body>
+
+</html>
