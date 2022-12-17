@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: url(img/background.jpg) no-repeat;
+            background-size: cover;
+        }
+        
+        #background {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: -1;
+            position: fixed;
+        }
+        
+        video {
+            width: 90%;
+            margin: 10px auto;
+            border-radius: 5px;
+            display: block;
+        }
+        
+        #printText {
+            text-align: center;
+            color: rgb(255, 90, 216);
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background"></div>
+    <iframe title="myFrame" src="//player.bilibili.com/player.html?aid=691441669&bvid=BV1924y1D7AM&cid=927013970&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">1 </iframe>
+
+    <div id="printText"></div>
+    <script>
+        function onePrint(word) {
+            var index = 0;
+            var word = word;
+
+            function type() {
+                document.getElementById("printText").innerText = word.substring(0, index++);
+            }
+            setInterval(type, 180);
+        }
+        onePrint("我这人特别小气\n你要是和我在一起了\n那么你只能是我的\n除了我别人都不能拥有你\n\n愿你三冬暖，愿你春不寒\n愿你天黑有灯，下雨有伞\n愿时光能缓，愿故人不散\n愿你惦念的人能和你道晚安\n愿你独闯的日子里不觉得孤单\n愿你余生所遇之人，都是好人\n愿你活的洒脱，不争不抢\n爱别人，更要懂得爱自己");
+    </script>
+</body>
+
+</html>
