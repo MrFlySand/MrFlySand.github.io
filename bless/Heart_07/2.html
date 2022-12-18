@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: url(img/background.jpg) no-repeat;
+            background-size: cover;
+        }
+        
+        #background {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: -1;
+            position: fixed;
+        }
+        
+        iframe {
+            width: 90%;
+            margin: 10px auto;
+            border-radius: 5px;
+            display: block;
+        }
+        
+        #printText {
+            text-align: center;
+            color: rgb(255, 90, 216);
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background"></div>
+    <iframe title="myFrame" src="//player.bilibili.com/player.html?aid=691441669&bvid=BV1924y1D7AM&cid=927013970&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">1 </iframe>
+
+    <div id="printText"></div>
+
+    <script>
+        function onePrint(word) {
+            var index = 0;
+            var word = word;
+
+            function type() {
+                document.getElementById("printText").innerText = word.substring(0, index++);
+            }
+            setInterval(type, 180);
+        }
+        onePrint("雪花遇见圣诞\n我遇见你\n你看过雪吗？\n看过我眼里的那片雪花吗？\n她纯白、安静\n总是轻轻地来\n你度过特别的圣诞节吗？\n如果没有\n希望今年的圣诞是\n一个特别的圣诞\n\n相遇并不难\n读书 学习 社交\n我们每天都在相遇\n过去的时光中\n你遇见了同窗 挚友 知己\n或是曾经的爱人\n爱好中的伯乐\n我也在遇见\n恰如你一般");
+    </script>
+</body>
+
+</html>
